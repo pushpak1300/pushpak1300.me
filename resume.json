@@ -18,7 +18,7 @@
   },
   "education": [
     {
-      "location": "Mumabi",
+      "location": "Mumbai",
       "area": "Info. Tech",
       "endDate": "May 2021",
       "gpa": "7.28",
@@ -48,11 +48,10 @@
     {
       "website": "",
       "highlights": [
-        "Automation of tasks",
-        "Managing AWS services and Deploying Restful Microservices."
+        "During period of internship I worked on Automation of tasks, Managing AWS services and Deploying restful microservices using Django."
       ],
       "company": "Behtaar",
-      "position": "Software Development Intern",
+      "position": "Software Development Engineering Intern",
       "location": "Mumbai,India",
       "startDate": "Jan 2020",
       "endDate": "Present"
@@ -182,14 +181,14 @@
     {
       "title": "Technical Head and Second-Year Representive",
       "awarder": "ACM Student Chapter FRCRCE",
-      "date": "July 2019 to July 2020",
+      "date": "July 2019 to Present",
       "summary": "Responsible for conducting technical workshops,events and guiding students with council arranged workshops and events."
     },
     {
       "title": "Python Top Scorer",
       "date": "May 2019",
       "awarder": "Mumbai University",
-      "summary": "Scored 95% in Python semester examination."
+      "summary": "Scored 95% in Python examination."
     }
   ],
   "sections": [
