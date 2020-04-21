@@ -1,0 +1,204 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "awards": "Extra-curricular activities and Achievements",
+    "work": "Internship Experience"
+  },
+  "basics": {
+    "name": "Pushpak Chhajed",
+    "email": "pushpak1300@gmail.com",
+    "phone": "8380838401",
+    "website": "https://pushpak1300.github.io",
+    "location": {
+      "address": "Mumbai"
+    }
+  },
+  "education": [
+    {
+      "location": "Mumabi",
+      "area": "Info. Tech",
+      "endDate": "May 2021",
+      "gpa": "7.28",
+      "institution": "Fr. Conceicao Rodrigues College of Engineering ",
+      "studyType": "Bachelor Of Engg.(B.E)",
+      "startDate": "August 2017"
+    },
+    {
+      "institution": "Zulal Bhilajirao Patil College",
+      "location": "Dhule",
+      "studyType": "H.S.C",
+      "area": "Computer Science",
+      "gpa": "78.62%",
+      "startDate": "August 2015",
+      "endDate": "May 2017"
+    },
+    {
+      "institution": "Jai- HInd High School",
+      "location": "Dhule",
+      "studyType": "S.S.C",
+      "gpa": "91.40%",
+      "endDate": "May 2015",
+      "startDate": "May 2014"
+    }
+  ],
+  "work": [
+    {
+      "website": "",
+      "highlights": [
+        "Automation of tasks",
+        "Managing AWS services and Deploying Restful Microservices."
+      ],
+      "company": "Behtaar",
+      "position": "Software Development Intern",
+      "location": "Mumbai,India",
+      "startDate": "Jan 2020",
+      "endDate": "Present"
+    },
+    {
+      "highlights": [
+        "Design and Developed Back-End services From Scratch.Design and Deploy Backend Server From Scratch and use various server side compression Techniques for better performance of server. Skills Used – Laravel,Webpack,AWS,Javascript,MySql "
+      ],
+      "company": "Taxvisor Technologies",
+      "position": "Devoloper Intern",
+      "location": "Mumbai",
+      "startDate": "Aug 2019",
+      "endDate": "Sep 2019"
+    },
+    {
+      "highlights": [
+        "Worked under Information-Technolgy department for devoloping student ,staff and event Management web-application portal. Skills Used – Laravel,Javascript,Bootstrap,Mysql,Jquery"
+      ],
+      "company": "Fr.Conceicao Roudrigues College Of Engineering",
+      "position": "Project Intern",
+      "location": "Mumbai",
+      "startDate": "June 2019",
+      "endDate": "Dec 2020"
+    }
+  ],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "Python",
+        "Javascript",
+        "BASH",
+        "Laravel",
+        "PHP",
+        "Django"
+      ],
+      "name": "Programming Language And Frameworks"
+    },
+    {
+      "keywords": [
+        "VS Code",
+        "Git SCM",
+        "Docker",
+        "Firebase",
+        "GCP",
+        "AWS"
+      ],
+      "name": "Tools and Cloud"
+    },
+    {
+      "keywords": [
+        "MySql",
+        "Sqlite",
+        "PouchDb"
+      ],
+      "name": "Databases"
+    },
+    {
+      "keywords": [
+        "Web Security",
+        "Problem Solving",
+        "Machine Learning",
+        null
+      ],
+      "name": "Others"
+    },
+    {
+      "keywords": [
+        ""
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Secupass-Password Manager Application",
+      "description": "Followed MVC project structure and build Authorization from scratch with highest level of security and data protection in mind.",
+      "url": "https://secupass.ml",
+      "keywords": [
+        "Laravel",
+        "Bootstrap ",
+        "My SQL",
+        "JQuery"
+      ]
+    },
+    {
+      "keywords": [
+        "Python",
+        "Telegram API",
+        "Scrapy"
+      ],
+      "name": "IT Bot and Scrapper",
+      "description": "Build telegram based chat-bot which send lab manuals,assignment and solution to the user on request without accesing college server.",
+      "url": "https://github.com/pushpak1300/SEITbot"
+    },
+    {
+      "keywords": [
+        "c",
+        "Blynk Library",
+        "Arduino"
+      ],
+      "name": "WQMS",
+      "description": "Water quality monitoring system project for monitoring water sources using arduino.",
+      "url": "https://github.com/pushpak1300/wqms"
+    },
+    {
+      "keywords": [
+        "Laravel",
+        "Bootstrap",
+        "Jquery"
+      ],
+      "name": "Department Management Website",
+      "description": "A full-fledged college department management website to accomplish various activities in an efficient manner yet minimizing human effort.",
+      "url": "https://github.com/insp7/frcrce-laravel"
+    },
+    {
+      "keywords": [
+        "Flask",
+        "Tensorflow-Keras",
+        "AWS"
+      ],
+      "name": "SCENER.io",
+      "description": "The platform for training, labelling,deploying and retraining image classification model.",
+      "url": "https://github.com/cascoders/SCENER.io"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Technical Head and Second-Year Representive",
+      "awarder": "ACM Student Chapter FRCRCE",
+      "date": "July 2019 to July 2020",
+      "summary": "Responsible for conducting technical workshops,events and guiding students with council arranged workshops and events."
+    },
+    {
+      "title": "Python Top Scorer",
+      "date": "May 2019",
+      "awarder": "Mumbai University",
+      "summary": "Scored 95% in Python semester examination."
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
