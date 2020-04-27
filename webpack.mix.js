@@ -14,3 +14,8 @@ const mix = require("laravel-mix");
 mix.js("js/all.js", "build/app.js");
 mix.styles(["bootstrap/css/bootstrap.css"], "build/all.css");
 
+mix.styles(
+  ["fonts/fontawesome-all.min.css", "fonts/font-awesome.min.css"],
+  "build/font.css"
+);
+

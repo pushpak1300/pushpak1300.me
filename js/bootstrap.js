@@ -6,9 +6,9 @@
 //  */
 
 try {
-    window.Popper = require('popper.js').default;
+    // window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-    require('bootstrap');
+    // require('bootstrap');
 } catch (e) {
     console.log(e);
 }
@@ -16,8 +16,6 @@ import AOS from "aos";
 import "alpinejs";
 AOS.init({
 });
-window.AOS=AOS;
 window.moment = require("moment");
-window.axios = require("axios").default;
 
 

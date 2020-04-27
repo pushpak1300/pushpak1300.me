@@ -4250,6 +4250,7 @@
     url(../fonts/fa-brands-400.woff) format("woff"),
     url(../fonts/fa-brands-400.ttf) format("truetype"),
     url(../fonts/fa-brands-400.svg#fontawesome) format("svg");
+  font-display: swap;
 }
 .fab {
   font-family: "Font Awesome 5 Brands";
@@ -4265,6 +4266,7 @@
     url(../fonts/fa-regular-400.woff) format("woff"),
     url(../fonts/fa-regular-400.ttf) format("truetype"),
     url(../fonts/fa-regular-400.svg#fontawesome) format("svg");
+  font-display: swap;
 }
 .far {
   font-weight: 400;
@@ -4280,6 +4282,7 @@
     url(../fonts/fa-solid-900.woff) format("woff"),
     url(../fonts/fa-solid-900.ttf) format("truetype"),
     url(../fonts/fa-solid-900.svg#fontawesome) format("svg");
+  font-display: swap;
 }
 .fa,
 .far,
