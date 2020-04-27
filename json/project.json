@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "SCENER.IO ⛰",
+    "description": "Customise your CNN like never before",
+    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
+    "github_url": "https://github.com/cascoders/SCENER.io",
+    "project_link": false,
+    "main_link": "https://github.com/cascoders/SCENER.io"
+  },
+  {
+    "id": 2,
+    "name": "Patient Plus 👨‍⚕️",
+    "description": "Community healthcare discussion forum",
+    "skills": "Bootstrap4, Laravel, sqlite , flask, Dialogflow",
+    "github_url": "https://github.com/pushpak1300/PatientPlus",
+    "project_link": false,
+    "main_link": "https://github.com/cascoders/Patient"
+  },
+  {
+    "id": 3,
+    "name": "Secupass 🔒",
+    "description": "Password Manager Application",
+    "skills": "Cryptography, Bootstrap4, Laravel, MySQL",
+    "github_url": "https://github.com/pushpak1300/Secupass",
+    "project_link": "http://secupass.ml",
+    "main_link": "https://github.com/pushpak1300/Secupass"
+  },
+  {
+    "id":4,
+    "name": "Unicorn Gym 🏋️",
+    "description": "Unicorn Gym Website",
+    "skills": "CSS, Bootstrap 4, Jquery",
+    "github_url": false,
+    "project_link": "https://unicorngym.in",
+    "main_link": "https://unicorngym.in"
+  },
+  {
+    "id": 5,
+    "name": "IT Bot 🤖",
+    "description": "Chatbot For Moodle and Scrapper",
+    "skills": "Python, Telegram-API, Scrapy",
+    "github_url": "https://github.com/pushpak1300/SEITbot",
+    "project_link": "https://t.me/SEIT_bot",
+    "main_link": "https://t.me/SEIT_bot"
+  },
+  {
+    "id": 6,
+    "name": "Collegr ERP Portal 🏫",
+    "description": "ERP portal developed for FRCRCE",
+    "skills": "Python, Telegram-API, Scrapy",
+    "github_url": "https://github.com/pushpak1300/frcrce-laravel",
+    "project_link": false,
+    "main_link": "https://github.com/pushpak1300/frcrce-laravel"
+  }
+]

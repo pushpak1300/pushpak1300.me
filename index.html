@@ -1,279 +1,396 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Pushpak's Portfolio</title>
+    <meta name="twitter:card" content="summary" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:title" content="Pushpak's Portfolio" />
+    <meta property="og:type" content="Blog" />
+    <meta property="og:image" content="assets/img/Image.jpg" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Pushpak's Portfolio</title>
-  <meta name="twitter:card" content="summary">
-  <link rel="manifest" href="site.webmanifest">
-  <meta property="og:title" content="pushpak's portfolio">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/Image.jpg?h=0eca7839fb6fce5c89f87efd3c71d9e5">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css?h=e031ce679c46461c65e7d0b9a1b1996b">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-  <link rel="stylesheet" href="fonts/fontawesome-all.min.css?h=0168f7c1e0d08faa2f4b13f4a1dc8c98">
-  <link rel="stylesheet" href="fonts/font-awesome.min.css?h=0168f7c1e0d08faa2f4b13f4a1dc8c98">
-  <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css?h=0168f7c1e0d08faa2f4b13f4a1dc8c98">
-  <link rel="stylesheet"
-    href=" https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
-  <link rel="stylesheet" href="css/styles.min.css?h=b2968737576ca2e8d8242ded1d9a62c6">
-  <style>
-    a {
-      color: black;
-    }
-    body{
-      padding-right:0px;
-    }
-    html, body { overflow-x: hidden; }
+    <link rel="stylesheet" href="fonts/fontawesome-all.min.css" async />
+    <link rel="stylesheet" href="fonts/font-awesome.min.css" async />
 
-  </style>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"
+      async
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css" async/> -->
+    <link rel="stylesheet" href="build/all.css" async />
+    <style>
+      a {
+        color: black;
+      }
+      body {
+        padding-right: 0px;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      #footerpad {
+        padding-top: 70px;
+        padding-bottom: 20px;
+        background-color: #fff;
+      }
+      a:focus,
+      a:hover {
+        color: #013e1a;
+      }
 
-<body>
-  <!--[if IE]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-      href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient"
-    style="background-color: rgb(51,48,48);opacity: 1;filter: brightness(106%) sepia(42%);">
-    <div class="container"><a class="navbar-brand logo" href="#">Pushpak Chhajed</a><button data-toggle="collapse"
-        class="navbar-toggler" data-target="#navbarNav" data-aos="fade-up-left"><span class="sr-only">Toggle
-          navigation</span><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" role="presentation"><a class="nav-link active" href="#about-me">About Me</a>
-          </li>
-          <li class="nav-item" role="presentation"><a class="nav-link active" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item" role="presentation"><a class="nav-link" target="_blank"
-              href="https://pushpak1300.github.io/resume.pdf">CV</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main class="text-center page lanidng-page">
-    <section id="about-me" class="portfolio-block block-intro bg-light" style="padding-bottom: 40px;margin-top: 0px;">
-      <div class="container" style="margin-top: -50px;">
-        <div class="border rounded-circle border-dark shadow-lg avatar"
-          style="background-image: url(&quot;img/Image.jpg?h=0eca7839fb6fce5c89f87efd3c71d9e5&quot;);filter: grayscale(9%);">
-        </div>
-        <h3 style="margin-top: -11px;">Pushpak Chhajed</h3>
-        <p class="text-center text-dark" style="font-size: 18px;"><strong>Mumbai,India</strong></p>
-        <p class="text-center text-dark" style="font-size: 18px;margin-top: -30px;"><a
-            href="mailto:pushpak1300@gmail.com">pushpak1300@gmail.com</a></p>
-        <div class="about-me">
-          <p data-aos="flip-left" data-aos-delay="50" style="margin-top: -30px;"><br>I'm a third year
-            undergrad student in the Department of <strong>Information Technology </strong>at<strong>
-              Fr.Conceicao Rodrigues College Of Engineering, Mumbai</strong><br><br>I'm
-            currently exploring the field of web-application security, which seems
-            fascinating to me. I usually attend hackathons during weekends and take part in programming
-            contests regularly.<br><br>I like to build and break apps 😏.<br></p>
-        </div>
-      </div>
-    </section>
-    <section class="text-left portfolio-block block-intro" id="projects"
-      style="padding-top: 10px;margin-top: 0px;margin-bottom: 0px;padding-bottom: 10px;">
-      <h1 class="text-center text-dark visible" data-aos="slide-up" data-aos-delay="50"
-        style="filter: grayscale(47%);background-color: #ffffff;margin-top: 20px;">Projects</h1>
-      <div>
-        <ul class="list-group list-group-flush ">
-        <li class="list-group-item  ">
-            <div class="card text-center  ">
-              <div class="card-body">
-                <h4 class="card-title">Frcrce department management website
-                </h4>
-                <p class="card-text">A full-fledged college department management website to accomplish various activities in an efficient manner yet minimizing human effort. Developed for Fr. CRCE.<br>Technologies
-                  Used:-PHP,HTML,Bootstrap4,Laravel,MySQL.<br><a href="https://github.com/insp7/frcrce-laravel"
-                    target="_blank"><i class="fab fa-github"></i>
-                  </a> <a href="http://frcrce.esy.es"> <i class="fas fa-link"></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item  ">
-            <div class="card text-center  ">
-              <div class="card-body">
-                <h4 class="card-title">Unicorn Gym Website
-                </h4>
-                <p class="card-text">Designed and Developed a website for Unicorn Gym.<br>Technologies
-                  Used:-HTML,Bootstrap4,Javascript,Jquery.<br> <a href="https://unicorngym.in"> <i class="fas fa-link"></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item  ">
-            <div class="card text-center  ">
-              <div class="card-body">
-                <h4 class="card-title">Secupass-Password Manger Application
-                </h4>
-                <p class="card-text">Password Manager Application Built In Laravel.<br>Technologies
-                  Used:-PHP,HTML,Bootstrap4,Laravel,MySQL.<br><a href="https://github.com/pushpak1300/Secupass"
-                    target="_blank"><i class="fab fa-github"></i>
-                  </a> <a href="http://secupass.ml"> <i class="fas fa-link"></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item  ">
-            <div class="card text-center  ">
-              <div class="card-body">
-                <h4 class="card-title">SEIT-bot</h4>
-                <p class="card-text">Chatbot created using telegram-python-bot API for acccessing the
-                  moodle files of FRCRCE college directly to mobile.<br>Technologies
-                  Used:-Python,Python-telegram-bot,Telegram-API,MySQL.<br> <a
-                    href="https://github.com/pushpak1300/SEITbot" target="_blank"><i class="fab fa-github"></i>
-                  </a> </p>
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item  ">
-            <div class="card text-center  ">
-              <div class="card-body">
-                <h4 class="card-title">Barcode genrator desktop application using electron js</h4>
-                <p class="card-text">This is barcode genrator desktop application using electron framework and python backend.<br>Technologies
-                Used:-Python,Electron js,Node js.<br><a href="https://github.com/pushpak1300/Barcode-genrator"
-                    target="_blank"><i class="fab fa-github"></i>
-                  </a> </p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="skills" class="bg-light" style="background-color: transperent;">
-      <div class="bg-light" style="background-color: transperent;padding-top: 15px;">
-        <h1 class="text-center text-dark visible bg-light" data-aos="zoom-out"
-          style="filter: grayscale(47%);margin-top: 30px;margin-bottom: 35px;">Skills</h1>
-        <div class="table-responsive" style="margin-top: 10px;">
-          <table class="table">
-            <thead>
-              <tr></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Python</strong>
-                  <h4><i class="devicon-python-plain colored"></i></h4>
-                </td>
-                <td><strong>PHP</strong>
-                  <h3><i class="devicon-php-plain colored"></i></h3>
-                </td>
-                <td><strong>Javascript</strong>
-                  <h4><i class="devicon-javascript-plain colored"></i></h4>
-                </td>
-                <td><strong>Laravel</strong>
-                  <h4><i class="devicon-laravel-plain colored"></i></h4>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Bootstrap</strong>
-                  <h4><i class="devicon-bootstrap-plain colored"></i></h4>
-                </td>
-                <td><strong>AWS</strong>
-                  <h3><i class="devicon-amazonwebservices-original colored"></i></h3>
-                </td>
+      html,
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+      .unhover {
+        text-decoration: none !important;
+      }
 
-                <td>
-                  <strong>React JS</strong>
-                  <h4><i class="devicon-react-original colored"></i></h4>
-                </td>
-                <td><strong>Node JS</strong>
-                  <h4><i class="devicon-nodejs-plain colored"></i></h4>
-                </td>
+      .hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
 
-               
-              </tr>
-              <tr>
-                <td><strong>Jquery</strong>
-                  <h4><i class="devicon-jquery-plain colored"></i></h4>
-                </td>
-                <td><strong>MySQL</strong>
-                  <h3><i class="devicon-mysql-plain colored"></i></h3>
-                </td>
-                <td><strong>HTML</strong>
-                  <h4><i class="devicon-html5-plain colored"></i></h4>
-                </td>
-                <td><strong>CSS</strong>
-                  <h4><i class="devicon-css3-plain colored"></i></h4>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>GIT</strong>
-                  <h4><i class="devicon-git-plain colored"></i></h4>
-                </td>
-                <td><strong>Heroku</strong>
-                  <h3><i class="devicon-heroku-plain colored"></i></h3>
-                </td>
-                <td><strong>Mongodb</strong>
-                  <h4><i class="devicon-mongodb-plain colored"></i></h4>
-                </td>
-                <td><strong>VS CODE<strong>
-                      <h4><i class="devicon-visualstudio-plain colored"></i></h4>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="page-footer">
-    <div class="container" data-aos="fade-left" data-aos-delay="50">
-      <div class="links"><a href="#about-me">About me</a><a href="#projects">Projects</a></div>
-    </div>
-    <footer data-aos="fade-right" id="footerpad" style="padding-top: 40px;">
+      .hvr-grow:hover,
+      .hvr-grow:focus,
+      .hvr-grow:active {
+        transform: scale(1.1);
+      }
+
+      .underline {
+        text-decoration: underline !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: black;
+          color: #ccc;
+        }
+      }
+      .navbar.navbar-dark.navbar-expand-lg.fixed-top.bg-white.portfolio-navbar.gradient {
+        background: #0f2027;
+        background: -webkit-linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        );
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient"
+      style="background-color: rgb(51,48,48);opacity: 1;filter: brightness(106%) sepia(42%);"
+    >
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-8 mx-auto">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item"><a href="https://www.facebook.com/pushpak1300"><span
-                    class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
-                      class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://github.com/pushpak1300"><span class="fa-stack fa-lg"><i
-                      class="fa fa-circle fa-stack-2x"></i><i
-                      class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://www.quora.com/profile/Pushpak-Chhajed"><span
-                    class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
-                      class="fab fa-quora fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://twitter.com/pushpak1300"><span class="fa-stack fa-lg"><i
-                      class="fa fa-circle fa-stack-2x"></i><i
-                      class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://www.instagram.com/pushpak1300/?hl=en"><span
-                    class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
-                      class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://discord.gg/nK6JUcP"><span class="fa-stack fa-lg"><i
-                      class="fa fa-circle fa-stack-2x"></i><i
-                      class="fab fa-discord fa-stack-1x fa-inverse"></i></span></a></li>
-              <li class="list-inline-item"><a href="https://www.linkedin.com/in/pushpak-c-286b17b1/"><span
-                    class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
-                      class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span></a></li>
-
-            </ul>
-            <p class="copyright text-muted text-center">Copyright &copy; Pushpak 2019 |
-              <strong>Code</strong> with ❤️ by Pushpak and ☕ </p>
+        <a class="navbar-brand logo" href="#">Pushpak Chhajed</a>
+        <button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navbarNav"
+          data-aos="fade-up-left"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" href="#about-me">About Me</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" href="#work">Work</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" href="#blogs">Blog</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://pushpak1300.github.io/resume.pdf"
+              >
+                CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="text-center page lanidng-page" x-data="aboutus()">
+      <section
+        id="about-me"
+        class="portfolio-block block-intro bg-light"
+        style="padding-bottom: 40px;margin-top: 0px;"
+      >
+        <div class="container" style="margin-top: -50px;">
+          <div
+            class="border rounded-circle border-dark shadow-lg avatar"
+            style='background-image: url("img/Image.jpg?h=0eca7839fb6fce5c89f87efd3c71d9e5");filter: grayscale(9%);'
+          ></div>
+          <h3 style="margin-top: -11px;" x-text="aboutus.name"></h3>
+          <p class="text-center text-dark" style="font-size: 18px;">
+            <strong x-text="aboutus.address"></strong>
+          </p>
+          <p
+            class="text-center text-dark"
+            style="font-size: 18px;margin-top: -30px;"
+          >
+            <a href="mailto:pushpak1300@gmail.com" x-text="aboutus.email"></a>
+          </p>
+          <div class="about-me">
+            <p
+              data-aos="flip-left"
+              style="margin-top: -30px;"
+              x-html="aboutus.description"
+            ></p>
           </div>
         </div>
+      </section>
+      <section
+        class="text-center portfolio-block block-intro px-sm-5"
+        x-data="projects()"
+        id="projects"
+        style="padding-top: 10px;margin-top: 0px;margin-bottom: 0px;padding-bottom: 10px;"
+      >
+        <a href="#work">
+          <h1
+            class="text-center text-dark visible"
+            data-aos="zoom-out"
+            id="work"
+          >
+            # Work
+          </h1>
+        </a>
+        <div class="text-center ">
+          <!-- <ul class="list-group list-group-flush "> -->
+          <div class="row mx-2">
+            <template x-for="project in projects" :key="project.name">
+              <div class="col-sm-6 ">
+                <div
+                  class="card rounded-sm p-4 my-2  w-100 text-center"
+                  style="background-color: #f8f9fa;"
+                  :data-aos="project.id%2==0? 'fade-left': 'fade-right'"
+                >
+                  <div class="card-body">
+                    <a :href="project.main_link">
+                      <h3
+                        class="card-title"
+                        x-text="project.name"
+                        :title="project.description"
+                      ></h3>
+                    </a>
+                    <span
+                      x-text="project.description"
+                      class="text-secondary"
+                    ></span>
+                    <br />
+                    <span class="text-dark">Built with -</span>
+                    <span x-text="project.skills" class="text-muted"></span>
+                    <br />
+                    <template x-if="project.github_url">
+                      <a :href="project.github_url" target="_blank">
+                        <i class="fab fa-github"></i>
+                      </a>
+                    </template>
+                    <template x-if="project.project_link">
+                      <a :href="project.project_link">
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="p-4" data-aos="fade-up">
+            <a href="https://github.com/pushpak1300">
+              <button type="button" class="btn btn-dark">
+                View All Projects ↗
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        id="articles"
+        class="bg-light"
+        style="background-color: transperent;"
+        x-data="article()"
+      >
+        <div
+          class="bg-light"
+          style="background-color: transperent;padding-top: 15px;"
+        >
+          <a href="#blogs">
+            <h1
+              class="text-center text-dark visible bg-light"
+              id="blogs"
+              data-aos="zoom-out"
+              style="filter: grayscale(47%);"
+            >
+              # Blogs
+            </h1>
+          </a>
+
+          <template x-for="article in articles" :key="article.id">
+            <div class="row p-2 justify-content-center">
+              <div class="col-sm-8 p-2" data-aos="fade-up">
+                <a :href="article.url" class="unhover">
+                  <div class="card shadow text-left">
+                    <div class="card-body">
+                      <h3
+                        class="card-title font-weight-bolder"
+                        x-text="article.name"
+                      ></h3>
+                      <h6
+                        class="card-text font-weight-bolder"
+                        x-text="article.topics"
+                      ></h6>
+                      <h6
+                        class="card-text font-weight-bolder"
+                        x-text='moment(article.published_on, "YYYYMMDD").fromNow();'
+                      ></h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </template>
+          <div class="p-4" data-aos="fade-up">
+            <a href="https://dev.to/pushpak1300">
+              <button type="button" class="btn btn-dark ">
+                View All Blogs ↗
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="container" data-aos="fade-left" data-aos-delay="50">
+        <div class="links">
+          <a href="#about-me">About me</a>
+          <a href="#work">Work</a>
+          <a href="#blog">Blog</a>
+          <a href="/resume.pdf">CV</a>
+        </div>
       </div>
+      <footer data-aos="fade-right" id="footerpad" style="padding-top: 40px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-8 mx-auto">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/pushpak1300">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://github.com/pushpak1300">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.quora.com/profile/Pushpak-Chhajed">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-quora fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/pushpak1300">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/pushpak1300/?hl=en">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://discord.gg/nK6JUcP">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/pushpak-c-286b17b1/">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://dev.to/pushpak1300">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i
+                        class="fab fa-dev fa-stack-1x fa-inverse"
+                        title="pushpak1300's DEV Profile"
+                      ></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <p class="copyright text-muted text-center">
+                Copyright &copy; Pushpak 2019 |
+                <strong>Code</strong>
+                with ❤️ by Pushpak and ☕
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
-  </footer>
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
-  <script src="bootstrap/js/bootstrap.min.js?h=63715b63ee49d5fe4844c2ecae071373"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154733037-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <script src="build/app.js" defer></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-154733037-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'UA-154733037-1');
-  </script>
-
-  <script src="js/script.min.js?h=a98ded0f8fa99fe4d1d8340d3300f1ba"></script>
-
-</body>
-
+      gtag("config", "UA-154733037-1");
+    </script>
+  </body>
 </html>
