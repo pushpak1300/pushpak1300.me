@@ -6,8 +6,6 @@
 //  */
 
 try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
     require('bootstrap');
 } catch (e) {
     console.log(e);
@@ -17,5 +15,4 @@ import "alpinejs";
 AOS.init({
 });
 window.moment = require("moment");
-
 

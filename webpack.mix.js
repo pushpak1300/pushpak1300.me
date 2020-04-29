@@ -1,6 +1,5 @@
 const mix = require("laravel-mix");
 
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,6 +11,7 @@ const mix = require("laravel-mix");
  |
  */
 mix.js("js/all.js", "build/app.js");
+
 mix.styles(["bootstrap/css/bootstrap.css"], "build/all.css");
 
 mix.styles(
@@ -19,3 +19,5 @@ mix.styles(
   "build/font.css"
 );
 
+
+mix.disableNotifications();
