@@ -39,7 +39,7 @@
     "id": 5,
     "name": "IT Bot 🤖",
     "description": "Chatbot and Scrapper For Moodle ",
-    "skills": "Python, Telegram-API, Scrapy",
+    "skills": "Python, Telegram-API, Scrapy, sqlite",
     "github_url": "https://github.com/pushpak1300/SEITbot",
     "project_link": "https://t.me/SEIT_bot",
     "main_link": "https://t.me/SEIT_bot"
