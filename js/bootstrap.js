@@ -15,6 +15,7 @@ try {
 import AOS from "aos";
 import "alpinejs";
 AOS.init({
+    once: true,
 });
 window.moment = require("moment");
 
