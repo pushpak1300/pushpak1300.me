@@ -35,7 +35,7 @@
   "dependencies": {
     "alpinejs": "^2.3.0",
     "aos": "^2.3.4",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^3.4.1",
     "http-server": "^0.12.3",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
