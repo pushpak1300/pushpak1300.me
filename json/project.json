@@ -52,5 +52,23 @@
     "github_url": "https://github.com/pushpak1300/frcrce-laravel",
     "project_link": false,
     "main_link": "https://github.com/pushpak1300/frcrce-laravel"
+  },
+  {
+    "id": 7,
+    "name": "JalPravah 🌊",
+    "description": "Early Flood Public Adress System",
+    "skills": "FLASK, AWS, Vue, Numpy, Twillo, Flutter",
+    "github_url": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+    "project_link": "https://jalpravah.pushpak1300.me/#/dashboard",
+    "main_link": "https://jalpravah.pushpak1300.me/#/dashboard"
+  },
+  {
+    "id": 7,
+    "name": "WQMS 💧",
+    "description": "IOT based Water Quality Monitoring System",
+    "skills": "Blynk, Arduino, ",
+    "github_url": "https://github.com/pushpak1300/wqms",
+    "project_link": false,
+    "main_link": "https://github.com/pushpak1300/wqms"
   }
 ]
