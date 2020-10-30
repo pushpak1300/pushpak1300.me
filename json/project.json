@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "SCENER.IO ⛰",
-    "description": "Customise your CNN like never before",
-    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
-    "github_url": "https://github.com/cascoders/SCENER.io",
-    "project_link": false,
-    "main_link": "https://github.com/cascoders/SCENER.io"
+    "name": "JalPravah 🌊",
+    "description": "Early Flood Public Address System",
+    "skills": "FLASK, AWS, Vue, Numpy, Redis, Flutter",
+    "github_url": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+    "project_link": "https://jalpravah.pushpak1300.me/#/dashboard",
+    "main_link": "https://jalpravah.pushpak1300.me/#/dashboard"
   },
   {
     "id": 2,
@@ -54,13 +54,13 @@
     "main_link": "https://github.com/pushpak1300/frcrce-laravel"
   },
   {
-    "id": 7,
-    "name": "JalPravah 🌊",
-    "description": "Early Flood Public Address System",
-    "skills": "FLASK, AWS, Vue, Numpy, Redis, Flutter",
-    "github_url": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
-    "project_link": "https://jalpravah.pushpak1300.me/#/dashboard",
-    "main_link": "https://jalpravah.pushpak1300.me/#/dashboard"
+    "id": 1,
+    "name": "SCENER.IO ⛰",
+    "description": "Customise your CNN like never before",
+    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
+    "github_url": "https://github.com/cascoders/SCENER.io",
+    "project_link": false,
+    "main_link": "https://github.com/cascoders/SCENER.io"
   },
   {
     "id": 7,
