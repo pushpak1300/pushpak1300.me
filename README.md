@@ -1,28 +1,20 @@
-# Portfolio Website 
- Portfolio Website built from scratch using Bootstrap4 and alpinejs.
- 
- [![DeepScan grade](https://deepscan.io/api/teams/6932/projects/9054/branches/114534/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6932&pid=9054&bid=114534)
- 
- #### Local Development:
+# pushpak1300.github.io
+
+## Build Setup
 
 ```bash
-# Get the project
-git clone https://github.com/pushpak1300/pushpak1300.github.io
+# install dependencies
+$ npm install
 
-# Change directory
-cd pushpak1300.github.io
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# Install npm dependecies
-npm install
+# build for production and launch server
+$ npm run build
+$ npm run start
 
-# Update The Content of files in json/* directory
-# After that you can build project by Following commands
-npm run prod  #for Production and minify build
-npm run dev #for development build
-
-#run project on local server
-npm run serve
+# generate static project
+$ npm run generate
 ```
 
-If you have any questions feel free to contact me on twitter [@pushpak1300](https://twitter.com/pushpak1300)
- 
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

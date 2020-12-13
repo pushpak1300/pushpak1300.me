@@ -1,45 +1,30 @@
 {
   "name": "pushpak1300.github.io",
   "version": "1.0.0",
-  "description": "Portfolio Website built from scratch using Bootstrap4.",
-  "main": "all.js",
-  "directories": {
-    "doc": "doc"
-  },
+  "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "serve": "http-server",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production && purgecss --css build/all.css build/font.css --content index.html -o build/",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.9.0",
+    "@nuxtjs/pwa": "^3.0.2",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6"
   },
   "devDependencies": {
-    "critical": "^1.3.9",
-    "cross-env": "^7.0",
-    "laravel-mix": "^5.0.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pushpak1300/pushpak1300.github.io.git"
-  },
-  "author": "Pushpak Chhajed",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pushpak1300/pushpak1300.github.io/issues"
-  },
-  "homepage": "https://github.com/pushpak1300/pushpak1300.github.io#readme",
-  "dependencies": {
-    "alpinejs": "^2.3.0",
-    "aos": "^2.3.4",
-    "bootstrap": "^4.4.1",
-    "http-server": "^0.12.3",
-    "jquery": "^3.5.1",
-    "moment": "^2.24.0",
-    "popper.js": "^1.14.3",
-    "purgecss": "^2.1.2"
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^3.1.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
   }
 }
