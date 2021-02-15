@@ -24,12 +24,22 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: '~/components/Icons/',
+        prefix: 'I',
+      },
+      {
+        path: '~/components/Base/',
+        prefix: 'Base',
+      }
+    ]
+  },
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
 
@@ -46,4 +56,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  router: {
+    linkExactActiveClass: 'active-navlink'
+  }
 }
