@@ -1,9 +1,5 @@
 <template>
-  <a
-    href="/feed.xml"
-    target="_blank"
-    class="text-gray-500 hover:text-gray-800 focus:outline-none p-2 rounded-full hidden md:block"
-  >
+  <a href="/feed.xml" target="_blank" class="text-gray-400 hover:text-gray-500">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"

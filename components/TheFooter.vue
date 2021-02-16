@@ -1,21 +1,22 @@
 <template>
-  <footer
-    class="text-center text-sm py-1 font-medium text-gray-500"
-    role="contentinfo"
-  >
-    <ul class="flex flex-col justify-center list-none">
-      <li class="md:mr-2">
-        &copy; Pushpak Chhajed <span v-text="new Date().getFullYear()"></span>.
-      </li>
-
-      <li>
+  <footer class="bg-white">
+    <div class="max-w-7xl mx-auto py-4 px-4 overflow-hidden sm:px-6 lg:px-8">
+      <div class="mt-1 flex justify-center space-x-6">
+        <Instagram />
+        <ITwitter />
+        <IGithub />
+        <IFeed />
+        <IDevTo />
+      </div>
+      <p class="mt-2 text-center text-base text-gray-400">
+        © Pushpak Chhajed <span v-text="new Date().getFullYear()"></span>.
+        <br />
         Built with
         <a
           href="https://nuxtjs.org/"
           class="hover:text-gray-900 underline"
           target="_blank"
-          title="The Intuitive
-Vue Framework"
+          title="The Intuitive Vue Framework"
           >Nuxt Js</a
         >
         ,
@@ -27,7 +28,7 @@ Vue Framework"
           >Tailwind CSS</a
         >
         and ❤️
-      </li>
-    </ul>
+      </p>
+    </div>
   </footer>
 </template>

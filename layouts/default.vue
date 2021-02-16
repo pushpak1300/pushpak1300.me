@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50 h-screen flex flex-col">
+  <div class="bg-white h-screen flex flex-col">
     <TheNavbar />
     <main class="flex-grow">
       <Nuxt />
