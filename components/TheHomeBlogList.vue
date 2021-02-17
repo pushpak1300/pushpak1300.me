@@ -13,7 +13,10 @@
           <p class="text-base text-gray-500">
             Get latest articles in your inbox.
           </p>
-          <form class="mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end">
+          <form
+            class="mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end"
+            @submit.prevent="subscribeToNewsletter"
+          >
             <div>
               <label for="email-address" class="sr-only">Email address</label>
               <input
@@ -21,7 +24,8 @@
                 name="email-address"
                 type="email"
                 autocomplete="email"
-                required=""
+                required="true"
+                v-model="email"
                 class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
                 placeholder="Enter your email"
               />
@@ -30,7 +34,7 @@
               class="mt-2 flex-shrink-0 w-full flex rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:w-auto sm:inline-flex"
             >
               <button
-                type="button"
+                type="sumbit"
                 class="w-full bg-gray-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:inline-flex"
               >
                 Notify me
@@ -40,9 +44,31 @@
         </div>
       </div>
       <div class="mt-4 pt-8 grid gap-12 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-8">
-        <BaseHomeBlogItem />
-        <BaseHomeBlogItem />
+        <BaseHomeBlogItem v-for="blog in blogs" :key="blog.id" :blog="blog" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    blogs: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      email: '',
+    }
+  },
+  methods: {
+    async subscribeToNewsletter() {
+      await this.$http.$post('https://usebasin.com/f/baffd19320ff.json', {
+        email: this.email,
+      })
+    },
+  },
+}
+</script>

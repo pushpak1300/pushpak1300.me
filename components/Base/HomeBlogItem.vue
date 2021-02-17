@@ -1,24 +1,38 @@
 <template>
   <div>
     <p class="text-sm text-gray-500">
-      <time datetime="2020-03-10">Mar 10, 2020</time>
+      <time :datetime="new Date(Date.parse(blog.created_at))">{{
+        $dateFns.format(new Date(Date.parse(blog.created_at)), 'd MMM, yyyy')
+      }}</time>
     </p>
     <a href="#" class="mt-1 block">
       <p class="text-xl font-semibold text-gray-900">
-        How to use search engine optimization to drive sales
+        {{ blog.title }}
       </p>
       <p class="mt-3 text-base text-gray-500">
-        Optio cum necessitatibus dolor voluptatum provident commodi et. Qui
-        aperiam fugiat nemo cumque.
+        {{ blog.description }}
       </p>
     </a>
     <div class="mt-3">
       <a
-        href="#"
+        :href="blog.url"
+        target="_blank"
+        rel="noopener"
         class="text-base font-semibold text-gray-600 hover:text-gray-500"
       >
-        Read full story
+        Read full blog
       </a>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    blog: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>

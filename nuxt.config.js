@@ -13,7 +13,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -45,10 +48,10 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxt/http',
+    '@nuxtjs/date-fns'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

@@ -42,8 +42,14 @@
         <nav class="hidden md:flex space-x-10">
           <BaseNavItem target-url="/">Home</BaseNavItem>
           <BaseNavItem target-url="/about">About</BaseNavItem>
-          <BaseNavItem target-url="/blogs">Blogs</BaseNavItem>
           <BaseNavItem target-url="/projects">Projects</BaseNavItem>
+          <a
+            href="https://dev.to/pushpak1300"
+            target="blank"
+            class="text-base font-medium text-gray-500 hover:text-gray-900"
+            rel="noopner"
+            >Blogs</a
+          >
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <IDarkMode />
@@ -64,6 +70,7 @@
       >
         <div
           class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
+          @click.capture="mobileMenuOpen = false"
         >
           <div class="pt-5 px-5">
             <div class="flex items-center justify-between">
@@ -100,9 +107,15 @@
               <div class="px-2 pt-2 pb-3 space-y-1">
                 <BaseMobileNavItem target-url="/">Home</BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/about">About</BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/blogs">Blogs</BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/projects"
                   >Projects</BaseMobileNavItem
+                >
+                <a
+                  href="https://dev.to/pushpak1300"
+                  target="blank"
+                  class="text-gray-500 hover:text-gray-900 outline-none block px-3 py-2 rounded-md text-base font-medium text-center"
+                  rel="noopner"
+                  >Blogs</a
                 >
               </div>
             </nav>

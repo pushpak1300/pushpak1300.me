@@ -27,7 +27,7 @@
           class="hover:text-gray-900 underline"
           >Tailwind CSS</a
         >
-        and ❤️
+        and <span class="font-serif">❤️</span>
       </p>
     </div>
   </footer>
