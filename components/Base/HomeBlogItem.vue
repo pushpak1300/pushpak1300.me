@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <p class="text-sm text-gray-500">
+  <div class="text-gray-500 dark:text-gray-300">
+    <p class="text-sm">
       <time :datetime="new Date(Date.parse(blog.created_at))">{{
         $dateFns.format(new Date(Date.parse(blog.created_at)), 'd MMM, yyyy')
       }}</time>
     </p>
     <a :href="blog.url" target="_blank" rel="noopener" class="mt-1 block">
-      <p class="text-xl font-semibold text-gray-700">
+      <p class="text-xl font-semibold text-gray-700 dark:text-gray-100">
         {{ blog.title }}
       </p>
-      <p class="mt-3 text-base text-gray-500">
+      <p class="mt-3 text-base">
         {{ blog.description }}
       </p>
     </a>
@@ -18,7 +18,7 @@
         :href="blog.url"
         target="_blank"
         rel="noopener"
-        class="text-base font-semibold text-gray-600 hover:text-gray-500"
+        class="text-base font-semibold text-gray-700 dark:text-gray-300 hover"
       >
         Read full blog
       </a>

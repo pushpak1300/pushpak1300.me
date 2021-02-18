@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-white mt-4 md:mt-12">
+  <div class="mt-4 md:mt-12">
     <div class="max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
       <div>
         <h2
-          class="text-2xl tracking-tight font-extrabold text-gray-700 sm:text-3xl"
+          class="text-2xl tracking-tight font-extrabold text-gray-700 dark:text-gray-100 sm:text-3xl"
         >
           Latest Blogs
         </h2>
         <div class="lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
-          <p class="text-base text-gray-500">
+          <p class="text-base text-gray-500 dark:text-gray-300">
             Get latest articles in your inbox.
           </p>
           <form
@@ -24,7 +24,7 @@
                 type="email"
                 autocomplete="email"
                 required="true"
-                class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-700 bg-white placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
+                class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-700 dark:text-gray-100 dark:bg-gray-800 dark:placeholder-gray-300 placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
                 placeholder="Enter your email"
               />
             </div>
@@ -33,7 +33,7 @@
             >
               <button
                 type="sumbit"
-                class="w-full bg-gray-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:inline-flex"
+                class="w-full bg-gray-600 dark:bg-gray-300 dark:text-gray-900 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:inline-flex"
               >
                 Notify me
               </button>

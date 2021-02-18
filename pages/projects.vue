@@ -1,7 +1,6 @@
 <template>
-  <main
-    role="main"
-    class="flex-auto w-full container max-w-4xl mx-auto md:py-8 py-4 px-6 text-gray-900"
+  <div
+    class="flex-grow w-full container max-w-4xl mx-auto md:py-8 py-4 px-6 text-gray-700 dark:text-gray-50"
   >
     <div class="mb-12 md:mb-6">
       <div class="mb-4">
@@ -14,7 +13,7 @@
         :project="project"
       />
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

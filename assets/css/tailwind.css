@@ -6,6 +6,6 @@
 
 @layer components {
   .active-navlink {
-    @apply text-black !important;
+    @apply text-black dark:text-gray-50 !important;
   }
 }
