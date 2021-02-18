@@ -1,11 +1,9 @@
 <template>
   <div class="bg-white mt-4 md:mt-12">
-    <div
-      class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl"
-    >
+    <div class="max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
       <div>
         <h2
-          class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl"
+          class="text-2xl tracking-tight font-extrabold text-gray-700 sm:text-3xl"
         >
           Latest Blogs
         </h2>
@@ -21,12 +19,12 @@
               <label for="email-address" class="sr-only">Email address</label>
               <input
                 id="email-address"
+                v-model="email"
                 name="email-address"
                 type="email"
                 autocomplete="email"
                 required="true"
-                v-model="email"
-                class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
+                class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-700 bg-white placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
                 placeholder="Enter your email"
               />
             </div>

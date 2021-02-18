@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "JalPravah 🌊",
+    "slug": "JalPravah",
+    "description": "Early Flood Public Address System",
+    "skills": "FLASK, AWS, Vue, Numpy, Redis, Flutter",
+    "github_url": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+    "project_link": "https://jalpravah.pushpak1300.me",
+    "main_link": "https://jalpravah.pushpak1300.me/#/dashboard"
+  },
+  {
+    "id": 2,
+    "name": "Patient Plus 👨‍⚕️",
+    "slug": "PatientPlus",
+    "description": "Community healthcare discussion forum",
+    "skills": "Bootstrap4, Laravel, sqlite , flask, Dialogflow",
+    "github_url": "https://github.com/pushpak1300/PatientPlus",
+    "project_link": false,
+    "main_link": "https://github.com/cascoders/Patient"
+  },
+  {
+    "id": 3,
+    "name": "Secupass 🔒",
+    "slug": "Secupass",
+    "description": "Password Manager Application",
+    "skills": "Cryptography, Bootstrap4, Laravel, MySQL",
+    "github_url": "https://github.com/pushpak1300/Secupass",
+    "project_link": "http://secupass.ml",
+    "main_link": "https://github.com/pushpak1300/Secupass"
+  },
+  {
+    "id": 4,
+    "name": "UFO Fit Gym 🏋️",
+    "slug": "UFOFitGym",
+    "description": "Unicorn Gym Website",
+    "skills": "CSS, Bootstrap 4, Jquery",
+    "github_url": false,
+    "project_link": "https://ufofit.in",
+    "main_link": "https://ufofit.in"
+  },
+  {
+    "id": 5,
+    "name": "IT Bot 🤖",
+    "slug": "ITBot",
+    "description": "Chatbot and Scrapper For Moodle ",
+    "skills": "Python, Telegram-API, Scrapy, sqlite",
+    "github_url": "https://github.com/pushpak1300/SEITbot",
+    "project_link": "https://t.me/SEIT_bot",
+    "main_link": "https://t.me/SEIT_bot"
+  },
+  {
+    "id": 6,
+    "name": "Collegr ERP Portal 🏫",
+    "slug": "ERP",
+    "description": "ERP portal developed for FRCRCE",
+    "skills": "Python, Telegram-API, Scrapy",
+    "github_url": "https://github.com/pushpak1300/frcrce-laravel",
+    "project_link": false,
+    "main_link": "https://github.com/pushpak1300/frcrce-laravel"
+  },
+  {
+    "id": 7,
+    "name": "SCENER.IO ⛰",
+    "slug": "scener",
+    "description": "Customise your CNN like never before",
+    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
+    "github_url": "https://github.com/cascoders/SCENER.io",
+    "project_link": false,
+    "main_link": "https://github.com/cascoders/SCENER.io"
+  },
+  {
+    "id": 8,
+    "name": "WQMS 💧",
+    "slug": "wqms",
+    "description": "IOT based Water Quality Monitoring System",
+    "skills": "Blynk, Arduino, ",
+    "github_url": "https://github.com/pushpak1300/wqms",
+    "project_link": false,
+    "main_link": "https://github.com/pushpak1300/wqms"
+  }
+]

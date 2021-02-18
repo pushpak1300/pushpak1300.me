@@ -5,8 +5,8 @@
         $dateFns.format(new Date(Date.parse(blog.created_at)), 'd MMM, yyyy')
       }}</time>
     </p>
-    <a href="#" class="mt-1 block">
-      <p class="text-xl font-semibold text-gray-900">
+    <a :href="blog.url" target="_blank" rel="noopener" class="mt-1 block">
+      <p class="text-xl font-semibold text-gray-700">
         {{ blog.title }}
       </p>
       <p class="mt-3 text-base text-gray-500">
