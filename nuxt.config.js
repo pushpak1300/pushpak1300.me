@@ -17,7 +17,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css', media: 'screen' },
+      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css', media: 'screen', defer: true },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16*16', href: '/favicon-16x16.png' },
