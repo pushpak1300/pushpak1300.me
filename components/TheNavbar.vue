@@ -49,9 +49,9 @@
           <BaseNavItem target-url="/projects">Projects</BaseNavItem>
           <a
             href="https://dev.to/pushpak1300"
-            target="blank"
+            target="_blank"
             class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-            rel="noopner"
+            rel="noopener"
             >Blogs</a
           >
         </nav>

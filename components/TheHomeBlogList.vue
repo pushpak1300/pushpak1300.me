@@ -34,6 +34,7 @@
               <button
                 type="sumbit"
                 class="w-full bg-gray-600 dark:bg-gray-300 dark:text-gray-900 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:inline-flex"
+                v-text="emailSubmited ? 'Sumbitted' : 'Notify me'"
               >
                 Notify me
               </button>
@@ -59,6 +60,7 @@ export default {
   data() {
     return {
       email: '',
+      emailSubmited: false,
     }
   },
   methods: {
@@ -66,6 +68,8 @@ export default {
       await this.$http.$post('https://usebasin.com/f/baffd19320ff.json', {
         email: this.email,
       })
+      this.email = ''
+      this.emailSubmited = true
     },
   },
 }

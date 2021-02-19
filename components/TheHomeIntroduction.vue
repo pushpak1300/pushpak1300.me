@@ -17,8 +17,8 @@
       fascinating to me. I usually attend
       <a
         href="https://devfolio.co/@pushpak1300"
-        target="\_blank"
-        rel="noopner"
+        target="_blank"
+        rel="noopener"
         class="text-gray-700 dark:text-gray-50 font-semibold"
         >hackathons</a
       >
@@ -26,7 +26,7 @@
       <a
         href="https://www.stopstalk.com/user/profile/pushpak1300"
         target="_blank"
-        rel="noopner"
+        rel="noopener"
         class="text-gray-700 dark:text-gray-50 font-semibold"
       >
         programming contests

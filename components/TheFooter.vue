@@ -6,7 +6,6 @@
           <Instagram />
           <ITwitter />
           <IGithub />
-          <IFeed />
           <IDevTo />
           <ILinkedIn />
         </div>
@@ -18,6 +17,7 @@
             href="https://nuxtjs.org/"
             class="hover:text-gray-900 underline"
             target="_blank"
+            rel="noopener"
             title="The Intuitive Vue Framework"
             >Nuxt Js</a
           >
@@ -25,6 +25,7 @@
           <a
             href="https://tailwindcss.com"
             target="_blank"
+            rel="noopener"
             title="Tailwind CSS, a utility-first CSS framework"
             class="hover:text-gray-900 underline"
             >Tailwind CSS</a
