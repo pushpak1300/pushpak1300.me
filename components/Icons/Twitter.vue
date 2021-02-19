@@ -1,8 +1,8 @@
 <template>
   <a
     href="https://twitter.com/pushpak1300"
-    rel="noopener"
     target="_blank"
+    rel="noopener"
     class="text-gray-400 hover:text-gray-500"
   >
     <span class="sr-only">Twitter</span>

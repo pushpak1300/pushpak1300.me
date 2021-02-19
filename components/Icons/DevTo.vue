@@ -1,10 +1,11 @@
 <template>
   <a
     href="https://dev.to/pushpak1300"
-    rel="noopener"
     target="_blank"
+    rel="noopener"
     class="text-gray-400 hover:text-gray-500"
   >
+    <span class="sr-only">Dev To</span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 172 172"

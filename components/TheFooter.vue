@@ -9,7 +9,7 @@
           <IDevTo />
           <ILinkedIn />
         </div>
-        <p class="mt-2 text-center text-base text-gray-400">
+        <p class="mt-2 text-center text-base text-gray-500">
           © Pushpak Chhajed <span v-text="new Date().getFullYear()"></span>.
           <br />
           Built with

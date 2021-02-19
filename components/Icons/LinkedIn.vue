@@ -5,6 +5,7 @@
     rel="noopener"
     class="text-gray-400 hover:text-gray-500"
   >
+    <span class="sr-only">LinkedIn</span>
     <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
