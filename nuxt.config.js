@@ -51,7 +51,10 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-154733037-1'
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
