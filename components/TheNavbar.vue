@@ -47,13 +47,8 @@
           <BaseNavItem target-url="/">Home</BaseNavItem>
           <BaseNavItem target-url="/about">About</BaseNavItem>
           <BaseNavItem target-url="/projects">Projects</BaseNavItem>
-          <a
-            href="https://dev.to/pushpak1300"
-            target="_blank"
-            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-            rel="noopener"
-            >Blogs</a
-          >
+          <BaseNavItem target-url="/blogs">Blogs</BaseNavItem>
+          <BaseNavItem target-url="/resume">Resume</BaseNavItem>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <IDarkMode />
@@ -109,17 +104,16 @@
             </div>
             <nav class="grid gap-y-8">
               <div class="px-2 pt-2 pb-3 space-y-1">
-                <BaseMobileNavItem target-url="/">Home</BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/"> Home</BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/about">About</BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/projects"
-                  >Projects</BaseMobileNavItem
-                >
-                <a
-                  href="https://dev.to/pushpak1300"
-                  target="blank"
-                  class="text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 outline-none block px-3 py-2 rounded-md text-base font-medium text-center"
-                  rel="noopner"
-                  >Blogs</a
+                  >Projects
+                </BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/blogs"
+                  >Blogs
+                </BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/resume"
+                  >Resume</BaseMobileNavItem
                 >
               </div>
             </nav>

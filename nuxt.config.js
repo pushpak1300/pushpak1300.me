@@ -68,7 +68,8 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
   router: {
-    linkExactActiveClass: 'active-navlink'
+    linkExactActiveClass: 'active-navlink',
+    middleware: 'redirect'
   },
   //dark mode configration
   colorMode: {
