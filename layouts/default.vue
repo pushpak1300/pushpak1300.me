@@ -7,3 +7,15 @@
     <TheFooter />
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      bodyAttrs: {
+        class: 'overflow-x-hidden',
+      },
+    }
+  },
+}
+</script>
