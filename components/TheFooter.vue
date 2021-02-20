@@ -13,7 +13,7 @@
       </nav>
       <div class="max-w-7xl mx-auto py-4 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div class="mt-1 flex justify-center space-x-6">
-          <Instagram />
+          <ILogoInstagram />
           <ITwitter />
           <IGithub />
           <IDevTo />
