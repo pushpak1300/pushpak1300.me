@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxt/components": "^2.0.0-1",
-    "@nuxt/content": "^1.9.0",
+    "@nuxt/content": "^1.13.1",
     "@nuxt/http": "^0.6.2",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",
