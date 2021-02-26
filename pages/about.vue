@@ -24,7 +24,13 @@
                 >
                   {{ about.name }}
                 </h2>
-                <h6 class="font-sm text-gray">{{ about.email }}</h6>
+                <a
+                  :href="`mailto:${about.email}`"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-md font-sm text-gray"
+                  >{{ about.email }}</a
+                >
               </div>
             </div>
             <div
