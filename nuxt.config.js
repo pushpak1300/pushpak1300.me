@@ -62,18 +62,18 @@ export default {
   },
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    [
+    '@nuxtjs/eslint-module',
+  ],
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxt/http', '@nuxtjs/date-fns', '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode', [
       '@nuxtjs/google-analytics',
       {
         id: 'UA-154733037-1',
       },
-    ],
-  ],
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxt/http', '@nuxtjs/date-fns'],
+    ],],
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -81,6 +81,14 @@ export default {
   router: {
     linkExactActiveClass: 'active-navlink',
     middleware: 'redirect',
+  },
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        'date-fns',
+        'content'
+      ]
+    }
   },
   // dark mode configration
   colorMode: {
