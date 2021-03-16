@@ -65,15 +65,21 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/eslint-module',
+    '@nuxt/postcss8',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxt/http', '@nuxtjs/date-fns', '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode', [
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxt/content',
+    '@nuxt/http',
+    '@nuxtjs/date-fns',
+    [
       '@nuxtjs/google-analytics',
       {
         id: 'UA-154733037-1',
       },
-    ],],
+    ],
+  ],
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -84,11 +90,8 @@ export default {
   },
   vite: {
     optimizeDeps: {
-      exclude: [
-        'date-fns',
-        'content'
-      ]
-    }
+      exclude: ['date-fns', 'content'],
+    },
   },
   // dark mode configration
   colorMode: {

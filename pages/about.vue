@@ -49,13 +49,13 @@
 
 <script>
 export default {
-  async fetch() {
-    this.about = await this.$content('about').fetch()
-  },
   data() {
     return {
       about: [],
     }
+  },
+  async fetch() {
+    this.about = await this.$content('about').fetch()
   },
 }
 </script>

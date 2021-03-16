@@ -18,13 +18,13 @@
 
 <script>
 export default {
-  async fetch() {
-    this.projects = await this.$content('projects').fetch()
-  },
   data() {
     return {
       projects: [],
     }
+  },
+  async fetch() {
+    this.projects = await this.$content('projects').fetch()
   },
 }
 </script>
