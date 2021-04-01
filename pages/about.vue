@@ -54,7 +54,7 @@ export default {
       about: [],
     }
   },
-  async fetch() {
+  async created() {
     this.about = await this.$content('about').fetch()
   },
 }

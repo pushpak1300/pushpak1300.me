@@ -23,7 +23,7 @@ export default {
       projects: [],
     }
   },
-  async fetch() {
+  async created() {
     this.projects = await this.$content('projects').fetch()
   },
 }

@@ -18,7 +18,7 @@ export default {
       blogs: [],
     }
   },
-  async fetch() {
+  async created() {
     this.blogs = await this.$http
       .$get('https://dev.to/api/articles?username=pushpak1300')
       .then((res) => res.slice(0, 2))
