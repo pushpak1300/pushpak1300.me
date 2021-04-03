@@ -1,6 +1,7 @@
 <template>
   <div>
     <section
+      v-show="about"
       class="text-gray-500 dark:text-gray-300 body-font dark:bg-gray-800"
     >
       <div class="container px-3 py-4 mx-auto flex flex-col">
@@ -51,7 +52,7 @@
 export default {
   data() {
     return {
-      about: [],
+      about: {},
     }
   },
   async created() {
