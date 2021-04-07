@@ -13,7 +13,7 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "@nuxt/components": "^2.1.4",
+    "@nuxt/components": "^2.1.6",
     "@nuxt/content": "^1.14.0",
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/google-analytics": "^2.4.0",
