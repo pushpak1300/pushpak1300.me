@@ -31,7 +31,7 @@
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "nuxt-vite": "0.0.37",
