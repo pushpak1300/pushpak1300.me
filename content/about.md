@@ -12,11 +12,11 @@ In the past I have worked on different cool projects and
 experienced space at an early stage startups as a
 <span class="font-medium text-gray-700 dark:text-gray-50">SDE Intern</span>. Few
 of them are
-<span class="font-medium text-gray-700 dark:text-gray-50">Taxvisor</span> and
-<span class="font-medium text-gray-700 dark:text-gray-50">Behtaar</span>.
+<span class="font-medium text-gray-700 dark:text-gray-50">Taxvisor</span>,
+<span class="font-medium text-gray-700 dark:text-gray-50">Behtaar</span> and <span class="font-medium text-gray-700 dark:text-gray-50">Eastern Enterprise</span>.
 Currently I'm working with
-<span class="font-medium text-gray-700 dark:text-gray-50">Easten Enterprises</span>
-as a SDE Intern.
+<span class="font-medium text-gray-700 dark:text-gray-50">ClearGlass Analytics</span>
+as a Software Engineer.
 <br />
 <br />
 If you've reached this point, you probably want to learn more
