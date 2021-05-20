@@ -1,6 +1,16 @@
 <template>
   <div
-    class="dark:bg-gray-800 flex-col h-full flex-grow container max-w-4xl md:py-12 py-8 px-6"
+    class="
+      dark:bg-gray-800
+      flex-col
+      h-full
+      flex-grow
+      container
+      max-w-4xl
+      md:py-12
+      py-8
+      px-6
+    "
   >
     <div class="mb-8">
       <TheHomeIntroduction />

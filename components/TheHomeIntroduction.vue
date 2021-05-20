@@ -1,7 +1,14 @@
 <template>
   <div class="text-gray-500 dark:text-gray-400">
     <h1
-      class="text-2xl font-bold text-gray-700 dark:text-gray-100 sm:text-4xl sm:truncate"
+      class="
+        text-2xl
+        font-bold
+        text-gray-700
+        dark:text-gray-100
+        sm:text-4xl
+        sm:truncate
+      "
     >
       Hey! 👋<br />
       I'm Pushpak Chhajed

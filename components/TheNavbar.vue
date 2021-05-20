@@ -2,7 +2,17 @@
   <div class="relative">
     <div class="mx-auto px-2 sm:px-6">
       <div
-        class="flex justify-between items-center border-b-2 border-gray-100 py-4 md:py-2 md:justify-start md:space-x-10 dark:border-gray-50"
+        class="
+          flex
+          justify-between
+          items-center
+          border-b-2 border-gray-100
+          py-4
+          md:py-2
+          md:justify-start
+          md:space-x-10
+          dark:border-gray-50
+        "
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <a href="/">
@@ -21,7 +31,20 @@
         <div class="-mr-2 -my-2 md:hidden">
           <button
             type="button"
-            class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+            class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              hover:bg-gray-100
+              dark:hover:bg-gray-700
+              dark:hover:text-gray-300
+              focus:outline-none
+              focus:ring-2 focus:ring-inset focus:ring-gray-500
+            "
             @click="mobileMenuOpen = true"
           >
             <span class="sr-only">Open menu</span>
@@ -65,10 +88,28 @@
       leave-to-class="opacity-0 scale-95"
       ><div
         v-if="mobileMenuOpen"
-        class="bg-white dark:bg-gray-800 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        class="
+          bg-white
+          dark:bg-gray-800
+          absolute
+          top-0
+          inset-x-0
+          p-2
+          transition
+          transform
+          origin-top-right
+          md:hidden
+        "
       >
         <div
-          class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50 dark:divide-gray-800 dark:ring-offset-gray-200"
+          class="
+            rounded-lg
+            shadow-lg
+            ring-1 ring-black ring-opacity-5
+            divide-y-2 divide-gray-50
+            dark:divide-gray-800
+            dark:ring-offset-gray-200
+          "
           @click.capture="mobileMenuOpen = false"
         >
           <div class="pt-5 px-5">
@@ -79,7 +120,20 @@
               <div class="mr-2">
                 <button
                   type="button"
-                  class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+                  class="
+                    rounded-md
+                    p-2
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-gray-400
+                    hover:text-gray-500
+                    hover:bg-gray-100
+                    dark:hover:bg-gray-700
+                    dark:hover:text-gray-300
+                    focus:outline-none
+                    focus:ring-2 focus:ring-inset focus:ring-gray-500
+                  "
                   @click="mobileMenuOpen = false"
                 >
                   <span class="sr-only">Close menu</span>

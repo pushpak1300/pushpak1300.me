@@ -3,7 +3,14 @@
     <div class="max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
       <div>
         <h2
-          class="text-2xl tracking-tight font-extrabold text-gray-700 dark:text-gray-100 sm:text-3xl"
+          class="
+            text-2xl
+            tracking-tight
+            font-extrabold
+            text-gray-700
+            dark:text-gray-100
+            sm:text-3xl
+          "
         >
           Latest Blogs
         </h2>
@@ -24,16 +31,64 @@
                 type="email"
                 autocomplete="email"
                 required="true"
-                class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-700 dark:text-gray-100 dark:bg-gray-800 dark:placeholder-gray-300 placeholder-gray-500 focus:outline-none focus:ring-gray-500 focus:border-gray-500 lg:max-w-xs"
+                class="
+                  appearance-none
+                  w-full
+                  px-4
+                  py-2
+                  border border-gray-300
+                  text-base
+                  rounded-md
+                  text-gray-700
+                  dark:text-gray-100
+                  dark:bg-gray-800
+                  dark:placeholder-gray-300
+                  placeholder-gray-500
+                  focus:outline-none
+                  focus:ring-gray-500
+                  focus:border-gray-500
+                  lg:max-w-xs
+                "
                 placeholder="Enter your email"
               />
             </div>
             <div
-              class="mt-2 flex-shrink-0 w-full flex rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:w-auto sm:inline-flex"
+              class="
+                mt-2
+                flex-shrink-0
+                w-full
+                flex
+                rounded-md
+                shadow-sm
+                sm:mt-0
+                sm:ml-3
+                sm:w-auto
+                sm:inline-flex
+              "
             >
               <button
                 type="sumbit"
-                class="w-full bg-gray-600 dark:bg-gray-300 dark:text-gray-900 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:inline-flex"
+                class="
+                  w-full
+                  bg-gray-600
+                  dark:bg-gray-300
+                  dark:text-gray-900
+                  px-4
+                  py-2
+                  border border-transparent
+                  rounded-md
+                  flex
+                  items-center
+                  justify-center
+                  text-base
+                  font-medium
+                  text-white
+                  hover:bg-gray-700
+                  focus:outline-none
+                  focus:ring-2 focus:ring-offset-2 focus:ring-gray-500
+                  sm:w-auto
+                  sm:inline-flex
+                "
                 v-text="emailSubmited ? 'Sumbitted' : 'Notify me'"
               >
                 Notify me

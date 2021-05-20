@@ -1,6 +1,15 @@
 <template>
   <button
-    class="text-gray-800 md:text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 focus:outline-none p-2 rounded-full"
+    class="
+      text-gray-800
+      md:text-gray-500
+      hover:text-gray-800
+      dark:text-gray-300
+      dark:hover:text-gray-100
+      focus:outline-none
+      p-2
+      rounded-full
+    "
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
