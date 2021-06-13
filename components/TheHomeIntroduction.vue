@@ -17,11 +17,10 @@
     <p
       class="text-lg md:text-base dark-mode:text-white leading-normal mb-2 mt-3"
     >
-      I'm an undergrad student in the Department of Information Technology at
-      Fr.CRCE, Mumbai.🎓
+      I am a Software Engineer and a problem solver.💻
       <br />
-      I'm currently exploring the field of web-application security, which seems
-      fascinating to me. I usually attend
+       I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in Information Technology (2021).
+      I usually attend
       <a
         href="https://devfolio.co/@pushpak1300"
         target="_blank"
