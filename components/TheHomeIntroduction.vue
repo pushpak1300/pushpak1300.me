@@ -19,8 +19,8 @@
     >
       I am a Software Engineer and a problem solver.💻
       <br />
-       I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in Information Technology (2021).
-      I usually attend
+      I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in
+      Information Technology (2021). I usually attend
       <a
         href="https://devfolio.co/@pushpak1300"
         target="_blank"

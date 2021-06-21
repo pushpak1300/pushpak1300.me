@@ -8,7 +8,9 @@
           items-center
           border-b-2 border-gray-100
           py-4
-          md:py-2 md:justify-start md:space-x-10
+          md:py-2
+          md:justify-start
+          md:space-x-10
           dark:border-gray-50
         "
       >
@@ -36,12 +38,12 @@
               items-center
               justify-center
               text-gray-400
-              hover:text-gray-500 hover:bg-gray-100
-              dark:hover:bg-gray-700 dark:hover:text-gray-300
+              hover:text-gray-500
+              hover:bg-gray-100
+              dark:hover:bg-gray-700
+              dark:hover:text-gray-300
               focus:outline-none
-              focus:ring-2
-              focus:ring-inset
-              focus:ring-gray-500
+              focus:ring-2 focus:ring-inset focus:ring-gray-500
             "
             @click="mobileMenuOpen = true"
           >
@@ -105,7 +107,8 @@
             shadow-lg
             ring-1 ring-black ring-opacity-5
             divide-y-2 divide-gray-50
-            dark:divide-gray-800 dark:ring-offset-gray-200
+            dark:divide-gray-800
+            dark:ring-offset-gray-200
           "
           @click.capture="mobileMenuOpen = false"
         >
@@ -124,12 +127,12 @@
                     items-center
                     justify-center
                     text-gray-400
-                    hover:text-gray-500 hover:bg-gray-100
-                    dark:hover:bg-gray-700 dark:hover:text-gray-300
+                    hover:text-gray-500
+                    hover:bg-gray-100
+                    dark:hover:bg-gray-700
+                    dark:hover:text-gray-300
                     focus:outline-none
-                    focus:ring-2
-                    focus:ring-inset
-                    focus:ring-gray-500
+                    focus:ring-2 focus:ring-inset focus:ring-gray-500
                   "
                   @click="mobileMenuOpen = false"
                 >

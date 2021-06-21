@@ -51,7 +51,6 @@ export default {
   },
   mounted() {
     if (this.$colorMode.preference === 'dark') {
-      this.$colorMode.preference === 'dark'
       this.darkOn = true
     }
   },

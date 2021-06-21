@@ -66,7 +66,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/eslint-module',
     '@nuxt/postcss8',
-    'nuxt-vite'
+    'nuxt-vite',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
