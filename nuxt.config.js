@@ -66,6 +66,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/eslint-module',
     '@nuxt/postcss8',
+    'nuxt-vite'
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -88,13 +89,10 @@ export default {
     linkExactActiveClass: 'active-navlink',
     middleware: 'redirect',
   },
-  vite: {
-    optimizeDeps: {
-      exclude: ['date-fns', 'content'],
-    },
-  },
   // dark mode configration
   colorMode: {
+    preference: 'light',
+    fallback: 'light',
     classSuffix: '',
   },
 }
