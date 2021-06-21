@@ -8,7 +8,7 @@
     "prod": "nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint:js": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
@@ -16,10 +16,15 @@
     "@nuxt/components": "^2.1.8",
     "@nuxt/content": "^1.14.0",
     "@nuxt/http": "^0.6.4",
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.15.0",
-    "nuxt": "^2.4.5"
+    "nuxt": "^2.4.5",
+    "vue": "^2.6.14",
+    "vue-class-component": "^7.2.6"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",

@@ -1,4 +1,6 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+const config: NuxtConfig = {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
   // Target (https://go.nuxtjs.dev/config-target)
@@ -67,6 +69,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxt/postcss8',
     'nuxt-vite',
+    '@nuxt/typescript-build',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -95,4 +98,13 @@ export default {
     fallback: 'light',
     classSuffix: '',
   },
-}
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}'
+      }
+    }
+  },
+};
+
+export default config;

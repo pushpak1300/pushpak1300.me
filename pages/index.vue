@@ -21,17 +21,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      blogs: [],
-    }
-  },
-  async created() {
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class Index extends Vue {
+  blogs = [];
+
+  async created(): Promise<any> {
     this.blogs = await this.$http
       .$get('https://dev.to/api/articles?username=pushpak1300')
       .then((res) => res.slice(0, 2))
-  },
+  }
+
 }
 </script>
