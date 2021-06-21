@@ -28,15 +28,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      projects: [],
-    }
-  },
-  async created() {
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class Projects extends Vue {
+  projects: [] = []
+
+  async created(): Promise<void> {
+    // @ts-ignore
     this.projects = await this.$content('projects').fetch()
-  },
+  }
 }
 </script>

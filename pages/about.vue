@@ -58,10 +58,7 @@
             </div>
             <div
               class="
-                sm:w-2/3
-                sm:pl-8
-                sm:py-4
-                sm:border-l
+                sm:w-2/3 sm:pl-8 sm:py-4 sm:border-l
                 border-gray-200
                 sm:border-t-0
                 border-t
@@ -82,15 +79,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      about: {},
-    }
-  },
-  async created() {
-    this.about = await this.$content('about').fetch()
-  },
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class About extends Vue {
+  about: Object = {};
+
+  async created(): Promise<void> {
+    this.about  = await this.$content('about').fetch()
+  }
 }
 </script>

@@ -27,13 +27,13 @@ import Component from 'vue-class-component'
 
 @Component
 export default class Index extends Vue {
-  blogs = [];
+  blogs: any[] = []
 
-  async created(): Promise<any> {
-    this.blogs = await this.$http
-      .$get('https://dev.to/api/articles?username=pushpak1300')
-      .then((res) => res.slice(0, 2))
+  async created(): Promise<void> {
+    const response: Array<any> = await this.$http.$get(
+      'https://dev.to/api/articles?username=pushpak1300'
+    )
+    this.blogs = response.slice(0, 2)
   }
-
 }
 </script>
