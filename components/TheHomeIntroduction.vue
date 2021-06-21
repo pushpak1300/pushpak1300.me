@@ -6,11 +6,10 @@
         font-bold
         text-gray-700
         dark:text-gray-100
-        sm:text-4xl
-        sm:truncate
+        sm:text-4xl sm:truncate
       "
     >
-      Hey! 👋<br />
+      Hey! 👋<br >
       I'm Pushpak Chhajed
     </h1>
 
@@ -18,7 +17,7 @@
       class="text-lg md:text-base dark-mode:text-white leading-normal mb-2 mt-3"
     >
       I am a Software Engineer and a problem solver.💻
-      <br />
+      <br >
       I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in
       Information Technology (2021). I usually attend
       <a
@@ -38,7 +37,7 @@
         programming contests
       </a>
       regularly.
-      <br />
+      <br >
       In short, I like to build and break apps.😏
     </p>
   </div>

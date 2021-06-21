@@ -22,7 +22,7 @@
               tracking-wider
             "
             v-text="error.statusCode"
-          ></div>
+          />
 
           <div class="ml-4 text-lg text-gray-500 uppercase tracking-wider">
             {{ error.message }}

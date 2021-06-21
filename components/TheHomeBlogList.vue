@@ -40,13 +40,9 @@
                   text-base
                   rounded-md
                   text-gray-700
-                  dark:text-gray-100
-                  dark:bg-gray-800
-                  dark:placeholder-gray-300
+                  dark:text-gray-100 dark:bg-gray-800 dark:placeholder-gray-300
                   placeholder-gray-500
-                  focus:outline-none
-                  focus:ring-gray-500
-                  focus:border-gray-500
+                  focus:outline-none focus:ring-gray-500 focus:border-gray-500
                   lg:max-w-xs
                 "
                 placeholder="Enter your email"
@@ -60,19 +56,15 @@
                 flex
                 rounded-md
                 shadow-sm
-                sm:mt-0
-                sm:ml-3
-                sm:w-auto
-                sm:inline-flex
+                sm:mt-0 sm:ml-3 sm:w-auto sm:inline-flex
               "
             >
-            <button
+              <button
                 v-if="loading"
                 class="
                   w-full
                   bg-gray-600
-                  dark:bg-gray-300
-                  dark:text-gray-900
+                  dark:bg-gray-300 dark:text-gray-900
                   px-4
                   py-2
                   border border-transparent
@@ -85,9 +77,10 @@
                   text-white
                   hover:bg-gray-700
                   focus:outline-none
-                  focus:ring-2 focus:ring-offset-2 focus:ring-gray-500
-                  sm:w-auto
-                  sm:inline-flex
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-gray-500
+                  sm:w-auto sm:inline-flex
                 "
               >
                 ⌛
@@ -98,8 +91,7 @@
                 class="
                   w-full
                   bg-gray-600
-                  dark:bg-gray-300
-                  dark:text-gray-900
+                  dark:bg-gray-300 dark:text-gray-900
                   px-4
                   py-2
                   border border-transparent
@@ -112,9 +104,10 @@
                   text-white
                   hover:bg-gray-700
                   focus:outline-none
-                  focus:ring-2 focus:ring-offset-2 focus:ring-gray-500
-                  sm:w-auto
-                  sm:inline-flex
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-gray-500
+                  sm:w-auto sm:inline-flex
                 "
                 v-text="emailSubmited ? 'Sumbitted' : 'Notify me'"
               >
@@ -148,14 +141,14 @@ export default {
   },
   methods: {
     async subscribeToNewsletter() {
-      this.loading = true;
+      this.loading = true
       await this.$http.$post('https://usebasin.com/f/baffd19320ff.json', {
         email: this.email,
       })
       this.email = ''
       this.emailSubmited = true
-      this.loading = false;
-    },
+      this.loading = false
+    }
   },
 }
 </script>

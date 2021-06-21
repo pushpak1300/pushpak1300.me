@@ -12,11 +12,11 @@
       text-base
       font-medium
       text-center
-      dark:text-gray-300
-      dark:hover:text-gray-100
+      dark:text-gray-300 dark:hover:text-gray-100
     "
-    ><slot></slot
-  ></NuxtLink>
+  >
+    <slot />
+  </NuxtLink>
 </template>
 
 <script>

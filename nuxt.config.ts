@@ -105,6 +105,6 @@ const config: NuxtConfig = {
       }
     }
   },
-};
+}
 
-export default config;
+export default config

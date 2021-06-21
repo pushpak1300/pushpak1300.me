@@ -7,8 +7,9 @@
         hover:text-gray-900
         dark:hover:text-gray-300
       "
-      ><slot></slot
-    ></NuxtLink>
+    >
+      <slot />
+    </NuxtLink>
   </div>
 </template>
 

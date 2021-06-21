@@ -8,9 +8,7 @@
           items-center
           border-b-2 border-gray-100
           py-4
-          md:py-2
-          md:justify-start
-          md:space-x-10
+          md:py-2 md:justify-start md:space-x-10
           dark:border-gray-50
         "
       >
@@ -38,12 +36,12 @@
               items-center
               justify-center
               text-gray-400
-              hover:text-gray-500
-              hover:bg-gray-100
-              dark:hover:bg-gray-700
-              dark:hover:text-gray-300
+              hover:text-gray-500 hover:bg-gray-100
+              dark:hover:bg-gray-700 dark:hover:text-gray-300
               focus:outline-none
-              focus:ring-2 focus:ring-inset focus:ring-gray-500
+              focus:ring-2
+              focus:ring-inset
+              focus:ring-gray-500
             "
             @click="mobileMenuOpen = true"
           >
@@ -62,16 +60,16 @@
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+              />
             </svg>
           </button>
         </div>
         <nav class="hidden md:flex space-x-10">
-          <BaseNavItem target-url="/">Home</BaseNavItem>
-          <BaseNavItem target-url="/about">About</BaseNavItem>
-          <BaseNavItem target-url="/projects">Projects</BaseNavItem>
-          <BaseNavItem target-url="/blogs">Blogs</BaseNavItem>
-          <BaseNavItem target-url="/resume">Resume</BaseNavItem>
+          <BaseNavItem target-url="/"> Home </BaseNavItem>
+          <BaseNavItem target-url="/about"> About </BaseNavItem>
+          <BaseNavItem target-url="/projects"> Projects </BaseNavItem>
+          <BaseNavItem target-url="/blogs"> Blogs </BaseNavItem>
+          <BaseNavItem target-url="/resume"> Resume </BaseNavItem>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <IDarkMode />
@@ -86,7 +84,8 @@
       leave-active-class="duration-100 ease-in"
       leave-class="opacity-100 scale-100"
       leave-to-class="opacity-0 scale-95"
-      ><div
+    >
+      <div
         v-if="mobileMenuOpen"
         class="
           bg-white
@@ -107,8 +106,7 @@
             shadow-lg
             ring-1 ring-black ring-opacity-5
             divide-y-2 divide-gray-50
-            dark:divide-gray-800
-            dark:ring-offset-gray-200
+            dark:divide-gray-800 dark:ring-offset-gray-200
           "
           @click.capture="mobileMenuOpen = false"
         >
@@ -127,12 +125,12 @@
                     items-center
                     justify-center
                     text-gray-400
-                    hover:text-gray-500
-                    hover:bg-gray-100
-                    dark:hover:bg-gray-700
-                    dark:hover:text-gray-300
+                    hover:text-gray-500 hover:bg-gray-100
+                    dark:hover:bg-gray-700 dark:hover:text-gray-300
                     focus:outline-none
-                    focus:ring-2 focus:ring-inset focus:ring-gray-500
+                    focus:ring-2
+                    focus:ring-inset
+                    focus:ring-gray-500
                   "
                   @click="mobileMenuOpen = false"
                 >
@@ -151,30 +149,34 @@
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M6 18L18 6M6 6l12 12"
-                    ></path>
+                    />
                   </svg>
                 </button>
               </div>
             </div>
             <nav class="grid gap-y-8">
               <div class="px-2 pt-2 pb-3 space-y-1">
-                <BaseMobileNavItem target-url="/"> Home</BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/about">About</BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/projects"
-                  >Projects
+                <BaseMobileNavItem target-url="/">
+Home
+</BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/about">
+                  About
                 </BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/blogs"
-                  >Blogs
+                <BaseMobileNavItem target-url="/projects">
+                  Projects
                 </BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/resume"
-                  >Resume</BaseMobileNavItem
-                >
+                <BaseMobileNavItem target-url="/blogs">
+                  Blogs
+                </BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/resume">
+                  Resume
+                </BaseMobileNavItem>
               </div>
             </nav>
           </div>
         </div>
-      </div></transition
-    >
+      </div>
+    </transition>
   </div>
 </template>
 
