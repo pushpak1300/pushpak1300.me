@@ -49,19 +49,17 @@ const config: NuxtConfig = {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: {
-    dirs: [
-      '~/components',
-      {
-        path: '~/components/Icons/',
-        prefix: 'I',
-      },
-      {
-        path: '~/components/Base/',
-        prefix: 'Base',
-      },
-    ],
-  },
+  components: [
+    '~/components',
+    {
+      path: '~/components/Icons/',
+      prefix: 'I',
+    },
+    {
+      path: '~/components/Base/',
+      prefix: 'Base',
+    },
+  ],
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     '@nuxtjs/tailwindcss',
