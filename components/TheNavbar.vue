@@ -156,9 +156,7 @@
             </div>
             <nav class="grid gap-y-8">
               <div class="px-2 pt-2 pb-3 space-y-1">
-                <BaseMobileNavItem target-url="/">
-Home
-</BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/"> Home </BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/about">
                   About
                 </BaseMobileNavItem>

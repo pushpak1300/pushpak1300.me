@@ -21,7 +21,7 @@
         </div>
         <p class="mt-2 text-center text-base text-gray-500">
           © Pushpak Chhajed <span v-text="new Date().getFullYear()" />.
-          <br >
+          <br />
           Built with
           <a
             href="https://nuxtjs.org/"

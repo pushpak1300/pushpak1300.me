@@ -26,7 +26,13 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/color-mode",
-      "@nuxt/content"
+      "@nuxt/content",
+      "@types/node"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
 }

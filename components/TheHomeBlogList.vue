@@ -148,7 +148,7 @@ export default {
       this.email = ''
       this.emailSubmited = true
       this.loading = false
-    }
+    },
   },
 }
 </script>

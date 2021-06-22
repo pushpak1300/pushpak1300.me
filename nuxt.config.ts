@@ -98,13 +98,6 @@ const config: NuxtConfig = {
     fallback: 'light',
     classSuffix: '',
   },
-  typescript: {
-    typeCheck: {
-      eslint: {
-        files: './**/*.{ts,js,vue}'
-      }
-    }
-  },
 }
 
 export default config

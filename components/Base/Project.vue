@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hr >
+    <hr />
     <p class="font-medium mt-7 text-2xl mb-5 text-gray-700 dark:text-gray-50">
       {{ project.name }}
     </p>
