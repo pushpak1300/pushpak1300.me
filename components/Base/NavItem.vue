@@ -14,13 +14,19 @@
   </NuxtLink>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+const Props = Vue.extend({
   props: {
     targetUrl: {
       type: String,
       required: true,
     },
   },
-}
+})
+
+@Component
+export default class NavItem extends Props {}
 </script>

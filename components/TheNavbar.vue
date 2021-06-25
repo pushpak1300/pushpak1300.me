@@ -178,13 +178,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Navabar',
-  data() {
-    return {
-      mobileMenuOpen: false,
-    }
-  },
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class Navabar extends Vue {
+  mobileMenuOpen = false
 }
 </script>

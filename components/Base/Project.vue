@@ -33,13 +33,19 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+const Props = Vue.extend({
   props: {
     project: {
       type: Object,
       required: true,
     },
   },
-}
+})
+
+@Component
+export default class Project extends Props {}
 </script>
