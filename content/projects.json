@@ -5,9 +5,9 @@
     "slug": "JalPravah",
     "description": "Developed an award winning web mobile application for the Ministry of Power, India at Smart India Hackathon 2020 to detect probable floods and notify users near the respective dam.",
     "skills": "FLASK, AWS, Vue, Numpy, Redis, Flutter",
-    "github_url": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
-    "project_link": "https://jalpravah.pushpak1300.me",
-    "main_link": "https://jalpravah.pushpak1300.me/#/dashboard"
+    "githubUrl": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+    "projectLink": "https://jalpravah.pushpak1300.me",
+    "mainLink": "https://jalpravah.pushpak1300.me/#/dashboard"
   },
   {
     "id": 2,
@@ -15,9 +15,9 @@
     "slug": "Secupass",
     "description": "Followed MVC project structure and built authorization from scratch with highest level of security and data protection in mind.",
     "skills": "Cryptography, Bootstrap4, Laravel, MySQL",
-    "github_url": "https://github.com/pushpak1300/Secupass",
-    "project_link": "http://secupass.ml",
-    "main_link": "https://github.com/pushpak1300/Secupass"
+    "githubUrl": "https://github.com/pushpak1300/Secupass",
+    "projectLink": "http://secupass.ml",
+    "mainLink": "https://github.com/pushpak1300/Secupass"
   },
   {
     "id": 3,
@@ -25,9 +25,9 @@
     "slug": "PatientPlus",
     "description": "Community healthcare discussion forum built at ERR_404 hackathon.",
     "skills": "Bootstrap4, Laravel, sqlite , flask, Dialogflow",
-    "github_url": "https://github.com/pushpak1300/PatientPlus",
-    "project_link": false,
-    "main_link": "https://github.com/cascoders/Patient"
+    "githubUrl": "https://github.com/pushpak1300/PatientPlus",
+    "projectLink": false,
+    "mainLink": "https://github.com/cascoders/Patient"
   },
   {
     "id": 4,
@@ -35,9 +35,9 @@
     "slug": "UFOFitGym",
     "description": "Unicorn Gym and UFO gym landing page.",
     "skills": "CSS, Bootstrap 4, Jquery",
-    "github_url": false,
-    "project_link": "https://ufofit.in",
-    "main_link": "https://ufofit.in"
+    "githubUrl": false,
+    "projectLink": "https://ufofit.in",
+    "mainLink": "https://ufofit.in"
   },
   {
     "id": 5,
@@ -45,9 +45,9 @@
     "slug": "ITBot",
     "description": "Built telegram based chat-bot which sends lab manuals and assignments to the user on request without accessing college server using web crawler which crawls through the server at specific crons and stores files on G-Drive.",
     "skills": "Python, Telegram-API, Scrapy, sqlite",
-    "github_url": "https://github.com/pushpak1300/SEITbot",
-    "project_link": "https://t.me/SEIT_bot",
-    "main_link": "https://t.me/SEIT_bot"
+    "githubUrl": "https://github.com/pushpak1300/SEITbot",
+    "projectLink": "https://t.me/SEIT_bot",
+    "mainLink": "https://t.me/SEIT_bot"
   },
 
   {
@@ -56,9 +56,9 @@
     "slug": "scener",
     "description": "Customise your CNN like never before -A web-app for training, labelling and deploying image classification model on AWS.",
     "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
-    "github_url": "https://github.com/cascoders/SCENER.io",
-    "project_link": false,
-    "main_link": "https://github.com/cascoders/SCENER.io"
+    "githubUrl": "https://github.com/cascoders/SCENER.io",
+    "projectLink": false,
+    "mainLink": "https://github.com/cascoders/SCENER.io"
   },
   {
     "id": 8,
@@ -66,9 +66,9 @@
     "slug": "wqms",
     "description": "IOT based Water Quality Monitoring System",
     "skills": "Blynk, Arduino, ",
-    "github_url": "https://github.com/pushpak1300/wqms",
-    "project_link": false,
-    "main_link": "https://github.com/pushpak1300/wqms"
+    "githubUrl": "https://github.com/pushpak1300/wqms",
+    "projectLink": false,
+    "mainLink": "https://github.com/pushpak1300/wqms"
   },
   {
     "id": 6,
@@ -76,9 +76,9 @@
     "slug": "ERP",
     "description": "Developed a full-fledged college department management website for FRCRCE to accomplish various activities in an efficient manner.",
     "skills": "Python, Telegram-API, Scrapy",
-    "github_url": "https://github.com/pushpak1300/frcrce-laravel",
-    "project_link": false,
-    "main_link": "https://github.com/pushpak1300/frcrce-laravel"
+    "githubUrl": "https://github.com/pushpak1300/frcrce-laravel",
+    "projectLink": false,
+    "mainLink": "https://github.com/pushpak1300/frcrce-laravel"
   },
   {
     "id": 9,
@@ -86,9 +86,9 @@
     "slug": "nicepods",
     "description": "Developed a Podcast playlist review mobile-app using Ionic-Vue and Firebase.",
     "skills": "Ionic, Vue, Firebase",
-    "github_url": "https://github.com/pushpak1300/nicepods",
-    "project_link": false,
-    "main_link": "https://github.com/pushpak1300/nicepods"
+    "githubUrl": "https://github.com/pushpak1300/nicepods",
+    "projectLink": false,
+    "mainLink": "https://github.com/pushpak1300/nicepods"
   },
   {
     "id": 9,
@@ -96,8 +96,8 @@
     "slug": "nodegit-lts-alpine",
     "description": "Docker image with prebuilt Nodegit package and node lts alpine.",
     "skills": "Docker, bash",
-    "github_url": "https://github.com/pushpak1300/nodegit-lts-alpine",
-    "project_link": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine",
-    "main_link": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine"
+    "githubUrl": "https://github.com/pushpak1300/nodegit-lts-alpine",
+    "projectLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine",
+    "mainLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine"
   }
 ]

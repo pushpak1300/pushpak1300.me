@@ -14,19 +14,19 @@
       </p>
     </div>
     <div class="mb-9">
-      <p v-if="project.github_url">
+      <p v-if="project.githubUrl">
         🌎 <strong>Check it out →</strong>
         <a
-          :href="project.github_url"
+          :href="project.githubUrl"
           target="_blank"
           rel="noopener"
-          v-text="project.github_url.replace('https://github.com/', '')"
+          v-text="project.githubUrl.replace('https://github.com/', '')"
         />
       </p>
-      <p v-if="project.project_link">
+      <p v-if="project.projectLink">
         🌎 <strong>Check it out →</strong>
-        <a :href="project.project_link" target="_blank" rel="noopener">{{
-          project.project_link
+        <a :href="project.projectLink" target="_blank" rel="noopener">{{
+          project.projectLink
         }}</a>
       </p>
     </div>

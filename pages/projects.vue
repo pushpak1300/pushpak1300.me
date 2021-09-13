@@ -36,10 +36,10 @@ import { Project } from '~/types/plugin-types'
 @Component
 export default class Projects extends Vue {
   projects: Project[] = []
-  loading = true 
+  loading = true
 
   async created(): Promise<void> {
-    this.projects = await this.$content('projects').fetch() as []
+    this.projects = (await this.$content('projects').fetch()) as []
     this.loading = false
   }
 }

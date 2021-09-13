@@ -14,9 +14,9 @@ export interface Project {
   name?: string
   description?: string
   id?: string
-  project_link?: string | null
-  github_link?: string | null
+  projectLink?: string | null
+  githubUrl?: string | null
   skills?: string
-  main_link?: string
-  slug?: string|null
+  mainLink?: string
+  slug?: string | null
 }

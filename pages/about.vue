@@ -86,11 +86,9 @@ import Component from 'vue-class-component'
 @Component
 export default class About extends Vue {
   about: Object = {}
-  loading = true
 
   async created(): Promise<void> {
     this.about = await this.$content('about').fetch()
-    this.loading = false
   }
 }
 </script>
