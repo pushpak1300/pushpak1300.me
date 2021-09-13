@@ -9,3 +9,14 @@ declare module 'vue/types/vue' {
     $content: contentFunc
   }
 }
+
+export interface Project {
+  name?: string
+  description?: string
+  id?: string
+  project_link?: string | null
+  github_link?: string | null
+  skills?: string
+  main_link?: string
+  slug?: string|null
+}

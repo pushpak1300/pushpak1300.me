@@ -31,14 +31,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import { Project } from '~/types/plugin-types'
 
 @Component
 export default class Projects extends Vue {
-  projects: [] = []
+  projects: Project[] = []
+  loading = true 
 
   async created(): Promise<void> {
-    // @ts-ignore
-    this.projects = await this.$content('projects').fetch()
+    this.projects = await this.$content('projects').fetch() as []
+    this.loading = false
   }
 }
 </script>
