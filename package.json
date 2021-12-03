@@ -41,7 +41,7 @@
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "nuxt-vite": "0.3.5",
-    "postcss": "^8.4.1",
+    "postcss": "^8.4.4",
     "typescript": "^4.5.2"
   }
 }
