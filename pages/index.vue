@@ -29,15 +29,17 @@ import Component from 'vue-class-component'
 
 @Component
 export default class Index extends Vue {
-  loading = true
   blogs: any[] = []
 
-  async created(): Promise<void> {
-    const response: Array<any> = await this.$http.$get(
-      'https://dev.to/api/articles?username=pushpak1300'
-    )
-    this.blogs = response.slice(0, 2)
-    this.loading = false
+  async mounted(): Promise<void> {
+    await this.$nextTick(async () => {
+      this.$nuxt.$loading.start()
+      const response: Array<any> = await this.$http.$get(
+        'https://dev.to/api/articles?username=pushpak1300'
+      )
+      this.blogs = response.slice(0, 2)
+      this.$nuxt.$loading.finish()
+    })
   }
 }
 </script>

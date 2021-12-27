@@ -88,7 +88,11 @@ export default class About extends Vue {
   about: Object = {}
 
   async created(): Promise<void> {
-    this.about = await this.$content('about').fetch()
+    await this.$nextTick(async () => {
+      this.$nuxt.$loading.start()
+      this.about = await this.$content('about').fetch()
+      this.$nuxt.$loading.finish()
+    })
   }
 }
 </script>

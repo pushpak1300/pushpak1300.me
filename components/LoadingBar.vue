@@ -1,7 +1,16 @@
 <template>
-  <div v-if="loading" class="flex h-screen items-center justify-center">
+  <div
+    v-if="loading"
+    class="
+      flex
+      h-screen
+      items-center
+      justify-center
+      dark:bg-black dark:text-white
+    "
+  >
     <svg
-      class="animate-spin -ml-1 mr-3 h-10 w-10"
+      class="animate-spin h-10 w-10"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

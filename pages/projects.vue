@@ -37,8 +37,12 @@ import { Project } from '~/types/plugin-types'
 export default class Projects extends Vue {
   projects: Project[] = []
 
-  async created() {
-    this.projects = (await this.$content('projects').fetch()) as []
+  async mounted() {
+    await this.$nextTick(async () => {
+      this.$nuxt.$loading.start()
+      this.projects = (await this.$content('projects').fetch()) as []
+      this.$nuxt.$loading.finish()
+    })
   }
 }
 </script>
