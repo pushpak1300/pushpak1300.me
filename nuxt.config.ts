@@ -68,6 +68,7 @@ const config: NuxtConfig = {
     '@nuxt/postcss8',
     'nuxt-vite',
     '@nuxt/typescript-build',
+    ['nuxt-storm', { nested: true, alias: true }],
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
