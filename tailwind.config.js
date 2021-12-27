@@ -14,7 +14,6 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.trueGray,
-        lightblue: colors.lightBlue,
       },
       container: {
         center: true,
