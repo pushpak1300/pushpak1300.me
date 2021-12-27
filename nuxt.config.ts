@@ -97,6 +97,7 @@ const config: NuxtConfig = {
     fallback: 'light',
     classSuffix: '',
   },
+  loading: '~/components/LoadingBar.vue',
 }
 
 export default config
