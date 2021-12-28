@@ -19,7 +19,7 @@
         <h1 class="mb-0 font-bold text-4xl">Projects</h1>
         <p class="my-2">List of projects that I am proud of</p>
       </div>
-      <BaseProject
+      <LazyBaseProject
         v-for="project in projects"
         :key="project.id"
         :project="project"
