@@ -16,7 +16,7 @@
     <p
       class="text-lg md:text-base dark-mode:text-white leading-normal mb-2 mt-3"
     >
-      I am a Software Engineer and a problem solver.💻
+      I am a Software Engineer and a problem solver 💻
       <br />
       I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in
       Information Technology (2021). I usually attend

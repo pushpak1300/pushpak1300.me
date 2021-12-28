@@ -30,7 +30,7 @@
                 name="email-address"
                 type="email"
                 autocomplete="email"
-                required="true"
+                required
                 class="
                   appearance-none
                   w-full
@@ -87,7 +87,7 @@
               </button>
               <button
                 v-else
-                type="sumbit"
+                type="submit"
                 class="
                   w-full
                   bg-gray-600
