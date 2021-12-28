@@ -17,7 +17,7 @@
             <span class="sr-only">Logo</span>
             <img
               class="h-12 w-auto sm:h-12"
-              width="auto"
+              width="12"
               height="12"
               :src="
                 $colorMode.preference === 'dark'
@@ -50,7 +50,6 @@
             <span class="sr-only">Open menu</span>
             <svg
               class="h-6 w-6"
-              x-description="Heroicon name: outline/menu"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -139,7 +138,6 @@
                   <span class="sr-only">Close menu</span>
                   <svg
                     class="h-6 w-6"
-                    x-description="Heroicon name: outline/x"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
