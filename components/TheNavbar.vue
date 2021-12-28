@@ -17,6 +17,8 @@
             <span class="sr-only">Logo</span>
             <img
               class="h-12 w-auto sm:h-12"
+              width="auto"
+              height="12"
               :src="
                 $colorMode.preference === 'dark'
                   ? require(`~/assets//PCLight.svg`)

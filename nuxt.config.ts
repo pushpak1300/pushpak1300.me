@@ -23,9 +23,9 @@ const config: NuxtConfig = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://rsms.me/inter/inter.css',
-        media: 'screen',
-        defer: true,
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        media: 'all',
+        async: true,
       },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       {
