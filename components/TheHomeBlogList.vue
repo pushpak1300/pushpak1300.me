@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="mt-4 pt-8 grid gap-12 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-8">
-        <LazyBaseHomeBlogItem v-for="blog in blogs" :key="blog.id" :blog="blog" />
+        <BaseHomeBlogItem v-for="blog in blogs" :key="blog.id" :blog="blog" />
       </div>
     </div>
   </div>
