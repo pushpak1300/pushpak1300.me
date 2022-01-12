@@ -15,9 +15,6 @@ export default {
       htmlAttrs: {
         class: 'overflow-x-hidden',
       },
-      bodyAttrs: {
-        class: 'overflow-x-hidden',
-      },
     }
   },
 }
