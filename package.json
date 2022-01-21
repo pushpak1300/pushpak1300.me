@@ -43,6 +43,6 @@
     "nuxt-storm": "^1.1.2",
     "nuxt-vite": "0.3.5",
     "postcss": "^8.4.5",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   }
 }
