@@ -3,7 +3,7 @@ name: Pushpak Chhajed
 email: pushpak1300@gmail.com
 ---
 
-I'm a software engineer from India with over 2 years of
+I'm a software engineer from India with over 3 years of
 experience in building applications mostly in web technologies.
 These days, I mostly write programs in Typescript and PHP.
 <br />
