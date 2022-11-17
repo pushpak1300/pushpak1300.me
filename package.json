@@ -22,7 +22,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.26.0",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "vue": "^2.7.13",
     "vue-class-component": "^7.2.6"
   },
