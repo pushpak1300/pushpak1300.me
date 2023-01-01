@@ -12,7 +12,7 @@
 useHead({
   htmlAttrs: {
     class: 'overflow-x-hidden',
-    lang:  'en'
+    lang: 'en'
   }
 })
 </script>

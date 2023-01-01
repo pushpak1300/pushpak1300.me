@@ -17,7 +17,7 @@
         <TheHomeIntroduction />
       </div>
       <div class="mb-4">
-      <TheHomeBlogList v-if="blogs" :blogs="blogs" />
+        <TheHomeBlogList v-if="blogs" :blogs="blogs" />
       </div>
     </div>
   </div>

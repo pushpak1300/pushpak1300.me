@@ -138,8 +138,7 @@ const subscribeToNewsletter = async () => {
   loading.value = true
   await useFetch('https://usebasin.com/f/baffd19320ff.json', {
     method: 'post',
-    body :{
-      email: email.value}
+    body: { email: email.value }
   })
   email.value = ''
   emailSubmited.value = true
