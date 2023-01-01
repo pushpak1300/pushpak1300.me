@@ -4,6 +4,7 @@
     <main class="flex-grow dark:bg-gray-800">
       <slot />
     </main>
+    <TheFooter />
   </div>
 </template>
 
