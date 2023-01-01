@@ -1,0 +1,1 @@
+import{$ as o,a0 as i}from"./entry.50f20d96.js";const e={"/blogs":"https://dev.to/pushpak1300","/resume":"https://drive.google.com/file/d/1t1KN1L5oL7FUyx9hvehRLcyrgFz6iwAf/view"},n=o((t,a)=>{if(t.path in e)return window.open(e[t.path],"_blank"),a.path in e?i("/"):i(a.path)});export{n as default};

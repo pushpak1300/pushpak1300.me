@@ -1,1 +1,0 @@
-import"./FooterNavItem.vue_vue_type_script_setup_true_lang.d089ea80.js";import{_ as t}from"./FooterNavItem.vue_vue_type_script_setup_true_lang.d089ea80.js";import"./entry.0057ee1f.js";export{t as default};
