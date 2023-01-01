@@ -11,7 +11,8 @@
 <script setup lang="ts">
 useHead({
   htmlAttrs: {
-    class: 'overflow-x-hidden'
+    class: 'overflow-x-hidden',
+    lang:  'en'
   }
 })
 </script>
