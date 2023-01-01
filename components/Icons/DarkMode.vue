@@ -1,5 +1,7 @@
 <template>
   <button
+    id="dark-mode"
+    aria-label="toggle dark mode"
     class="
       text-gray-800
       md:text-gray-500
