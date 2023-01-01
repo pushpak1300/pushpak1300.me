@@ -91,3 +91,5 @@ sw.*
 
 ## Ide-helper
 .components.gen.js
+
+.output
