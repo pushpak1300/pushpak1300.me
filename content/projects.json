@@ -1,4 +1,5 @@
-[
+{
+  "projects" : [
   {
     "id": 1,
     "name": "JalPravah 🌊",
@@ -99,5 +100,5 @@
     "githubUrl": "https://github.com/pushpak1300/nodegit-lts-alpine",
     "projectLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine",
     "mainLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine"
-  }
-]
+  }]
+}

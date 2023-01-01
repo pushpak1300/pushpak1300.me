@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer components {
-    .active-navlink {
+    .router-link-exact-active {
         @apply text-black dark:text-gray-50 !important;
     }
 }

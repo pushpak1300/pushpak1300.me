@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="projects.length"
+    v-if="data.projects"
     class="
       flex-grow
       w-full
@@ -20,7 +20,7 @@
         <p class="my-2">List of projects that I am proud of</p>
       </div>
       <BaseProject
-        v-for="project in projects"
+        v-for="project in data.projects"
         :key="project.id"
         :project="project"
       />
@@ -29,6 +29,14 @@
 </template>
 
 <script setup lang="ts">
-const {data:projects} = await useAsyncData('projects', () => queryContent('/projects').find())
-console.log(projects);
+
+import { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
+
+interface Project extends MarkdownParsedContent {
+  projects: Object
+}
+
+const route = useRoute()
+
+const {data} = await useAsyncData(() => queryContent<Project>(route.path).findOne())
 </script>
