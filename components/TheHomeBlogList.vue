@@ -134,10 +134,12 @@ const email = ref('')
 const emailSubmited = ref(false)
 const loading = ref(false)
 
-const subscribeToNewsletter = () => {
+const subscribeToNewsletter = async () => {
   loading.value = true
-  useAsyncData('post', 'https://usebasin.com/f/baffd19320ff.json', {
-    email: email.value
+  await useFetch('https://usebasin.com/f/baffd19320ff.json', {
+    method: 'post',
+    body :{
+      email: email.value}
   })
   email.value = ''
   emailSubmited.value = true
