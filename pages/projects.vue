@@ -16,8 +16,12 @@
   >
     <div class="mb-12 md:mb-6">
       <div class="mb-4">
-        <h1 class="mb-0 font-bold text-4xl">Projects</h1>
-        <p class="my-2">List of projects that I am proud of</p>
+        <h1 class="mb-0 font-bold text-4xl">
+          Projects
+        </h1>
+        <p class="my-2">
+          List of projects that I am proud of
+        </p>
       </div>
       <BaseProject
         v-for="project in data.projects"
@@ -30,7 +34,7 @@
 
 <script setup lang="ts">
 
-import { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
+import { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
 
 interface Project extends MarkdownParsedContent {
   projects: Object
@@ -38,5 +42,5 @@ interface Project extends MarkdownParsedContent {
 
 const route = useRoute()
 
-const {data} = await useAsyncData(() => queryContent<Project>(route.path).findOne())
+const { data } = await useAsyncData(() => queryContent<Project>(route.path).findOne())
 </script>

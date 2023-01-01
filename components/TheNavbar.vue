@@ -25,7 +25,7 @@
                   : pc
               "
               alt="logo"
-            />
+            >
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
@@ -66,11 +66,21 @@
           </button>
         </div>
         <nav class="hidden md:flex space-x-10">
-          <BaseNavItem target-url="/"> Home </BaseNavItem>
-          <BaseNavItem target-url="/about"> About </BaseNavItem>
-          <BaseNavItem target-url="/projects"> Projects </BaseNavItem>
-          <BaseNavItem target-url="/blogs"> Blogs </BaseNavItem>
-          <BaseNavItem target-url="/resume"> Resume </BaseNavItem>
+          <BaseNavItem target-url="/">
+            Home
+          </BaseNavItem>
+          <BaseNavItem target-url="/about">
+            About
+          </BaseNavItem>
+          <BaseNavItem target-url="/projects">
+            Projects
+          </BaseNavItem>
+          <BaseNavItem target-url="/blogs">
+            Blogs
+          </BaseNavItem>
+          <BaseNavItem target-url="/resume">
+            Resume
+          </BaseNavItem>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <IDarkMode />
@@ -156,7 +166,9 @@
             </div>
             <nav class="grid gap-y-8">
               <div class="px-2 pt-2 pb-3 space-y-1">
-                <BaseMobileNavItem target-url="/"> Home </BaseMobileNavItem>
+                <BaseMobileNavItem target-url="/">
+                  Home
+                </BaseMobileNavItem>
                 <BaseMobileNavItem target-url="/about">
                   About
                 </BaseMobileNavItem>
@@ -179,7 +191,7 @@
 </template>
 
 <script setup lang="ts">
-import pc from '~/assets/PC.svg';
-import pcLight from '~/assets/PCLight.svg';
-let mobileMenuOpen = ref(false);
+import pc from '~/assets/PC.svg'
+import pcLight from '~/assets/PCLight.svg'
+const mobileMenuOpen = ref(false)
 </script>

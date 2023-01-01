@@ -46,7 +46,7 @@
                   lg:max-w-xs
                 "
                 placeholder="Enter your email"
-              />
+              >
             </div>
             <div
               class="
@@ -110,8 +110,7 @@
                   sm:w-auto sm:inline-flex
                 "
                 v-text="emailSubmited ? 'Sumbitted' : 'Notify me'"
-              >
-              </button>
+              />
             </div>
           </form>
         </div>
@@ -127,21 +126,21 @@
 const props = defineProps({
   blogs: {
     type: Array,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-let email= ref('');
-let emailSubmited = ref(false);
-let loading = ref(false);
+const email = ref('')
+const emailSubmited = ref(false)
+const loading = ref(false)
 
 const subscribeToNewsletter = () => {
   loading.value = true
   useAsyncData('post', 'https://usebasin.com/f/baffd19320ff.json', {
-    email: email.value,
+    email: email.value
   })
   email.value = ''
   emailSubmited.value = true
   loading.value = false
-};
+}
 </script>

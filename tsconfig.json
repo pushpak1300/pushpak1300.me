@@ -3,6 +3,8 @@
   "extends": "./.nuxt/tsconfig.json",
   "types": [
     "@nuxt/types",
-    "@nuxtjs/date-fns"
+    "@nuxtjs/color-mode",
+    "@nuxt/content",
+    "@types/node"
   ]
 }

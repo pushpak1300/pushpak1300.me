@@ -23,7 +23,7 @@
 const props = defineProps({
   targetUrl: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 })
 </script>

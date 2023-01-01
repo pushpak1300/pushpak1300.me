@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-let darkOn = ref(false);
+const darkOn = ref(false)
 const colorMode = useColorMode()
 
 const toggleDarkMode = () => {

@@ -23,7 +23,7 @@
                   src="~/assets/avtar.webp"
                   alt="Pushpak Profile picture"
                   class="rounded-full h-32 w-36 mx-auto"
-                />
+                >
               </div>
               <div
                 class="
@@ -52,8 +52,7 @@
                   target="_blank"
                   rel="noopener"
                   class="text-md font-sm text-gray"
-                >{{ about.email }}</a
-                >
+                >{{ about.email }}</a>
               </div>
             </div>
             <div

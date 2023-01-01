@@ -8,21 +8,21 @@ module.exports = {
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
+    './nuxt.config.{js,ts}'
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        gray: colors.neutral,
+        gray: colors.neutral
       },
       container: {
-        center: true,
+        center: true
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }

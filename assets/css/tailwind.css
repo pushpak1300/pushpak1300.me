@@ -4,8 +4,7 @@
 
 @tailwind utilities;
 
-@layer components {
-    .router-link-exact-active {
-        @apply text-black dark:text-gray-50 !important;
-    }
+.router-link-exact-active {
+    @apply text-black dark:text-gray-50 !important;
 }
+

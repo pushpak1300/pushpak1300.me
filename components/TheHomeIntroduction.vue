@@ -9,7 +9,7 @@
         sm:text-4xl sm:truncate
       "
     >
-      Hey! 👋<br />
+      Hey! 👋<br>
       I'm Pushpak Chhajed
     </h1>
 
@@ -17,7 +17,7 @@
       class="text-lg md:text-base dark-mode:text-white leading-normal mb-2 mt-3"
     >
       I am a Software Engineer and a problem solver 💻
-      <br />
+      <br>
       I did my undergraduation from Fr.CRCE, Mumbai where I obtained B.Engg. in
       Information Technology (2021). I usually attend
       <a
@@ -25,8 +25,7 @@
         target="_blank"
         rel="noopener"
         class="text-gray-700 dark:text-gray-50 font-semibold"
-      >hackathons</a
-      >
+      >hackathons</a>
       during weekends and take part in
       <a
         href="https://www.stopstalk.com/user/profile/pushpak1300"
@@ -37,7 +36,7 @@
         programming contests
       </a>
       regularly.
-      <br />
+      <br>
       In short, I like to build and break apps.😏
     </p>
   </div>
