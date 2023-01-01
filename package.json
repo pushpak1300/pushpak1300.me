@@ -8,7 +8,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=.output/public --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt/content": "^2.3.0",

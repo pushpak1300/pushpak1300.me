@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content'],
   colorMode: {
     preference: 'light',
@@ -55,6 +55,10 @@ export default defineNuxtConfig({
       path: '~/components/Base/',
       prefix: 'Base'
     }
-  ]
-
+  ],
+  nitro: {
+    prerender: {
+      routes: ['/about', '/projects']
+    }
+  }
 })
