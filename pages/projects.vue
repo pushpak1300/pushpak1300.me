@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
 
 interface Project extends MarkdownParsedContent {

@@ -23,7 +23,7 @@ If you've reached this point, you probably want to learn more
 about my
 <a href="/projects" class="font-medium text-gray-700 dark:text-gray-100 underline">projects</a>
 or read my
-<a href="/blogs" class="font-medium text-gray-700 dark:text-gray-100 underline">articles</a>. You can also follow me on
+<a href="https://dev.to/pushpak1300" rel="noopener" target="_blank" class="font-medium text-gray-700 dark:text-gray-100 underline">articles</a>. You can also follow me on
 <a href="https://twitter.com/pushpak1300" rel="noopener" target="\_blank" class="font-medium text-gray-700 dark:text-gray-50 underline">Twitter</a>, where I actively share what I'm working on. <br />
 If you happen to be in the same city I live (currently in
 Dhule), maybe we can hang out (or code, of course) together.

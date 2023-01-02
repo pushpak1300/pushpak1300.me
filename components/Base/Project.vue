@@ -8,9 +8,9 @@
       {{ project.description }}
     </p>
     <div class="mb-7 text-gray-700 dark:text-gray-50">
-      <h4 class="text-xl font-medium">
+      <p class="text-xl font-medium">
         ⚡ Tech stack
-      </h4>
+      </p>
       <p class="text-gray-700 dark:text-gray-50">
         {{ project.skills }}
       </p>

@@ -56,5 +56,5 @@
 </template>
 
 <script setup lang="ts">
-import { RouteMappings } from "~/constants/routes";
+import { RouteMappings } from '~/constants/routes'
 </script>

@@ -193,7 +193,7 @@
 <script setup lang="ts">
 import pc from '~/assets/PC.svg'
 import pcLight from '~/assets/PCLight.svg'
-import { RouteMappings } from "~/constants/routes";
+import { RouteMappings } from '~/constants/routes'
 
 const mobileMenuOpen = ref(false)
 </script>
