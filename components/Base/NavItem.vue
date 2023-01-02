@@ -2,6 +2,7 @@
   <!-- For Navitem active class check tailwind.css -->
   <NuxtLink
     :to="props.targetUrl"
+    :target="props.target"
     class="
       text-base
       font-medium
@@ -19,6 +20,10 @@ const props = defineProps({
   targetUrl: {
     type: String,
     required: true
+  },
+  target: {
+    type: String,
+    default: ''
   }
 })
 </script>

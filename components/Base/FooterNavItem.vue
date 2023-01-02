@@ -1,6 +1,7 @@
 <template>
   <div v-show="route.path !== targetUrl" class="px-5 py-2">
     <NuxtLink
+      :target="props.target"
       :to="props.targetUrl"
       class="
         text-base text-gray-500
@@ -19,6 +20,10 @@ const props = defineProps({
   targetUrl: {
     type: String,
     required: true
+  },
+  target: {
+    type: String,
+    default: ''
   }
 })
 </script>

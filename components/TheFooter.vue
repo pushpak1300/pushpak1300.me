@@ -14,10 +14,10 @@
         <BaseFooterNavItem target-url="/projects">
           Projects
         </BaseFooterNavItem>
-        <BaseFooterNavItem target-url="/blogs">
+        <BaseFooterNavItem :target-url="RouteMappings.blogs" target="_blank">
           Blogs
         </BaseFooterNavItem>
-        <BaseFooterNavItem target-url="/resume">
+        <BaseFooterNavItem :target-url="RouteMappings.resume" target="_blank">
           Resume
         </BaseFooterNavItem>
       </nav>
@@ -54,3 +54,7 @@
     </footer>
   </div>
 </template>
+
+<script setup lang="ts">
+import { RouteMappings } from "~/constants/routes";
+</script>

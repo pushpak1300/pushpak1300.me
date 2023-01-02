@@ -75,10 +75,10 @@
           <BaseNavItem target-url="/projects">
             Projects
           </BaseNavItem>
-          <BaseNavItem target-url="/blogs">
+          <BaseNavItem :target-url="RouteMappings.blogs" target="_blank">
             Blogs
           </BaseNavItem>
-          <BaseNavItem target-url="/resume">
+          <BaseNavItem :target-url="RouteMappings.resume" target="_blank">
             Resume
           </BaseNavItem>
         </nav>
@@ -175,10 +175,10 @@
                 <BaseMobileNavItem target-url="/projects">
                   Projects
                 </BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/blogs">
+                <BaseMobileNavItem :target-url="RouteMappings.blogs" target="_blank">
                   Blogs
                 </BaseMobileNavItem>
-                <BaseMobileNavItem target-url="/resume">
+                <BaseMobileNavItem :target-url="RouteMappings.resume" target="_blank">
                   Resume
                 </BaseMobileNavItem>
               </div>
@@ -193,5 +193,7 @@
 <script setup lang="ts">
 import pc from '~/assets/PC.svg'
 import pcLight from '~/assets/PCLight.svg'
+import { RouteMappings } from "~/constants/routes";
+
 const mobileMenuOpen = ref(false)
 </script>
