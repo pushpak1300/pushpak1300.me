@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#ffffff' }
       ],
       script: [{
-        type: "text/partytown",
+        type: 'text/partytown',
         defer: true,
         src: 'https://pushpak1300.me/_vercel/insights/script.js'
       }],
