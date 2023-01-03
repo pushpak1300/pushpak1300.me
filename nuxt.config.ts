@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@nuxtjs/partytown'],
   colorMode: {
     preference: 'light',
     fallback: 'light',
@@ -21,6 +21,11 @@ export default defineNuxtConfig({
         { name: 'msapplication-TileColor', content: '#da532c' },
         { name: 'theme-color', content: '#ffffff' }
       ],
+      script: [{
+        type: "text/partytown",
+        defer: true,
+        src: 'https://pushpak1300.me/_vercel/insights/script.js'
+      }],
       link: [
         { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
