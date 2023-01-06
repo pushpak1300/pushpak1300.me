@@ -1,4 +1,4 @@
-/* Partytown 0.7.3 - MIT builder.io */
+/* Partytown 0.7.4 - MIT builder.io */
 (self => {
     const WinIdKey = Symbol();
     const InstanceIdKey = Symbol();
@@ -300,7 +300,6 @@
     const getTargetProp = (target, applyPath) => {
         let n = "";
         if (target) {
-            target[InstanceIdKey];
             const cstrName = getConstructorName(target);
             if ("Window" === cstrName) {
                 n = "";
@@ -572,7 +571,18 @@
                 return getItems().length;
             }
         };
-        win[storageName] = storage;
+        win[storageName] = new Proxy(storage, {
+            get: (target, key) => Reflect.has(target, key) ? Reflect.get(target, key) : target.getItem(key),
+            set(target, key, value) {
+                target.setItem(key, value);
+                return true;
+            },
+            has: (target, key) => !!Reflect.has(target, key) || "string" == typeof key && null !== target.getItem(key),
+            deleteProperty(target, key) {
+                target.removeItem(key);
+                return true;
+            }
+        });
     };
     const STORAGE_KEY = 0;
     const STORAGE_VALUE = 1;
@@ -717,7 +727,7 @@
         return resolvedUrl;
     };
     const resolveUrl = (env, url, type) => resolveToUrl(env, url, type) + "";
-    const getPartytownScript = () => `<script src="${partytownLibUrl("partytown.js?v=0.7.3")}"><\/script>`;
+    const getPartytownScript = () => `<script src="${partytownLibUrl("partytown.js?v=0.7.4")}"><\/script>`;
     const createImageConstructor = env => class HTMLImageElement {
         constructor() {
             this.s = "";
@@ -1260,6 +1270,39 @@
         };
         definePrototypePropertyDescriptor(WorkerSVGGraphicsElement, SVGGraphicsElementDescriptorMap);
     };
+    const createNamedNodeMapCstr = (win, WorkerBase) => {
+        win.NamedNodeMap = defineConstructorName(class NamedNodeMap extends WorkerBase {
+            constructor(winId, instanceId, applyPath) {
+                super(winId, instanceId, applyPath);
+                return new Proxy(this, {
+                    get(target, propName) {
+                        const handler = NAMED_NODE_MAP_HANDLERS[propName];
+                        return handler ? handler.bind(target, [ propName ]) : getter(target, [ propName ]);
+                    },
+                    set(target, propName, propValue) {
+                        const handler = NAMED_NODE_MAP_HANDLERS[propName];
+                        if (handler) {
+                            throw new Error("Can't set read-only property: " + String(propName));
+                        }
+                        setter(target, [ propName ], propValue);
+                        return true;
+                    }
+                });
+            }
+        }, "NamedNodeMap");
+    };
+    function method(applyPath, ...args) {
+        return callMethod(this, applyPath, args, 1);
+    }
+    const NAMED_NODE_MAP_HANDLERS = {
+        getNamedItem: method,
+        getNamedItemNS: method,
+        item: method,
+        removeNamedItem: method,
+        removeNamedItemNS: method,
+        setNamedItem: method,
+        setNamedItemNS: method
+    };
     const createWindow = ($winId$, $parentWinId$, url, $visibilityState$, isIframeWindow, isDocumentImplementation) => {
         let cstrInstanceId;
         let cstrNodeName;
@@ -1312,7 +1355,7 @@
                         (() => {
                             if (!webWorkerCtx.$initWindowMedia$) {
                                 self.$bridgeToMedia$ = [ getter, setter, callMethod, constructGlobal, definePrototypePropertyDescriptor, randomId, WinIdKey, InstanceIdKey, ApplyPathKey ];
-                                webWorkerCtx.$importScripts$(partytownLibUrl("partytown-media.js?v=0.7.3"));
+                                webWorkerCtx.$importScripts$(partytownLibUrl("partytown-media.js?v=0.7.4"));
                                 webWorkerCtx.$initWindowMedia$ = self.$bridgeFromMedia$;
                                 delete self.$bridgeFromMedia$;
                             }
@@ -1336,6 +1379,7 @@
                 (win => {
                     win.NodeList = defineConstructorName(NodeList, "NodeList");
                 })(win);
+                createNamedNodeMapCstr(win, WorkerBase);
                 createCSSStyleDeclarationCstr(win, WorkerBase, "CSSStyleDeclaration");
                 ((win, WorkerBase, cstrName) => {
                     win[cstrName] = defineConstructorName(class extends WorkerBase {
