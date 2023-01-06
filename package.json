@@ -11,7 +11,7 @@
     "deploy": "push-dir --dir=.output/public --branch=gh-pages --cleanup"
   },
   "devDependencies": {
-    "@kevinmarrec/nuxt-pwa": "^0.13.0",
+    "@kevinmarrec/nuxt-pwa": "^0.14.0",
     "@nuxt/content": "^2.3.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
