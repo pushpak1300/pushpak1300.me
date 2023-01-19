@@ -1,0 +1,1 @@
+import"./TheFooter.vue.fd83aaa9.js";import{_ as d}from"./TheFooter.vue.fd83aaa9.js";import"./FooterNavItem.vue.aa04daf9.js";import"./entry.05018b0e.js";import"./LogoInstagram.dc0648e3.js";import"./Twitter.d5cae98e.js";import"./Github.563edbc1.js";import"./DevTo.4b70a47c.js";import"./LinkedIn.70ce2ec1.js";import"./routes.9876d9cf.js";export{d as default};
