@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white h-screen flex flex-col dark:bg-gray-800 overflow-x-hidden">
+  <div class="bg-white h-full flex flex-col dark:bg-gray-800">
     <TheNavbar />
     <main class="flex-grow dark:bg-gray-800">
       <slot />
@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 useHead({
-  htmlAttrs: {
-    class: 'overflow-y-hidden',
+  bodyAttrs: {
+    class: 'dark:bg-gray-800',
     lang: 'en'
   }
 })

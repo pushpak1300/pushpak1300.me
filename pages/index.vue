@@ -4,7 +4,6 @@
       class="
         dark:bg-gray-800
         flex-col
-        h-full
         flex-grow
         container
         max-w-4xl
