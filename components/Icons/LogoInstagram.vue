@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://www.instagram.com/pushpak1300"
+    href="https://www.instagram.com/traveldiary.tech/"
     target="_blank"
     rel="noopener"
     class="text-gray-400 hover:text-gray-500"
