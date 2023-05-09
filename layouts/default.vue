@@ -12,6 +12,8 @@
 useHead({
   bodyAttrs: {
     class: 'dark:bg-gray-800',
+  },
+  htmlAttrs: {
     lang: 'en'
   }
 })
