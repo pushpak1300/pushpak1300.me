@@ -25,7 +25,7 @@
           v-text="project.githubUrl.replace('https://github.com/', '')"
         />
       </p>
-      <p v-if="project.projectLink">
+      <p v-if="project.projectLink" class="break-words">
         🌎 <strong>Check it out →</strong>
         <a :href="project.projectLink" target="_blank" rel="noopener">{{
           project.projectLink
