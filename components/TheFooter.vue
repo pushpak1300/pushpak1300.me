@@ -34,7 +34,7 @@
           <br>
           Built with
           <a
-            href="https://nuxtjs.org/"
+            href="https://nuxt.com/"
             class="hover:text-gray-900 underline"
             target="_blank"
             rel="noopener"
