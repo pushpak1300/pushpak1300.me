@@ -19,7 +19,7 @@
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@vercel/analytics": "^1.0.1",
     "eslint": "^8.41.0",
-    "nuxt": "3.5.1",
+    "nuxt": "3.5.2",
     "typescript": "^5.0.4"
   }
 }
