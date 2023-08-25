@@ -20,6 +20,6 @@
     "@vercel/analytics": "^1.0.1",
     "eslint": "^8.47.0",
     "nuxt": "3.6.2",
-    "typescript": "^5.0.4"
+    "typescript": "^5.2.2"
   }
 }
