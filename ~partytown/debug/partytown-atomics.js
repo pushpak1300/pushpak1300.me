@@ -1,4 +1,4 @@
-/* Partytown 0.7.3 - MIT builder.io */
+/* Partytown 0.8.2 - MIT builder.io */
 (window => {
     const isPromise = v => "object" == typeof v && v && v.then;
     const noop = () => {};
@@ -119,18 +119,18 @@
         Cstr.observedAttributes = ceData[1];
         return Cstr;
     };
-    const serializeForWorker = ($winId$, value, added, type, cstrName) => void 0 !== value && (type = typeof value) ? "string" === type || "number" === type || "boolean" === type || null == value ? [ 0, value ] : "function" === type ? [ 6 ] : (added = added || new Set) && Array.isArray(value) ? added.has(value) ? [ 1, [] ] : added.add(value) && [ 1, value.map((v => serializeForWorker($winId$, v, added))) ] : "object" === type ? serializedValueIsError(value) ? [ 14, {
+    const serializeForWorker = ($winId$, value, added, type, cstrName, prevInstanceId) => void 0 !== value && (type = typeof value) ? "string" === type || "number" === type || "boolean" === type || null == value ? [ 0, value ] : "function" === type ? [ 6 ] : (added = added || new Set) && Array.isArray(value) ? added.has(value) ? [ 1, [] ] : added.add(value) && [ 1, value.map((v => serializeForWorker($winId$, v, added))) ] : "object" === type ? serializedValueIsError(value) ? [ 14, {
         name: value.name,
         message: value.message,
         stack: value.stack
-    } ] : "" === (cstrName = getConstructorName(value)) ? [ 2, {} ] : "Window" === cstrName ? [ 3, [ $winId$, $winId$ ] ] : "HTMLCollection" === cstrName || "NodeList" === cstrName ? [ 7, Array.from(value).map((v => serializeForWorker($winId$, v, added)[1])) ] : cstrName.endsWith("Event") ? [ 5, serializeObjectForWorker($winId$, value, added) ] : "CSSRuleList" === cstrName ? [ 12, Array.from(value).map(serializeCssRuleForWorker) ] : startsWith(cstrName, "CSS") && cstrName.endsWith("Rule") ? [ 11, serializeCssRuleForWorker(value) ] : "CSSStyleDeclaration" === cstrName ? [ 13, serializeObjectForWorker($winId$, value, added) ] : "Attr" === cstrName ? [ 10, [ value.name, value.value ] ] : value.nodeType ? [ 3, [ $winId$, getAndSetInstanceId(value), getNodeName(value) ] ] : [ 2, serializeObjectForWorker($winId$, value, added, true, true) ] : void 0 : value;
+    } ] : "" === (cstrName = getConstructorName(value)) ? [ 2, {} ] : "Window" === cstrName ? [ 3, [ $winId$, $winId$ ] ] : "HTMLCollection" === cstrName || "NodeList" === cstrName ? [ 7, Array.from(value).map((v => serializeForWorker($winId$, v, added)[1])) ] : cstrName.endsWith("Event") ? [ 5, serializeObjectForWorker($winId$, value, added) ] : "CSSRuleList" === cstrName ? [ 12, Array.from(value).map(serializeCssRuleForWorker) ] : startsWith(cstrName, "CSS") && cstrName.endsWith("Rule") ? [ 11, serializeCssRuleForWorker(value) ] : "CSSStyleDeclaration" === cstrName ? [ 13, serializeObjectForWorker($winId$, value, added) ] : "Attr" === cstrName ? [ 10, [ value.name, value.value ] ] : value.nodeType ? [ 3, [ $winId$, getAndSetInstanceId(value), getNodeName(value), prevInstanceId ] ] : [ 2, serializeObjectForWorker($winId$, value, added, true, true) ] : void 0 : value;
     const serializeObjectForWorker = (winId, obj, added, includeFunctions, includeEmptyStrings, serializedObj, propName, propValue) => {
         serializedObj = {};
         if (!added.has(obj)) {
             added.add(obj);
             for (propName in obj) {
                 if (isValidMemberName(propName)) {
-                    propValue = "path" === propName && obj instanceof Event ? obj.composedPath() : obj[propName];
+                    propValue = "path" === propName && getConstructorName(obj).endsWith("Event") ? obj.composedPath() : obj[propName];
                     (includeFunctions || "function" != typeof propValue) && (includeEmptyStrings || "" !== propValue) && (serializedObj[propName] = serializeForWorker(winId, propValue, added));
                 }
             }
@@ -219,7 +219,7 @@
                             rtnValue = await rtnValue;
                             isLast && (accessRsp.$isPromise$ = true);
                         }
-                        isLast && (accessRsp.$rtnValue$ = serializeForWorker(winId, rtnValue));
+                        isLast && (accessRsp.$rtnValue$ = serializeForWorker(winId, rtnValue, void 0, void 0, void 0, task.$instanceId$));
                     } else {
                         accessRsp.$error$ = `Error finding instance "${task.$instanceId$}" on window ${normalizedWinId(winId)}`;
                         console.error(accessRsp.$error$, task);
@@ -282,11 +282,12 @@
         let win = winCtx.$window$;
         let doc = win.document;
         let scriptSelector = 'script[type="text/partytown"]:not([data-ptid]):not([data-pterror])';
+        let blockingScriptSelector = scriptSelector + ":not([async]):not([defer])";
         let scriptElm;
         let $instanceId$;
         let scriptData;
         if (doc && doc.body) {
-            scriptElm = doc.querySelector('script[type="text/partytown"]:not([data-ptid]):not([data-pterror]):not([async]):not([defer])');
+            scriptElm = doc.querySelector(blockingScriptSelector);
             scriptElm || (scriptElm = doc.querySelector(scriptSelector));
             if (scriptElm) {
                 scriptElm.dataset.ptid = $instanceId$ = getAndSetInstanceId(scriptElm, $winId$);
@@ -367,16 +368,14 @@
             const pushState = history.pushState.bind(history);
             const replaceState = history.replaceState.bind(history);
             const onLocationChange = (type, state, newUrl, oldUrl) => () => {
-                setTimeout((() => {
-                    worker.postMessage([ 13, {
-                        $winId$: $winId$,
-                        type: type,
-                        state: state,
-                        url: doc.baseURI,
-                        newUrl: newUrl,
-                        oldUrl: oldUrl
-                    } ]);
-                }));
+                worker.postMessage([ 13, {
+                    $winId$: $winId$,
+                    type: type,
+                    state: state,
+                    url: doc.baseURI,
+                    newUrl: newUrl,
+                    oldUrl: oldUrl
+                } ]);
             };
             history.pushState = (state, _, newUrl) => {
                 pushState(state, _, newUrl);
@@ -433,8 +432,8 @@
         })(docImpl, interfaceName))).filter((elm => elm)).map((elm => [ elm ]));
         return readImplementations(elms, []);
     };
-    const cstrs = new Set([ "Object" ]);
     const readImplementations = (impls, interfaces) => {
+        const cstrs = new Set([ "Object" ]);
         const cstrImpls = impls.filter((implData => implData[0])).map((implData => {
             const impl = implData[0];
             const interfaceType = implData[1];
@@ -476,7 +475,7 @@
                     (String(value).includes("[native") || Object.getPrototypeOf(implementation)[memberName]) && interfaceMembers.push([ memberName, 5 ]);
                 } else if ("object" === memberType && null != value) {
                     cstrName = getConstructorName(value);
-                    "Object" !== cstrName && self[cstrName] && interfaceMembers.push([ memberName, value.nodeType || cstrName ]);
+                    "Object" !== cstrName && "Function" !== cstrName && self[cstrName] && interfaceMembers.push([ memberName, value.nodeType || cstrName ]);
                 } else {
                     "symbol" !== memberType && (memberName.toUpperCase() === memberName ? interfaceMembers.push([ memberName, 6, value ]) : interfaceMembers.push([ memberName, 6 ]));
                 }
@@ -557,14 +556,14 @@
         };
     })(((accessReq, responseCallback) => mainAccessHandler(worker, accessReq).then(responseCallback))).then((onMessageHandler => {
         if (onMessageHandler) {
-            worker = new Worker(libPath + "partytown-ww-atomics.js?v=0.7.3", {
+            worker = new Worker(libPath + "partytown-ww-atomics.js?v=0.8.2", {
                 name: "Partytown 🎉"
             });
             worker.onmessage = ev => {
                 const msg = ev.data;
                 12 === msg[0] ? mainAccessHandler(worker, msg[1]) : onMessageHandler(worker, msg);
             };
-            logMain("Created Partytown web worker (0.7.3)");
+            logMain("Created Partytown web worker (0.8.2)");
             worker.onerror = ev => console.error("Web Worker Error", ev);
             mainWindow.addEventListener("pt1", (ev => registerWindow(worker, getAndSetInstanceId(ev.detail.frameElement), ev.detail)));
         }
