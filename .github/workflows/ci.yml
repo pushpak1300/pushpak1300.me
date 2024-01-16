@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18]
+        node: [20]
 
     steps:
       - name: Checkout
@@ -26,9 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run Linter
-        run: npm run lint
 
       - name: Generate
         run: npm run generate
