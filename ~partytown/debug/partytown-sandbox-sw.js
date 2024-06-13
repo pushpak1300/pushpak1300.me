@@ -1,4 +1,4 @@
-/* Partytown 0.8.2 - MIT builder.io */
+/* Partytown 0.10.2 - MIT builder.io */
 (window => {
     const isPromise = v => "object" == typeof v && v && v.then;
     const noop = () => {};
@@ -47,6 +47,19 @@
         Graphics: "g",
         SVG: "svg"
     };
+    const defaultPartytownForwardPropertySettings = {
+        preserveBehavior: false
+    };
+    const arrayMethods = Object.freeze((obj => {
+        const properties = new Set;
+        let currentObj = obj;
+        do {
+            Object.getOwnPropertyNames(currentObj).forEach((item => {
+                "function" == typeof currentObj[item] && properties.add(item);
+            }));
+        } while ((currentObj = Object.getPrototypeOf(currentObj)) !== Object.prototype);
+        return Array.from(properties);
+    })([]));
     const InstanceIdKey = Symbol();
     const CreatedKey = Symbol();
     const instances = new Map;
@@ -145,7 +158,12 @@
         }
         return obj;
     };
-    const serializedValueIsError = value => value instanceof window.top.Error;
+    let ErrorObject = null;
+    const serializedValueIsError = value => {
+        var _a;
+        ErrorObject = (null === (_a = window.top) || void 0 === _a ? void 0 : _a.Error) || ErrorObject;
+        return value instanceof ErrorObject;
+    };
     const deserializeFromWorker = (worker, serializedTransfer, serializedType, serializedValue) => {
         if (serializedTransfer) {
             serializedType = serializedTransfer[0];
@@ -277,6 +295,60 @@
         }
         return instance;
     };
+    const mainForwardTrigger = (worker, $winId$, win) => {
+        let queuedForwardCalls = win._ptf;
+        let forwards = (win.partytown || {}).forward || [];
+        let i;
+        let mainForwardFn;
+        let forwardCall = ($forward$, args) => worker.postMessage([ 10, {
+            $winId$: $winId$,
+            $forward$: $forward$,
+            $args$: serializeForWorker($winId$, Array.from(args))
+        } ]);
+        win._ptf = void 0;
+        forwards.map((forwardProps => {
+            const [property, {preserveBehavior: preserveBehavior}] = (propertyOrPropertyWithSettings => {
+                if ("string" == typeof propertyOrPropertyWithSettings) {
+                    return [ propertyOrPropertyWithSettings, defaultPartytownForwardPropertySettings ];
+                }
+                const [property, settings = defaultPartytownForwardPropertySettings] = propertyOrPropertyWithSettings;
+                return [ property, {
+                    ...defaultPartytownForwardPropertySettings,
+                    ...settings
+                } ];
+            })(forwardProps);
+            mainForwardFn = win;
+            property.split(".").map(((_, i, arr) => {
+                mainForwardFn = mainForwardFn[arr[i]] = i + 1 < len(arr) ? mainForwardFn[arr[i]] || (propertyName => arrayMethods.includes(propertyName) ? [] : {})(arr[i + 1]) : (() => {
+                    let originalFunction = null;
+                    if (preserveBehavior) {
+                        const {methodOrProperty: methodOrProperty, thisObject: thisObject} = ((window, properties) => {
+                            let thisObject = window;
+                            for (let i = 0; i < properties.length - 1; i += 1) {
+                                thisObject = thisObject[properties[i]];
+                            }
+                            return {
+                                thisObject: thisObject,
+                                methodOrProperty: properties.length > 0 ? thisObject[properties[properties.length - 1]] : void 0
+                            };
+                        })(win, arr);
+                        "function" == typeof methodOrProperty && (originalFunction = (...args) => methodOrProperty.apply(thisObject, ...args));
+                    }
+                    return (...args) => {
+                        let returnValue;
+                        originalFunction && (returnValue = originalFunction(args));
+                        forwardCall(arr, args);
+                        return returnValue;
+                    };
+                })();
+            }));
+        }));
+        if (queuedForwardCalls) {
+            for (i = 0; i < len(queuedForwardCalls); i += 2) {
+                forwardCall(queuedForwardCalls[i], queuedForwardCalls[i + 1]);
+            }
+        }
+    };
     const readNextScript = (worker, winCtx) => {
         let $winId$ = winCtx.$winId$;
         let win = winCtx.$window$;
@@ -305,29 +377,7 @@
             } else {
                 if (!winCtx.$isInitialized$) {
                     winCtx.$isInitialized$ = 1;
-                    ((worker, $winId$, win) => {
-                        let queuedForwardCalls = win._ptf;
-                        let forwards = (win.partytown || {}).forward || [];
-                        let i;
-                        let mainForwardFn;
-                        let forwardCall = ($forward$, args) => worker.postMessage([ 10, {
-                            $winId$: $winId$,
-                            $forward$: $forward$,
-                            $args$: serializeForWorker($winId$, Array.from(args))
-                        } ]);
-                        win._ptf = void 0;
-                        forwards.map((forwardProps => {
-                            mainForwardFn = win;
-                            forwardProps.split(".").map(((_, i, arr) => {
-                                mainForwardFn = mainForwardFn[arr[i]] = i + 1 < len(arr) ? mainForwardFn[arr[i]] || ("push" === arr[i + 1] ? [] : {}) : (...args) => forwardCall(arr, args);
-                            }));
-                        }));
-                        if (queuedForwardCalls) {
-                            for (i = 0; i < len(queuedForwardCalls); i += 2) {
-                                forwardCall(queuedForwardCalls[i], queuedForwardCalls[i + 1]);
-                            }
-                        }
-                    })(worker, $winId$, win);
+                    mainForwardTrigger(worker, $winId$, win);
                     doc.dispatchEvent(new CustomEvent("pt0"));
                     {
                         const winType = win === win.top ? "top" : "iframe";
@@ -437,20 +487,22 @@
         const screen = mainWindow.screen;
         const impls = [ [ mainWindow.history ], [ perf ], [ perf.navigation ], [ perf.timing ], [ screen ], [ screen.orientation ], [ mainWindow.visualViewport ], [ intersectionObserver, 12 ], [ mutationObserver, 12 ], [ resizeObserver, 12 ], [ textNode ], [ comment ], [ frag ], [ shadowRoot ], [ elm ], [ elm.attributes ], [ elm.classList ], [ elm.dataset ], [ elm.style ], [ docImpl ], [ docImpl.doctype ] ];
         const initialInterfaces = [ readImplementation("Window", mainWindow), readImplementation("Node", textNode) ];
-        const $config$ = JSON.stringify(config, ((k, v) => {
-            if ("function" == typeof v) {
-                v = String(v);
-                v.startsWith(k + "(") && (v = "function " + v);
-            }
-            return v;
-        }));
+        const $config$ = function(config) {
+            return JSON.stringify(config, ((key, value) => {
+                if ("function" == typeof value) {
+                    value = String(value);
+                    value.startsWith(key + "(") && (value = "function " + value);
+                }
+                "loadScriptsOnMainThread" === key && (value = value.map((scriptUrl => Array.isArray(scriptUrl) ? scriptUrl : [ "string" == typeof scriptUrl ? "string" : "regexp", "string" == typeof scriptUrl ? scriptUrl : scriptUrl.source ])));
+                return value;
+            }));
+        }(config);
         const initWebWorkerData = {
             $config$: $config$,
             $interfaces$: readImplementations(impls, initialInterfaces),
             $libPath$: new URL(libPath, mainWindow.location) + "",
             $origin$: origin,
-            $localStorage$: readStorage("localStorage"),
-            $sessionStorage$: readStorage("sessionStorage")
+            $tabId$: mainWindow._pttab
         };
         addGlobalConstructorUsingPrototype(initWebWorkerData.$interfaces$, mainWindow, "IntersectionObserverEntry");
         return initWebWorkerData;
@@ -517,17 +569,6 @@
             console.warn(e);
         }
     };
-    const readStorage = storageName => {
-        let items = [];
-        let i = 0;
-        let l = len(mainWindow[storageName]);
-        let key;
-        for (;i < l; i++) {
-            key = mainWindow[storageName].key(i);
-            items.push([ key, mainWindow[storageName].getItem(key) ]);
-        }
-        return items;
-    };
     const getGlobalConstructor = (mainWindow, cstrName) => void 0 !== mainWindow[cstrName] ? new mainWindow[cstrName](noop) : 0;
     const addGlobalConstructorUsingPrototype = ($interfaces$, mainWindow, cstrName) => {
         void 0 !== mainWindow[cstrName] && $interfaces$.push([ cstrName, "Object", Object.keys(mainWindow[cstrName].prototype).map((propName => [ propName, 6 ])), 12 ]);
@@ -543,14 +584,14 @@
         }));
     })(((accessReq, responseCallback) => mainAccessHandler(worker, accessReq).then(responseCallback))).then((onMessageHandler => {
         if (onMessageHandler) {
-            worker = new Worker(libPath + "partytown-ww-sw.js?v=0.8.2", {
+            worker = new Worker(libPath + "partytown-ww-sw.js?v=0.10.2", {
                 name: "Partytown 🎉"
             });
             worker.onmessage = ev => {
                 const msg = ev.data;
                 12 === msg[0] ? mainAccessHandler(worker, msg[1]) : onMessageHandler(worker, msg);
             };
-            logMain("Created Partytown web worker (0.8.2)");
+            logMain("Created Partytown web worker (0.10.2)");
             worker.onerror = ev => console.error("Web Worker Error", ev);
             mainWindow.addEventListener("pt1", (ev => registerWindow(worker, getAndSetInstanceId(ev.detail.frameElement), ev.detail)));
         }
