@@ -1,13 +1,17 @@
 <template>
-	<div class="space-y-3">
+	<div class="space-y-6">
+		<NuxtImg src="/avtar.webp" alt="Pushpak Chhajed"
+			class="ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-24 sm:w-24"
+			sizes="50px sm:78px" placeholder format="webp" />
 		<h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
-			Hey 👋
+			Hello there! 👋
 		</h1>
-		<h5 class="h-5 font-semibold text-xl text-gray-900 dark:text-gray-400">
-			I'm Pushpak Chhajed.
+		<h5 class="h-5 font-semibold text-xl text-gray-800 dark:text-gray-100">
+			<mark class="bg-primary-300">Pushpak Chhajed.</mark>
 		</h5>
 		<p class="text-gray-900 dark:text-gray-400">
-			I'm a software engineer from India with more than three years of experience in developing applications, primarily
+			I'm a software engineer from India with more than three years of experience in developing applications,
+			primarily
 			using web technologies. Currently, I mainly write programs in TypeScript, PHP, and Python. I have extensive
 			experience with PostgreSQL and various optimization techniques.
 		</p>
@@ -30,6 +34,6 @@ import { useSeoMeta } from '#imports';
 useSeoMeta({
 	title: 'Pushpak Chhajed',
 	description:
-    'I\'m Fayaz, your friendly neighborhood software, product engineer and designer from Bengaluru, India. I specialize in building web applications and sites using Javascript, React, Vue & Node',
+		'I\'m a software engineer from India with more than three years of experience in developing applications, primarily using web technologies.',
 });
 </script>

@@ -1,0 +1,10 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.router-link-exact-active {
+    @apply text-black dark:text-gray-50 !important;
+}
+

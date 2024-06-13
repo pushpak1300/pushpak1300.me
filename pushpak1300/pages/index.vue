@@ -1,9 +1,8 @@
 <template>
-	<main class="min-h-screen">
-		<div class="space-y-16">
+	<main class="max-h-screen">
+		<div class="space-y-14">
 			<HomeIntro />
 			<HomeSocialLinks />
-			<HomeFeaturedProject />
 		</div>
 	</main>
 </template>
