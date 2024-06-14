@@ -50,7 +50,7 @@ interface BlogContent extends ParsedContent {
 	githubUrl: string;
 }
 
-const { data: blogs } = await useAsyncData('projects-all', () =>
+const { data: blogs } = await useAsyncData('blogs-all', () =>
 	queryContent<BlogContent>('blogs').sort({ published_at: -1 }).find()
 )
 

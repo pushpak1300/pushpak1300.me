@@ -8,7 +8,7 @@
 						<ULink :to="item.path" :target="item.external ? '_blank' : '_self'"
 							class="relative px-2 py-4 flex items-center justify-center transition group-hover:text-primary-500 dark:hover:text-primary-400"
 							active-class="text-primary-600 dark:text-primary-400">
-							<Icon aria-hidden="true" :name="item.icon" class="w-5 h-5 z-10" />
+							<Icon aria-hidden="true" :name="item.icon" class="w-6 h-6 z-10" />
 
 							<span v-if="$route.path === item.path"
 								class="absolute h-8 w-8 z-0 rounded-xl bg-gray-100 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />

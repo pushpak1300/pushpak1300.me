@@ -2,7 +2,6 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 export default <Partial<Config>> {
-	safelist: ['router-link-exact-active'],
 	content: [
 		'./components/**/*.{vue,js}',
 		'./layouts/**/*.vue',
