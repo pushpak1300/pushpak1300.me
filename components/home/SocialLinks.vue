@@ -50,8 +50,8 @@ const links = [
 	},
 	{
 		name: 'Email',
-		url: 'mailto:pushpak1300@gmail.com',
-		icon: 'mdi:gmail',
+		url: 'mailto:hey@pushpak1300.me',
+		icon: 'mdi:email',
 	},
 ];
 </script>

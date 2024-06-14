@@ -14,12 +14,15 @@
 				</h2>
 			</div>
 			<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-				Get notified when I publish something new, and unsubscribe at any time.
+				Subscribe to newsletter and unsubscribe at any time.
 			</p>
-			<div class="flex items-center gap-3 mt-6">
-				<UInput placeholder="Email Address" icon="i-heroicons-envelope" class="flex-1" size="lg" />
-				<UButton label="Join &rarr;" size="lg" color="primary" />
-			</div>
+			<form @submit.prevent="subscribeToNewsletter">
+				<div class="flex items-center gap-3 mt-6">
+					<UInput id="email-address" v-model="email" name="email-address" type="email" autocomplete="email" placeholder="Enter your email"
+						required icon="i-heroicons-envelope" class="flex-1" size="lg" />
+					<UButton :loading="loading" type="submit" :label="emailSubmited? 'Done' : 'Join →'" size="lg" color="primary" />
+				</div>
+			</form>
 		</div>
 	</main>
 </template>
@@ -50,4 +53,19 @@ interface BlogContent extends ParsedContent {
 const { data: blogs } = await useAsyncData('projects-all', () =>
 	queryContent<BlogContent>('blogs').sort({ published_at: -1 }).find()
 )
+
+const email = ref('')
+const emailSubmited = ref(false)
+const loading = ref(false)
+
+const subscribeToNewsletter = async () => {
+	loading.value = true
+	await useFetch('https://usebasin.com/f/baffd19320ff.json', {
+		method: 'post',
+		body: { email: email.value }
+	})
+	email.value = ''
+	emailSubmited.value = true
+	loading.value = false
+}
 </script>

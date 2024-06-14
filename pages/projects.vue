@@ -1,45 +1,35 @@
 <template>
-  <div
-    v-if="data.projects"
-    class="
-      flex-grow
-      w-full
-      container
-      max-w-4xl
-      mx-auto
-      md:py-8
-      py-4
-      px-6
-      text-gray-700
-      dark:text-gray-50
-    "
-  >
-    <div class="mb-12 md:mb-6">
-      <div class="mb-4">
-        <h1 class="mb-0 font-bold text-4xl">
-          Projects
-        </h1>
-        <p class="my-2">
-          List of projects that I am proud of
-        </p>
-      </div>
-      <BaseProject
-        v-for="project in data.projects"
-        :key="project.id"
-        :project="project"
-      />
-    </div>
-  </div>
+	<main>
+		<AppHeader class="mb-16" :title :description />
+		<div class="space-y-6" v-if="projects">
+			<ProjectItem v-for="(project, id) in projects" :key="id" :project="project" />
+		</div>
+	</main>
 </template>
 
 <script setup lang="ts">
-import { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
+import { useSeoMeta, useAsyncData } from "#imports";
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
-interface Project extends MarkdownParsedContent {
-  projects: Object
+const title = "Projects";
+const description = "I've completed numerous projects, and I'm especially proud of these.";
+
+useSeoMeta({
+	title,
+	description,
+});
+
+interface ProjectContent extends ParsedContent {
+	name: string;
+	description: string;
+	slug: string;
+	projectLink: string;
+	mainLink: string;
+	skills: string;
+	githubUrl: string;
 }
 
-const route = useRoute()
-
-const { data } = await useAsyncData(() => queryContent<Project>(route.path).findOne())
+const { data: projects } = await useAsyncData('projects-all', () =>
+	queryContent<ProjectContent>('projects').sort({ id: -1 }).find()
+)
 </script>

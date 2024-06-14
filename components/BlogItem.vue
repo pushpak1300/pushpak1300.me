@@ -1,6 +1,6 @@
 <template>
     <div class="py-3">
-        <ULink :to="blog._path" class="group rounded-lg" :target="blog.external ? '_blank' : '_self'">
+        <ULink :to="blog.external_url" class="group rounded-lg" :target="blog.external ? '_blank' : '_self'">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                 <h3
                     class="flex gap-3 text-lg font-medium group-hover:text-primary-500 dark:group-hover:text-primary-200">
