@@ -52,8 +52,8 @@ const items = [
 		icon: 'heroicons:folder-plus',
 	},
 	{
-		name: 'Articles',
-		path: '/articles',
+		name: 'Blogs',
+		path: '/blogs',
 		icon: 'heroicons:newspaper',
 	},
 	{

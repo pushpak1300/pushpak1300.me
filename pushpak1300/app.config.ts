@@ -1,6 +1,6 @@
 export default defineAppConfig({
 	ui: {
-		primary: 'teal',
+		primary: 'indigo',
 		gray: 'slate',
 		button: {
 			rounded:

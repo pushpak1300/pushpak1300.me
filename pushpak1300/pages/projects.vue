@@ -1,7 +1,7 @@
 <template>
-	<main class="min-h-screen">
-		<AppHeader class="mb-12" :title="title" :description="description" />
-		<div class="space-y-4" v-if="projects">
+	<main>
+		<AppHeader class="mb-16" :title :description />
+		<div class="space-y-6" v-if="projects">
 			<ProjectItem v-for="(project, id) in projects" :key="id" :project="project" />
 		</div>
 	</main>
