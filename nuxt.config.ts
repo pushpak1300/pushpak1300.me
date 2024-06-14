@@ -69,7 +69,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ["/about", "/projects"],
+      routes: ["/blogs", "/projects"],
     },
   },
   components: [
