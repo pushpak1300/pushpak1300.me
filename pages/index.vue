@@ -6,7 +6,7 @@
         flex-col
         flex-grow
         container
-        max-w-4xl
+        max-w-5xl
         md:py-12
         py-8
         px-6

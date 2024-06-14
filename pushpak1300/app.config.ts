@@ -14,7 +14,7 @@ export default defineAppConfig({
 			},
 		},
 		container: {
-			constrained: 'max-w-4xl',
+			constrained: 'max-w-5xl',
 		},
 		modal: {
 			overlay: {

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     "~/components",
     { path: "~/components/app", prefix: "App" },
     { path: "~/components/home", prefix: "Home" },
+    { path: "~/components/project", prefix: "Project" },
   ],
   eslint: {
     config: {

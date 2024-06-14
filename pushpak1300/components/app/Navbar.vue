@@ -1,6 +1,6 @@
 <template>
 	<div ref="headerRef" :style="styles" class="fixed top-0 w-full z-50">
-		<nav class="mx-auto px-2 sm:px-4 max-w-4xl">
+		<nav class="mx-auto px-2 sm:px-4 max-w-5xl">
 			<ul
 				class="flex items-center my-4 px-3 text-sm font-medium text-gray-800 rounded-md shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5">
 				<li v-for="item in items" :key="item.path" class="group">
