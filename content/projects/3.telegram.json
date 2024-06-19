@@ -1,0 +1,9 @@
+{
+    "name": "IT Bot 🤖",
+    "slug": "ITBot",
+    "description": "Built telegram based chat-bot which sends lab manuals and assignments to the user on request without accessing college server using web crawler which crawls through the server at specific crons and stores files on G-Drive.",
+    "skills": "Python, Telegram-API, Scrapy, sqlite",
+    "githubUrl": "https://github.com/pushpak1300/SEITbot",
+    "projectLink": "https://t.me/SEIT_bot",
+    "mainLink": "https://t.me/SEIT_bot"
+  }

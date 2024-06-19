@@ -1,0 +1,9 @@
+{
+  "name": "Nodegit-lts-Alpine 🐳",
+  "slug": "nodegit-lts-alpine",
+  "description": "Docker image with prebuilt Nodegit package and node lts alpine.",
+  "skills": "Docker, bash",
+  "githubUrl": "https://github.com/pushpak1300/nodegit-lts-alpine",
+  "projectLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine",
+  "mainLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine"
+}

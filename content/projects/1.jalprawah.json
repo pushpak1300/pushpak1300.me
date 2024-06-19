@@ -1,0 +1,9 @@
+{
+  "name": "JalPravah 🌊",
+  "slug": "JalPravah",
+  "description": "Developed an award winning web mobile application for the Ministry of Power, India at Smart India Hackathon 2020 to detect probable floods and notify users near the respective dam.",
+  "skills": "Flask, AWS, Vue, Numpy, Redis, Flutter",
+  "githubUrl": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+  "projectLink": "https://jalpravah.pushpak1300.me",
+  "mainLink": "https://jalpravah.pushpak1300.me/#/dashboard"
+}
