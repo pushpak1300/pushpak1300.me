@@ -7,7 +7,13 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: true,
-	modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image', '@nuxt/content'],
+	modules: [
+		'@nuxt/ui',
+		'@nuxt/eslint',
+		'@nuxt/image',
+		'@nuxt/content',
+		'@nuxthq/studio',
+	],
 	colorMode: {
 		preference: 'dark',
 	},
