@@ -54,8 +54,6 @@ import { useAppConfig, useColorMode } from '#imports';
 const appConfig = useAppConfig();
 const colorMode = useColorMode();
 
-// Computed
-
 const primaryColors = computed(() => appConfig.ui.colors.filter(color => color !== 'primary').map(color => ({ value: color, text: color, hex: colors[color][colorMode.value === 'dark' ? 400 : 500] })));
 const primary = computed({
 	get() {

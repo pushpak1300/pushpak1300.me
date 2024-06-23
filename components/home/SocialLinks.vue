@@ -32,7 +32,7 @@ const links = [
 	{
 		name: 'Twitter',
 		url: 'https://twitter.com/pushpak1300',
-		icon: 'mdi:twitter',
+		icon: 'fa6-brands:square-x-twitter',
 	},
 	{
 		name: 'Linkedin',
