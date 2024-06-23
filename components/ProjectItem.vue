@@ -6,9 +6,9 @@
 			target="_blank"
 		>
 			<div>
-				<h3 class="text-lg font-medium group-hover:text-primary-500 dark:group-hover:text-primary-200">
+				<h2 class="text-lg font-medium group-hover:text-primary-500 dark:group-hover:text-primary-200">
 					{{ project.name }}
-				</h3>
+				</h2>
 				<p class="text-gray-800 dark:text-gray-400 text-sm">{{ project.description }}</p>
 				<p
 					class="text-gray-900 dark:text-gray-200 text-md font-semibold mt-1 hover:text-primary hover:cursor-default"
