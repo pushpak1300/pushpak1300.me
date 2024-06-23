@@ -10,6 +10,7 @@
 				:to="link.url"
 				target="_blank"
 				external
+				:aria-label="link.name + ' profile'"
 				class="flex items-end gap-4 hover:text-primary-300 group"
 			>
 				<Icon

@@ -17,6 +17,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui": "^2.16.0",
     "@nuxthq/studio": "^2.0.0",
+    "@vercel/speed-insights": "^1.0.12",
     "eslint": "9.4.0",
     "nuxt": "^3.12.1",
     "vue": "^3.4.27",

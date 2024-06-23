@@ -1,4 +1,5 @@
 <template>
+	<SpeedInsights />
 	<AppNavbar />
 	<div class="h-32" />
 	<UContainer>
@@ -9,6 +10,10 @@
 		<AppFooter />
 	</UContainer>
 </template>
+
+<script setup lang="ts">
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
+</script>
 
 <style>
 .page-enter-active,
