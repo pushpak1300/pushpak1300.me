@@ -4,16 +4,15 @@
 			src="/avtar.webp"
 			alt="Pushpak Chhajed"
 			class="ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-24 sm:w-24"
-			sizes="50px sm:78px"
 			placeholder
 			format="webp"
 		/>
 		<h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
 			Hello there! 👋
 		</h1>
-		<h5 class="h-5 font-semibold text-xl text-gray-800 dark:text-gray-100">
+		<h2 class="h-2 font-semibold text-xl text-gray-800 dark:text-gray-100">
 			<mark class="bg-primary-300">Pushpak Chhajed.</mark>
-		</h5>
+		</h2>
 		<p class="text-gray-900 dark:text-gray-400">
 			I'm a software engineer from India with more than three years of experience in developing applications,
 			primarily
