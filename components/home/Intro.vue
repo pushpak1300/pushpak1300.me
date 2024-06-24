@@ -7,6 +7,7 @@
 			placeholder
 			width="45"
 			format="webp"
+			loading="lazy"
 		/>
 		<h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
 			Hello there! 👋
