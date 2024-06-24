@@ -1,5 +1,5 @@
 <template>
-	<main class="max-h-screen">
+	<main>
 		<div class="space-y-14">
 			<HomeIntro />
 			<HomeSocialLinks />
