@@ -13,6 +13,7 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/content',
 		'@nuxthq/studio',
+		'@nuxtjs/tailwindcss',
 	],
 	colorMode: {
 		preference: 'dark',
@@ -72,6 +73,10 @@ export default defineNuxtConfig({
 	},
 	typescript: {
 		strict: false,
+	},
+	tailwindcss: {
+		editorSupport: true,
+		viewer: false,
 	},
 	nitro: {
 		prerender: {
