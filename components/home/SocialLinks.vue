@@ -50,6 +50,11 @@ const links = [
 		icon: 'mdi:dev-to',
 	},
 	{
+		name: 'Peerlist',
+		url: 'https://peerlist.io/pushpak1300',
+		icon: 'iconoir:peerlist',
+	},
+	{
 		name: 'Email',
 		url: 'mailto:hey@pushpak1300.me',
 		icon: 'mdi:email',
