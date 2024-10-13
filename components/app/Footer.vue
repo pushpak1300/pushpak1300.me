@@ -5,19 +5,17 @@
 		</div>
 		<div />
 		<div class="sm:text-right text-primary-400">
-			Built with <a
+			Built with <AppExternalLink
 				href="https://nuxt.com/"
-				class="text-primary-700 dark:text-primary-100 underline"
-				target="_blank"
-				rel="noopener"
 				title="The Intuitive Vue Framework"
-			>Nuxt Js</a> & <a
+			>
+				Nuxt Js
+			</AppExternalLink> & <AppExternalLink
 				href="https://tailwindcss.com"
-				target="_blank"
-				rel="noopener"
 				title="Tailwind CSS, a utility-first CSS framework"
-				class="text-primary-700 dark:text-primary-100 underline"
-			>Tailwind CSS</a>
+			>
+				Tailwind CSS
+			</AppExternalLink>
 		</div>
 	</footer>
 </template>
