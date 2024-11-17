@@ -1,7 +1,9 @@
 <template>
-	<div class="space-y-6">
+	<div
+		v-motion-fade-visible
+		class="space-y-6"
+	>
 		<NuxtImg
-			v-motion-fade
 			src="/avtar.webp"
 			alt="Pushpak Chhajed"
 			class="size-12 rounded-full border border-gray-300 bg-gray-200 ring-2 ring-gray-200 transition-all duration-300 hover:ring-4 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/10 sm:size-24"
@@ -10,7 +12,7 @@
 			format="webp"
 			loading="lazy"
 		/>
-		<h1 class="text-xl font-bold text-gray-800 dark:text-gray-100">
+		<h1 class="text-xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-2xl">
 			Hey. I'm {{ appConfig.name }}. 👋
 		</h1>
 		<p class="text-gray-900 dark:text-gray-400">

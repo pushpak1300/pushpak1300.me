@@ -10,7 +10,7 @@
 				v-for="(link, index) in links"
 				:key="link.icon"
 				v-motion-pop-visible
-				:delay="index*100"
+				:delay="index*50"
 				:to="link.url"
 				target="_blank"
 				external

@@ -5,7 +5,11 @@
 			class="group rounded-lg"
 			:target="blog.external ? '_blank' : '_self'"
 		>
-			<div class="group grid grid-cols-1 md:grid-cols-4">
+			<div
+				v-motion-fade-visible
+				:delay="300"
+				class="group grid grid-cols-1 md:grid-cols-4"
+			>
 				<time
 					class="group-hover:text-primary flex-none text-sm text-gray-800 dark:text-gray-400 md:py-8"
 					:datetime="blog.published_at"
@@ -22,7 +26,6 @@
 						{{ blog.description }}
 					</p>
 					<div
-						v-motion-slide-visible-once-left
 						class="text-primary text-sm"
 					>
 						Read More →

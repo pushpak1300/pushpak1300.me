@@ -1,6 +1,6 @@
 <template>
 	<div
-		v-motion-slide-visible-once-right
+		v-motion-fade-visible
 		:delay="200"
 	>
 		<a
