@@ -1,20 +1,23 @@
 <template>
-	<div>
+	<div
+		v-motion-slide-visible-once-right
+		:delay="200"
+	>
 		<a
-			class="gap-4 group rounded-lg"
+			class="group gap-4 rounded-lg"
 			:href="project.mainLink"
 			target="_blank"
 		>
 			<div>
-				<h2 class="text-lg font-medium group-hover:text-primary-500 dark:group-hover:text-primary-200">
+				<h2 class="group-hover:text-primary-500 dark:group-hover:text-primary-200 text-lg font-medium">
 					{{ project.name }}
 				</h2>
-				<p class="text-gray-800 dark:text-gray-400 text-sm">{{ project.description }}</p>
+				<p class="text-sm text-gray-800 dark:text-gray-400">{{ project.description }}</p>
 				<p
-					class="text-gray-900 dark:text-gray-200 text-md font-semibold mt-1 hover:text-primary hover:cursor-default"
+					class="hover:text-primary mt-1 text-base font-semibold text-gray-900 hover:cursor-default dark:text-gray-200"
 				>
 					Stack:
-					<span class="font-normal text-sm lowercase ">{{ project.skills }}</span>
+					<span class="text-sm font-normal lowercase ">{{ project.skills }}</span>
 				</p>
 				<div class="flex gap-6">
 					<AppIconLink

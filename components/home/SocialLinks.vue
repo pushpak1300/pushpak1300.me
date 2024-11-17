@@ -1,21 +1,25 @@
 <template>
 	<div>
-		<h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">
+		<h2 class="mb-4 text-xs font-semibold uppercase text-gray-400">
 			Socials
 		</h2>
-		<div class="flex space-x-4">
+		<div
+			class="flex space-x-4"
+		>
 			<NuxtLink
-				v-for="link in links"
+				v-for="(link, index) in links"
 				:key="link.icon"
+				v-motion-pop-visible
+				:delay="index*100"
 				:to="link.url"
 				target="_blank"
 				external
 				:aria-label="link.name + ' profile'"
-				class="flex items-end gap-4 hover:text-primary-300 group"
+				class="hover:text-primary-300 group flex items-end gap-4"
 			>
 				<Icon
 					:name="link.icon"
-					class="w-8 h-8"
+					class="size-8"
 				/>
 			</NuxtLink>
 		</div>

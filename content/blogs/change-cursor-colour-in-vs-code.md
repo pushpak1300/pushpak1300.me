@@ -1,5 +1,6 @@
 ---
 title: "Change Cursor Colour in VS code 🤯"
+description: "I will show you how to change cursor colour in VScode."
 published_at: 2020/09/17
 slug: "change-cursor-colour-in-vs-code"
 external: true

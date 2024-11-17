@@ -14,7 +14,7 @@
 			>
 				<UIcon
 					name="i-heroicons-swatch-20-solid"
-					class="w-5 h-5 text-primary-500 dark:text-primary-400"
+					class="text-primary-500 dark:text-primary-400 size-5"
 				/>
 			</UButton>
 		</template>
@@ -31,7 +31,7 @@
 					/>
 				</div>
 
-				<hr class="border-gray-200 dark:border-gray-800 my-2">
+				<hr class="my-2 border-gray-200 dark:border-gray-800">
 
 				<div class="grid grid-cols-5 gap-px">
 					<AppColorPickerPill

@@ -1,6 +1,10 @@
 <script setup>
 const colorMode = useColorMode();
 
+const getIconName = computed(() => {
+	return isDark.value ? 'heroicons:sun' : 'heroicons:moon';
+});
+
 const isDark = computed({
 	get() {
 		return colorMode.value === 'dark';
@@ -17,13 +21,13 @@ const isDark = computed({
 		:ui="{ popper: { strategy: 'absolute' } }"
 	>
 		<button
-			class="relative px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
+			class="hover:text-primary-500 dark:hover:text-primary-400 relative flex items-center justify-center px-3 py-4 transition"
 			@click="isDark = !isDark"
 		>
-			<div
+			<Icon
 				aria-hidden="true"
-				:name="isDark ? 'solar:sun-2-outline' : 'solar:moon-outline'"
-				class="w-3 h-3 rounded-full bg-gray-900 dark:bg-white"
+				:name="getIconName"
+				class="size-5"
 			/>
 			<span class="sr-only">Toggle Theme</span>
 		</button>

@@ -1,12 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: {
-		enabled: true,
-		timeline: {
-			enabled: true,
-		},
-	},
-	ssr: true,
 	modules: [
 		'@nuxt/ui',
 		'@nuxt/eslint',
@@ -14,9 +7,19 @@ export default defineNuxtConfig({
 		'@nuxt/content',
 		'@nuxthq/studio',
 		'@nuxtjs/tailwindcss',
+		'@vueuse/motion/nuxt',
 	],
-	colorMode: {
-		preference: 'dark',
+	ssr: true,
+	components: [
+		'~/components',
+		{ path: '~/components/app', prefix: 'App' },
+		{ path: '~/components/home', prefix: 'Home' },
+	],
+	devtools: {
+		enabled: true,
+		timeline: {
+			enabled: true,
+		},
 	},
 	app: {
 		pageTransition: { name: 'page', mode: 'out-in' },
@@ -71,23 +74,18 @@ export default defineNuxtConfig({
 			],
 		},
 	},
-	typescript: {
-		strict: false,
+	colorMode: {
+		preference: 'dark',
 	},
-	tailwindcss: {
-		editorSupport: true,
-		viewer: false,
-	},
+	compatibilityDate: '2024-11-16',
 	nitro: {
 		prerender: {
 			routes: ['/blogs', '/projects'],
 		},
 	},
-	components: [
-		'~/components',
-		{ path: '~/components/app', prefix: 'App' },
-		{ path: '~/components/home', prefix: 'Home' },
-	],
+	typescript: {
+		strict: false,
+	},
 	eslint: {
 		config: {
 			stylistic: {
@@ -96,5 +94,9 @@ export default defineNuxtConfig({
 				quotes: 'single',
 			},
 		},
+	},
+	tailwindcss: {
+		editorSupport: true,
+		viewer: false,
 	},
 });

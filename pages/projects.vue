@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<AppHeader
-			class="mb-16"
+			class="mb-8 md:mb-16"
 			:title
 			:description
 		/>
@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import { useSeoMeta, useAsyncData } from '#imports';
+import appConfig from '~/app.config';
 
 const title = 'Projects';
 const description = 'I\'ve completed numerous projects, and I\'m especially proud of these.';
@@ -28,6 +29,10 @@ const description = 'I\'ve completed numerous projects, and I\'m especially prou
 useSeoMeta({
 	title,
 	description,
+});
+
+useHead({
+	title: `${title} | ${appConfig.name}`,
 });
 
 interface ProjectContent extends ParsedContent {

@@ -2,11 +2,11 @@
 	<div
 		ref="headerRef"
 		:style="styles"
-		class="fixed top-0 w-full z-50"
+		class="fixed top-0 z-50 w-full"
 	>
-		<nav class="mx-auto px-2 sm:px-4 max-w-5xl">
+		<nav class="mx-auto max-w-3xl px-2 sm:px-4">
 			<ul
-				class="flex items-center my-4 px-3 text-sm font-medium text-gray-800 rounded-md shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5"
+				class="my-4 flex items-center rounded-md bg-white/90 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20"
 			>
 				<li
 					v-for="item in items"
@@ -20,37 +20,24 @@
 						<ULink
 							:to="item.path"
 							:target="item.external ? '_blank' : '_self'"
-							class="relative px-2 py-4 flex items-center justify-center transition group-hover:text-primary-500 dark:hover:text-primary-400"
+							class="group-hover:text-primary-500 dark:hover:text-primary-400 relative flex items-center justify-center p-4 transition"
 							active-class="text-primary-600 dark:text-primary-400"
 						>
 							<Icon
 								aria-hidden="true"
 								:name="item.icon"
-								class="w-6 h-6 z-10"
+								class="z-10 size-6"
 							/>
 
 							<span
 								v-if="$route.path === item.path"
-								class="absolute h-8 w-8 z-0 rounded-xl bg-gray-100 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+								class="absolute left-1/2 top-1/2 z-0 size-10 -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-gray-100 dark:bg-white/10"
 							/>
 							<span class="sr-only">{{ item.name }}</span>
-						</ULink>
-						<ULink
-							:to="item.path"
-							:target="item.external ? '_blank': '_self'"
-							:external="item.external"
-							class="relative flex items-center justify-center"
-							active-class="text-primary-600 dark:text-primary-400"
-						>
-							<span class="sr-only sm:not-sr-only sm:pr-2 group-hover:text-primary-500">{{ item.name
-							}}</span>
 						</ULink>
 					</UTooltip>
 				</li>
 				<li class="flex-1" />
-				<li>
-					<AppColorPicker />
-				</li>
 				<li>
 					<AppToggleTheme />
 				</li>
@@ -75,7 +62,7 @@ const items = [
 	{
 		name: 'Projects',
 		path: '/projects',
-		icon: 'heroicons:folder-plus',
+		icon: 'heroicons:archive-box',
 	},
 	{
 		name: 'Blogs',

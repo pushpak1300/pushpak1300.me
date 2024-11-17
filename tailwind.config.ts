@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 export default <Partial<Config>> {
 	content: [
@@ -22,5 +23,5 @@ export default <Partial<Config>> {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [typography],
 };

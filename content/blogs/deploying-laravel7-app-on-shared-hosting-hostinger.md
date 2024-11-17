@@ -1,5 +1,6 @@
 ---
 title: "Deploying Laravel 8 app on shared-hosting (Hostinger)"
+description: "In this article, I’ll try to explain how you can deploy your laravel application on shared hosting platform."
 published_at: 2020/04/30
 slug: "deploying-laravel7-app-on-shared-hosting-hostinger"
 external: true

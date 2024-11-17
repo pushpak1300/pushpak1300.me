@@ -19,7 +19,7 @@
 			@click.stop.prevent="$emit('select')"
 		>
 			<span
-				class="inline-block w-3 h-3 rounded-full"
+				class="inline-block size-3 rounded-full"
 				:style="{ backgroundColor: color.hex }"
 			/>
 		</UButton>

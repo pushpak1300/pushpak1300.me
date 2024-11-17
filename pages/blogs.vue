@@ -1,13 +1,13 @@
 <template>
 	<main class="">
 		<AppHeader
-			class="mb-16"
+			class="mb-8 md:mb-16"
 			:title
 			:description
 		/>
 		<div
 			v-if="blogs"
-			class="space-y-4"
+			class="border-primary border-l-2 pl-4"
 		>
 			<BlogItem
 				v-for="(blog, id) in blogs"
@@ -15,12 +15,12 @@
 				:blog="blog"
 			/>
 		</div>
-		<div class="pt-24">
+		<div class="pt-16 md:pt-24">
 			<div class="mb-6 flex items-center gap-3">
-				<div class="flex-none rounded-full p-1 text-primary-500 bg-primary-500/10">
-					<div class="h-1.5 w-1.5 rounded-full bg-current" />
+				<div class="text-primary-500 bg-primary-500/10 flex-none rounded-full p-1">
+					<div class="size-1.5 rounded-full bg-current" />
 				</div>
-				<h2 class="uppercase text-xs font-semibold text-gray-400">
+				<h2 class="text-xs font-semibold uppercase text-gray-400">
 					STAY IN TOUCH
 				</h2>
 			</div>
@@ -28,7 +28,7 @@
 				Subscribe to newsletter and unsubscribe at any time.
 			</p>
 			<form @submit.prevent="subscribeToNewsletter">
-				<div class="flex items-center gap-3 mt-6">
+				<div class="mt-6 flex items-center gap-3">
 					<UInput
 						id="email-address"
 						v-model="email"
@@ -58,6 +58,7 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import { useSeoMeta, useAsyncData } from '#imports';
 import type BlogItem from '~/components/BlogItem.vue';
+import appConfig from '~/app.config';
 
 const title = 'Blogs';
 const description = 'The articles I\'ve penned over the years. Though I\'ve been quiet in recent times, I plan to reignite my writing soon.';
@@ -65,6 +66,10 @@ const description = 'The articles I\'ve penned over the years. Though I\'ve been
 useSeoMeta({
 	title,
 	description,
+});
+
+useHead({
+	title: `${title} | ${appConfig.name}`,
 });
 
 interface BlogContent extends ParsedContent {

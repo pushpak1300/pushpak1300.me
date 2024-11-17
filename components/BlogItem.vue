@@ -1,26 +1,33 @@
 <template>
-	<div class="py-3">
+	<div class="py-4 md:py-2">
 		<ULink
 			:to="blog.external_url"
 			class="group rounded-lg"
 			:target="blog.external ? '_blank' : '_self'"
 		>
-			<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-				<h2
-					class="flex gap-3 text-lg font-medium group-hover:text-primary-500 dark:group-hover:text-primary-200"
-				>
-					<span class="block w-0.5 rounded-full bg-primary-500" />
-					{{ blog.title }}
-				</h2>
-				<div
-					class="hidden sm:block flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-primary-200"
-				/>
+			<div class="group grid grid-cols-1 md:grid-cols-4">
 				<time
-					class="text-sm flex-none text-gray-800 dark:text-gray-400 group-hover:text-primary-500 dark:group-hover:text-primary-200"
+					class="group-hover:text-primary flex-none text-sm text-gray-800 dark:text-gray-400 md:py-8"
 					:datetime="blog.published_at"
 				>
 					{{ getReadableDate(blog.published_at) }}
 				</time>
+				<div class="space-y-2 rounded py-4 md:col-span-3 md:p-8 md:hover:bg-gray-100 md:hover:dark:bg-gray-900">
+					<h2
+						class="group-hover:text-primary-500 dark:group-hover:text-primary-200 text-lg font-medium"
+					>
+						{{ blog.title }}
+					</h2>
+					<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+						{{ blog.description }}
+					</p>
+					<div
+						v-motion-slide-visible-once-left
+						class="text-primary text-sm"
+					>
+						Read More →
+					</div>
+				</div>
 			</div>
 		</ULink>
 	</div>
@@ -38,7 +45,7 @@ const getReadableDate = (dateString: string) => {
 	const date = new Date(dateString);
 	return date.toLocaleDateString('en-US', {
 		year: 'numeric',
-		month: 'short',
+		month: 'long',
 		day: 'numeric',
 	});
 };

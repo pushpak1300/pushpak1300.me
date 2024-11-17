@@ -1,7 +1,7 @@
 export default defineAppConfig({
 	ui: {
-		primary: 'indigo',
-		gray: 'slate',
+		primary: 'sky',
+		gray: 'coolGray',
 		button: {
 			rounded:
         'rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]',
@@ -14,7 +14,7 @@ export default defineAppConfig({
 			},
 		},
 		container: {
-			constrained: 'max-w-5xl',
+			constrained: 'max-w-3xl',
 		},
 		modal: {
 			overlay: {
@@ -28,5 +28,6 @@ export default defineAppConfig({
 			},
 		},
 	},
+	name: 'Pushpak Chhajed',
 	resumeURL: 'https://drive.google.com/file/d/1t1KN1L5oL7FUyx9hvehRLcyrgFz6iwAf/view',
 });
