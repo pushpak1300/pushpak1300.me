@@ -12,7 +12,7 @@
 			format="webp"
 			loading="lazy"
 		/>
-		<h1 class="text-xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-2xl">
+		<h1 class="text-xl font-bold text-gray-800 drop-shadow-2xl dark:text-gray-100">
 			Hey. I'm {{ appConfig.name }}. 👋
 		</h1>
 		<p class="text-gray-900 dark:text-gray-400">

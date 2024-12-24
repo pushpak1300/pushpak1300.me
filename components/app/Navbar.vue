@@ -69,11 +69,11 @@ const items = [
 		path: '/blogs',
 		icon: 'heroicons:newspaper',
 	},
-	// {
-	// 	name: 'Talks',
-	// 	path: '/talks',
-	// 	icon: 'heroicons:microphone',
-	// },
+	{
+		name: 'Talks',
+		path: '/talks',
+		icon: 'heroicons:microphone',
+	},
 	{
 		name: 'Resume',
 		external: true,

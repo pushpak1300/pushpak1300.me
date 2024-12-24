@@ -6,7 +6,7 @@
 		<a
 			:href="link"
 			target="_blank"
-			class="group-hover:text-primary-500 dark:hover:text-primary-400 relative flex items-center justify-center py-4 transition"
+			class="group-hover:text-primary relative flex items-center justify-center py-4 transition"
 		>
 			<Icon
 				aria-hidden="true"

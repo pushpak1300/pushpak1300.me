@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+import type { ParsedContent } from '@nuxt/content';
 import { useSeoMeta, useAsyncData } from '#imports';
 import appConfig from '~/app.config';
 
