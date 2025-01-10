@@ -63,7 +63,7 @@
 			<br><br>
 			As of 2024, my current focus is on:
 			<br>
-			<b class="text-primary-700 dark:text-primary-100">TypeScript, PHP, Python, Laravel, Inertia, Tailwind, Vue and Nuxt.</b><br>
+			<b class="text-primary-700 dark:text-primary-100">Laravel, Inertia, Tailwind, Vue, TypeScript, PHP, Python and Nuxt.</b><br>
 			<br>
 
 			When I’m not coding, you can find me reading about the latest trends, or
