@@ -56,6 +56,26 @@
       "date": "2021-03-27",
       "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
       "youtubeUrl": "https://www.youtube.com/watch?v=nS_1FEn22SA"
+    },
+    {
+      "title": "FrankenPHP - New Tool In PHP land",
+      "conference": "Hackerspace Mumbai (In-Person)",
+      "date": "2021-02-08",
+      "slidesUrl": "https://docs.google.com/presentation/d/1_8Jr58oBlCvi38heGZ8VfkYZWhC48Gt6n0ywSMOwsmU/edit#slide=id.g2676d00131c_1_45"
+    },
+    {
+      "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
+      "conference": "Laravel Bangalore Meetup (In-Person)",
+      "date": "2025-02-15",
+      "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QleCq_fgYcU"
+    },
+    {
+      "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
+      "conference": "Laracon India",
+      "date": "2025-03-12",
+      "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
+      "tweetUrl": "https://x.com/LaraconIN/status/1892930535980179720"
     }
   ]
 }
