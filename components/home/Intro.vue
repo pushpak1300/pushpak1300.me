@@ -16,7 +16,7 @@
 			Hey. I'm {{ appConfig.name }}. 👋
 		</h1>
 		<p class="text-gray-900 dark:text-gray-400">
-			I’m a tinkerer, hacker, and software engineer from India. <br><br>
+			I'm a tinkerer, hacker, and software engineer from India. <br><br>
 			My coding journey started at 2012 when I began customizing Cydia themes for my iPad, which quickly fueled my
 			obsession with computers and the
 			internet. I started learning swift. I shifted to web tech-learning HTML, CSS, and JavaScript. Building
@@ -57,18 +57,37 @@
 				title="Bigly Sales"
 			>
 				Bigly Sales
-			</AppExternalLink>, where I’m scaling our LLM
+			</AppExternalLink>, where I'm scaling our LLM
 			and Laravel pipeline to automate customer
 			communications, scaling to millions of calls and SMS daily.
+			<br><br>
+			This role has deepened my passion for the intersection of Laravel and AI, leading me to actively contribute to the <AppExternalLink
+				href="https://prismphp.com/"
+				title="Prism PHP"
+			>
+				Prism
+			</AppExternalLink> package. My enthusiasm for this space also led me to share my insights as a speaker at <AppExternalLink
+				href="https://laracon.in/"
+				title="Laracon India"
+			>
+				Laracon India.
+			</AppExternalLink>
+			<br><br>
+			Currently, I'm channeling my energy as a Founding Software Engineer at <AppExternalLink
+				href="https://zango.ai"
+				title="Zango"
+			>
+				Zango
+			</AppExternalLink>, where we're building automations within the compliance industry.
 			<br><br>
 			As of 2024, my current focus is on:
 			<br>
 			<b class="text-primary-700 dark:text-primary-100">Laravel, Inertia, Tailwind, Vue, TypeScript, PHP, Python and Nuxt.</b><br>
 			<br>
 
-			When I’m not coding, you can find me reading about the latest trends, or
+			When I'm not coding, you can find me reading about the latest trends, or
 			traveling. <br>
-			I’m always up for a chat or collaboration. Hit me up on <AppExternalLink
+			I'm always up for a chat or collaboration. Hit me up on <AppExternalLink
 				href="https://x.com/pushpak1300"
 				title="X account of Pushpak Chhajed"
 			>
