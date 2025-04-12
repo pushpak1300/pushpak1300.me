@@ -5,21 +5,24 @@
 			:title="PAGE_CONFIG.title"
 			:description="PAGE_CONFIG.description"
 		/>
-		<div v-if="talks">
+		<div v-if="talks.length > 0">
 			<div
-				v-for="(yearTalks, year) in groupedTalks"
-				:key="year"
+				v-for="group in groupedTalks"
+				:key="group.year"
 				class="mb-8"
 			>
 				<h2 class="mb-4 text-xl font-semibold uppercase">
-					{{ year }}
+					{{ group.year }}
 				</h2>
 				<TalkItem
-					v-for="talk in yearTalks"
+					v-for="talk in group.talks"
 					:key="talk.title"
 					:talk="talk"
 				/>
 			</div>
+		</div>
+		<div v-else>
+			<p>Loading talks...</p> <!-- Optional: Add a loading state -->
 		</div>
 
 		<!-- Contact Section -->
@@ -93,7 +96,7 @@ const { data: talksData } = await useAsyncData('talks-all', () =>
 const talks = computed(() => talksData.value?.talks || []);
 
 const groupedTalks = computed(() => {
-	if (!talks.value) return {};
+	if (!talks.value || talks.value.length === 0) return []; // Return empty array if no talks
 
 	const groupByTitle = (talks: RawTalk[]): Record<string, GroupedTalk> => {
 		return talks.reduce((groups, talk) => {
@@ -110,24 +113,36 @@ const groupedTalks = computed(() => {
 				youtubeUrl: talk.youtubeUrl,
 				tweetUrl: talk.tweetUrl,
 			});
+			// Sort instances within each title group by date descending
+			groups[talk.title].instances.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 			return groups;
 		}, {} as Record<string, GroupedTalk>);
 	};
 
 	const groupByYear = (titleGroups: Record<string, GroupedTalk>): Record<string, GroupedTalk[]> => {
 		return Object.values(titleGroups).reduce((groups, talk) => {
-			talk.instances.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+			// Use the latest instance's date for determining the year
 			const year = new Date(talk.instances[0].date).getFullYear().toString();
 			if (!groups[year]) {
 				groups[year] = [];
 			}
 			groups[year].push(talk);
+			// Sort talks within each year alphabetically by title
+			groups[year].sort((a, b) => a.title.localeCompare(b.title));
 			return groups;
 		}, {} as Record<string, GroupedTalk[]>);
 	};
 
 	const titleGroups = groupByTitle(talks.value);
 	const yearGroups = groupByYear(titleGroups);
-	return yearGroups;
+
+	// Sort years in descending order
+	const sortedYears = Object.keys(yearGroups).sort((a, b) => parseInt(b) - parseInt(a));
+
+	// Map to the final array structure for the template
+	return sortedYears.map(year => ({
+		year,
+		talks: yearGroups[year],
+	}));
 });
 </script>
