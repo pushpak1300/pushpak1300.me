@@ -51,7 +51,7 @@
 			<br>
 			Recently, I participated in a Laracon India hackathon that got my interest in large language models (LLMs).
 			This
-			led to my current role (Senior Software Engineer) at
+			led to my previous role (Senior Software Engineer) at
 			<AppExternalLink
 				href="https://biglysales.com"
 				title="Bigly Sales"
