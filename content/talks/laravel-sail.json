@@ -1,0 +1,17 @@
+{
+  "title": "Laravel Sail",
+  "instances": [
+    {
+      "conference": "Laravel Mumbai Meetup(In-Person)",
+      "date": "2023-03-25",
+      "slidesUrl": "https://docs.google.com/presentation/d/1pStKgNFSUajoiIqdc4fCJiejSfdoAT2wHWjUokFTj_o/edit?usp=sharing",
+      "tweetUrl": "https://x.com/skk_shashank/status/1639524351124066304"
+    },
+    {
+      "conference": "Laravel Pune Meetup(Online)",
+      "date": "2022-11-26",
+      "slidesUrl": "https://docs.google.com/presentation/d/1pStKgNFSUajoiIqdc4fCJiejSfdoAT2wHWjUokFTj_o/edit?usp=sharing",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-SRnPa1x49o&list=PLhy8lB64a1hJnOjJ1K-ftfBy-sZNpZI_e"
+    }
+  ]
+} 

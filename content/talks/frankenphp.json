@@ -1,0 +1,23 @@
+{
+  "title": "FrankenPHP - New Tool In PHP land",
+  "instances": [
+    {
+      "conference": "Laravel Nagpur Meetup (Online)",
+      "date": "2024-04-22",
+      "slidesUrl": "https://docs.google.com/presentation/d/1rTFRnQ1YKj4uM5aOIUa-yB_oQr9URgKomlwZ1p47ia0/edit?usp=sharing",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NFqWAGGysb8",
+      "tweetUrl": "https://x.com/LaravelNagpur/status/1778722405180940441"
+    },
+    {
+      "conference": "Laravel Bangalore Meetup (In-Person)",
+      "date": "2024-02-03",
+      "slidesUrl": "https://docs.google.com/presentation/d/1rTFRnQ1YKj4uM5aOIUa-yB_oQr9URgKomlwZ1p47ia0/edit?usp=sharing",
+      "tweetUrl": "https://x.com/pushpak1300/status/1753306752563728838"
+    },
+    {
+      "conference": "Hackerspace Mumbai (In-Person)",
+      "date": "2025-02-08",
+      "slidesUrl": "https://docs.google.com/presentation/d/1_8Jr58oBlCvi38heGZ8VfkYZWhC48Gt6n0ywSMOwsmU/edit#slide=id.g2676d00131c_1_45"
+    }
+  ]
+} 

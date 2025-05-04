@@ -30,21 +30,18 @@ export default defineContentConfig({
     }),
     talks: defineCollection({
       type: "data",
-      source: "talks.json",
+      source: "talks/**.json",
       schema: z.object({
-        talks: z.array(
+        title: z.string(),
+        instances: z.array(
           z.object({
-            title: z.string(),
-            instances: z.array(
-              z.object({
-                conference: z.string(),
-                date: z.string(),
-                slidesUrl: z.string(),
-                youtubeUrl: z.string(),
-              })
-            ),
+            conference: z.string(),
+            date: z.string(),
+            slidesUrl: z.string(),
+            youtubeUrl: z.string().optional(),
+            tweetUrl: z.string().optional()
           })
-        ),
+        )
       }),
     }),
   },

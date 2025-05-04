@@ -44,8 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData } from '#imports';
-import type { TalksResponse, RawTalk, GroupedTalk } from '~/types/content';
+import { useSeoMeta, useAsyncData, queryCollection } from '#imports';
 import appConfig from '~/app.config';
 import TalkItem from '~/components/TalkItem.vue';
 
@@ -65,42 +64,27 @@ useHead({
 	title: `${PAGE_CONFIG.title} | ${appConfig.name}`,
 });
 
-// Data fetching
-const { data: talksData } = await useAsyncData('talks-all', () =>
-	$fetch<TalksResponse>('/api/talks')
+// Data fetching using queryCollection
+const { data: talksData } = await useAsyncData('talks', () =>
+	queryCollection('talks')
+		.all()
 );
 
-// Computed properties
-const talks = computed(() => talksData.value?.talks || []);
-
+// Sort talks by date within instances
 const groupedTalks = computed(() => {
-	if (!talks.value || talks.value.length === 0) return []; // Return empty array if no talks
-
-	const groupByTitle = (talks: RawTalk[]): Record<string, GroupedTalk> => {
-		return talks.reduce((acc, talk) => {
-			if (!acc[talk.title]) {
-				acc[talk.title] = {
-					title: talk.title,
-					instances: [],
-				};
-			}
-			acc[talk.title].instances.push(...talk.instances);
-			return acc;
-		}, {} as Record<string, GroupedTalk>);
-	};
-
-	const groupByYear = (titleGroups: Record<string, GroupedTalk>): GroupedTalk[] => {
-		const result: GroupedTalk[] = [];
-		Object.values(titleGroups).forEach((group) => {
-			group.instances.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-			result.push(group);
-		});
-		return result;
-	};
-
-	const titleGroups = groupByTitle(talks.value);
-	const yearGroups = groupByYear(titleGroups);
-
-	return yearGroups;
+	if (!talksData.value || talksData.value.length === 0) return [];
+	
+	// Sort instances by date within each talk
+	return talksData.value.map(talk => {
+		// Sort instances by date, newest first
+		const sortedInstances = [...talk.instances].sort(
+			(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
+		
+		return {
+			...talk,
+			instances: sortedInstances
+		};
+	});
 });
 </script>
