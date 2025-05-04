@@ -2,7 +2,8 @@
   "name": "Cypress Mailpit ✉️",
   "slug": "cypress_mailpit",
   "description": "A collection of useful Cypress commands for asseting mailpit.",
+  "published_at": "2022-11-10",
   "skills": "cypress,typescript",
   "githubUrl": "https://github.com/pushpak1300/cypress-mailpit",
   "mainLink": "https://github.com/pushpak1300/cypress-mailpit"
-}
+} 

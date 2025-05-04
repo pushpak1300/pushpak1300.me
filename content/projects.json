@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Larasonic 🚀",
+    "slug": "larasonic",
+    "description": "A modern SaaS Kit for VILT stack",
+    "skills": "vue,inertia,tailwind,laravel",
+    "githubUrl": "https://github.com/pushpak1300/Larasonic",
+    "mainLink": "https://larasonic.com"
+  },
+  {
+    "name": "vibegit 🛠️",
+    "slug": "vibegit",
+    "description": "Become 10x more productive by orchestrating multiple AI coding agents in isolated, sandboxed git environments.",
+    "skills": "typescript, git, oclif, vibecoding",
+    "githubUrl": "https://github.com/pushpak1300/vibegit?ref=peerlist&utm_source=peerlist",
+    "projectLink": "https://www.npmjs.com/package/vibegit",
+    "mainLink": "https://www.npmjs.com/package/vibegit"
+  },
+  {
+    "name": "Cypress Mailpit ✉️",
+    "slug": "cypress_mailpit",
+    "description": "A collection of useful Cypress commands for asseting mailpit.",
+    "skills": "cypress,typescript",
+    "githubUrl": "https://github.com/pushpak1300/cypress-mailpit",
+    "mainLink": "https://github.com/pushpak1300/cypress-mailpit"
+  },
+  {
+    "name": "Secupass 🔒",
+    "slug": "Secupass",
+    "description": "Followed MVC project structure and built authorization from scratch with highest level of security and data protection in mind.",
+    "skills": "Cryptography, Bootstrap4, Laravel, MySQL",
+    "githubUrl": "https://github.com/pushpak1300/Secupass",
+    "projectLink": "http://secupass.ml",
+    "mainLink": "https://github.com/pushpak1300/Secupass"
+  },
+  {
+    "name": "IT Bot 🤖",
+    "slug": "ITBot",
+    "description": "Built telegram based chat-bot which sends lab manuals and assignments to the user on request without accessing college server using web crawler which crawls through the server at specific crons and stores files on G-Drive.",
+    "skills": "Python, Telegram-API, Scrapy, sqlite",
+    "githubUrl": "https://github.com/pushpak1300/SEITbot",
+    "projectLink": "https://t.me/SEIT_bot",
+    "mainLink": "https://t.me/SEIT_bot"
+  },
+  {
+    "name": "Collegr ERP Portal 🏫",
+    "slug": "ERP",
+    "description": "Developed a full-fledged college department management website for FRCRCE to accomplish various activities in an efficient manner.",
+    "skills": "Python, Telegram-API, Scrapy",
+    "githubUrl": "https://github.com/pushpak1300/frcrce-laravel",
+    "projectLink": false,
+    "mainLink": "https://github.com/pushpak1300/frcrce-laravel"
+  },
+  {
+    "name": "JalPravah 🌊",
+    "slug": "JalPravah",
+    "description": "Developed an award winning web mobile application for the Ministry of Power, India at Smart India Hackathon 2020 to detect probable floods and notify users near the respective dam.",
+    "skills": "Flask, AWS, Vue, Numpy, Redis, Flutter",
+    "githubUrl": "https://github.com/CROSSS-Coders/LN379_CROSSSCoders",
+    "projectLink": "https://jalpravah.pushpak1300.me",
+    "mainLink": "https://jalpravah.pushpak1300.me/#/dashboard"
+  },
+  {
+    "name": "SCENER.IO ⛰",
+    "slug": "scener",
+    "description": "Customise your CNN like never before -A web-app for training, labelling and deploying image classification model on AWS.",
+    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
+    "githubUrl": "https://github.com/cascoders/SCENER.io",
+    "projectLink": false,
+    "mainLink": "https://github.com/cascoders/SCENER.io"
+  },
+  {
+    "name": "WQMS 💧",
+    "slug": "wqms",
+    "description": "IOT based Water Quality Monitoring System",
+    "skills": "Blynk, Arduino, ",
+    "githubUrl": "https://github.com/pushpak1300/wqms",
+    "projectLink": false,
+    "mainLink": "https://github.com/pushpak1300/wqms"
+  },
+  {
+    "name": "Nodegit-lts-Alpine 🐳",
+    "slug": "nodegit-lts-alpine",
+    "description": "Docker image with prebuilt Nodegit package and node lts alpine.",
+    "skills": "Docker, bash",
+    "githubUrl": "https://github.com/pushpak1300/nodegit-lts-alpine",
+    "projectLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine",
+    "mainLink": "https://hub.docker.com/repository/docker/pushpak1300/nodegit-lts-alpine"
+  }
+]

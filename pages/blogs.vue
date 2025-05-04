@@ -55,9 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData } from '#imports';
-import type { BlogContent } from '~/types/content';
-import type BlogItem from '~/components/BlogItem.vue';
+import { useSeoMeta, useAsyncData, queryCollection } from '#imports';
 import appConfig from '~/app.config';
 
 const title = 'Blogs';
@@ -72,8 +70,10 @@ useHead({
 	title: `${title} | ${appConfig.name}`,
 });
 
-const { data: blogs } = await useAsyncData('blogs-all', () =>
-	$fetch<BlogContent[]>('/api/blogs')
+const { data: blogs } = await useAsyncData('blogs-all', () => 
+	queryCollection('blogs')
+		.order('published_at', 'DESC')
+		.all()
 );
 
 const email = ref('');

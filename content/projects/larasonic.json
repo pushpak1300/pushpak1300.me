@@ -2,7 +2,8 @@
   "name": "Larasonic 🚀",
   "slug": "larasonic",
   "description": "A modern SaaS Kit for VILT stack",
+  "published_at": "2023-04-15",
   "skills": "vue,inertia,tailwind,laravel",
   "githubUrl": "https://github.com/pushpak1300/Larasonic",
   "mainLink": "https://larasonic.com"
-}
+} 

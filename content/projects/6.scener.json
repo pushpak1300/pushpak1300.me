@@ -1,9 +1,0 @@
-{
-    "name": "SCENER.IO ⛰",
-    "slug": "scener",
-    "description": "Customise your CNN like never before -A web-app for training, labelling and deploying image classification model on AWS.",
-    "skills": "FLASK, AWS, Tenserflow-Keras, Bootstrap",
-    "githubUrl": "https://github.com/cascoders/SCENER.io",
-    "projectLink": false,
-    "mainLink": "https://github.com/cascoders/SCENER.io"
-  }

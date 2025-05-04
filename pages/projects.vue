@@ -10,8 +10,8 @@
 			class="space-y-6"
 		>
 			<ProjectItem
-				v-for="(project, id) in projects"
-				:key="id"
+				v-for="(project) in projects"
+				:key="project.slug"
 				:project="project"
 			/>
 		</div>
@@ -19,8 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData } from '#imports';
-import type { ProjectContent } from '~/types/content';
+import { useSeoMeta, useAsyncData, queryCollection } from '#imports';
 import appConfig from '~/app.config';
 
 const title = 'Projects';
@@ -35,7 +34,9 @@ useHead({
 	title: `${title} | ${appConfig.name}`,
 });
 
-const { data: projects } = await useAsyncData('projects-all', () =>
-	$fetch<ProjectContent[]>('/api/projects')
+const { data: projects } = await useAsyncData('projects', () =>
+	queryCollection('projects')
+		.order('published_at', 'DESC')
+		.all()
 );
 </script>
