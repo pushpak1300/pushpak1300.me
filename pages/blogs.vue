@@ -20,11 +20,11 @@
 				<div class="text-primary-500 bg-primary-500/10 flex-none rounded-full p-1">
 					<div class="size-1.5 rounded-full bg-current" />
 				</div>
-				<h2 class="text-xs font-semibold uppercase text-gray-400">
+				<h2 class="text-xs font-semibold uppercase text-neutral-400">
 					STAY IN TOUCH
 				</h2>
 			</div>
-			<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+			<p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
 				Subscribe to newsletter and unsubscribe at any time.
 			</p>
 			<form @submit.prevent="subscribeToNewsletter">
@@ -55,8 +55,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import { useSeoMeta, useAsyncData } from '#imports';
+import type { BlogContent } from '~/types/content';
 import type BlogItem from '~/components/BlogItem.vue';
 import appConfig from '~/app.config';
 
@@ -72,18 +72,8 @@ useHead({
 	title: `${title} | ${appConfig.name}`,
 });
 
-interface BlogContent extends ParsedContent {
-	name: string;
-	description: string;
-	slug: string;
-	projectLink: string;
-	mainLink: string;
-	skills: string;
-	githubUrl: string;
-}
-
 const { data: blogs } = await useAsyncData('blogs-all', () =>
-	queryContent<BlogContent>('blogs').sort({ published_at: -1 }).find(),
+	$fetch<BlogContent[]>('/api/blogs')
 );
 
 const email = ref('');

@@ -1,20 +1,22 @@
 export default defineAppConfig({
 	ui: {
-		primary: ['emerald', 'blue', 'purple', 'rose', 'cyan', 'red', 'orange', 'lime'][Math.floor(Math.random() * 8)],
-		gray: 'zinc',
-		button: {
-			rounded:
-        'rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]',
-		},
-		formGroup: {
-			help: 'text-xs mt-1 text-gray-500 dark:text-gray-400',
-			error: 'text-xs mt-1 text-red-500 dark:text-red-400',
-			label: {
-				base: 'text-sm block font-medium text-gray-500 dark:text-gray-200',
-			},
+		colors: {
+			primary: ['emerald', 'blue', 'purple', 'rose', 'cyan', 'red', 'orange', 'lime'][Math.floor(Math.random() * 8)],
+			neutral: 'zinc',
 		},
 		container: {
-			constrained: 'max-w-3xl',
+			base: 'w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8',
+		},
+		button: {
+			rounded:
+				'rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]',
+		},
+		formGroup: {
+			help: 'text-xs mt-1 text-neutral-500 dark:text-neutral-400',
+			error: 'text-xs mt-1 text-red-500 dark:text-red-400',
+			label: {
+				base: 'text-sm block font-medium text-neutral-500 dark:text-neutral-200',
+			},
 		},
 		modal: {
 			overlay: {

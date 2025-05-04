@@ -1,14 +1,16 @@
 <template>
 	<SpeedInsights />
-	<AppNavbar />
-	<div class="h-32" />
-	<UContainer>
-		<NuxtPage />
-	</UContainer>
-	<div class="h-24" />
-	<UContainer>
-		<AppFooter />
-	</UContainer>
+	<UApp>
+		<AppNavbar />
+		<div class="h-32" />
+		<UContainer>
+			<NuxtPage />
+		</UContainer>
+		<div class="h-24" />
+		<UContainer>
+			<AppFooter />
+		</UContainer>
+	</UApp>
 </template>
 
 <script setup lang="ts">

@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
 	modules: [
 		'@nuxt/ui',
 		'@nuxt/eslint',
 		'@nuxt/image',
 		'@nuxt/content',
-		'@nuxthq/studio',
-		'@nuxtjs/tailwindcss',
 		'@vueuse/motion/nuxt',
 	],
+	content: {},
 	ssr: true,
 	components: [
 		'~/components',
@@ -29,14 +29,13 @@ export default defineNuxtConfig({
 				class: 'h-full',
 			},
 			bodyAttrs: {
-				class: 'antialiased bg-gray-50 dark:bg-black min-h-screen',
+				class: 'antialiased bg-neutral-50 dark:bg-black min-h-screen',
 			},
 			title: 'Pushpak Chhajed',
 			meta: [
 				{ charset: 'utf-8' },
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 				{
-					hid: 'description',
 					name: 'description',
 					content: 'Pushpak\'s Portfolio',
 				},
@@ -95,9 +94,5 @@ export default defineNuxtConfig({
 				quotes: 'single',
 			},
 		},
-	},
-	tailwindcss: {
-		editorSupport: true,
-		viewer: false,
 	},
 });

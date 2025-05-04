@@ -16,7 +16,7 @@
 
 			<span
 				v-if="active"
-				class="absolute left-1/2 top-1/2 z-0 size-8 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-gray-200 dark:bg-white/10"
+				class="absolute left-1/2 top-1/2 z-0 size-8 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-neutral-200 dark:bg-white/10"
 			/>
 			<span class="sr-only">{{ name }}</span>
 		</a>

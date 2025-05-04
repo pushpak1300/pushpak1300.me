@@ -12,9 +12,9 @@
 				<h2 class="group-hover:text-primary-500 dark:group-hover:text-primary-200 text-lg font-medium">
 					{{ project.name }}
 				</h2>
-				<p class="text-sm text-gray-800 dark:text-gray-400">{{ project.description }}</p>
+				<p class="text-sm text-neutral-800 dark:text-neutral-400">{{ project.description }}</p>
 				<p
-					class="hover:text-primary mt-1 text-base font-semibold text-gray-900 hover:cursor-default dark:text-gray-200"
+					class="hover:text-primary mt-1 text-base font-semibold text-neutral-900 hover:cursor-default dark:text-neutral-200"
 				>
 					Stack:
 					<span class="text-sm font-normal lowercase ">{{ project.skills }}</span>
@@ -42,7 +42,7 @@
 					/>
 				</div>
 			</div>
-			<UDivider
+			<USeparator
 				type="dashed"
 				class="py-4"
 			/>

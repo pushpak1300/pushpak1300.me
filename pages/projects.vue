@@ -19,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content';
 import { useSeoMeta, useAsyncData } from '#imports';
+import type { ProjectContent } from '~/types/content';
 import appConfig from '~/app.config';
 
 const title = 'Projects';
@@ -35,17 +35,7 @@ useHead({
 	title: `${title} | ${appConfig.name}`,
 });
 
-interface ProjectContent extends ParsedContent {
-	name: string;
-	description: string;
-	slug: string;
-	projectLink: string;
-	mainLink: string;
-	skills: string;
-	githubUrl: string;
-}
-
 const { data: projects } = await useAsyncData('projects-all', () =>
-	queryContent<ProjectContent>('projects').sort({ id: -1 }).find(),
+	$fetch<ProjectContent[]>('/api/projects')
 );
 </script>

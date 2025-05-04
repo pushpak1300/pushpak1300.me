@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 class="mb-4 text-xs font-semibold uppercase text-gray-400">
+		<h2 class="mb-4 text-xs font-semibold uppercase text-neutral-400">
 			Socials
 		</h2>
 		<div

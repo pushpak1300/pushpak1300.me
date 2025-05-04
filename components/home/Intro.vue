@@ -6,16 +6,16 @@
 		<NuxtImg
 			src="/avtar.webp"
 			alt="Pushpak Chhajed"
-			class="size-12 rounded-full border border-gray-300 bg-gray-200 ring-2 ring-gray-200 transition-all duration-300 hover:ring-4 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/10 sm:size-24"
+			class="size-12 rounded-full border border-neutral-300 bg-neutral-200 ring-2 ring-neutral-200 transition-all duration-300 hover:ring-4 dark:border-neutral-800 dark:bg-neutral-900 dark:ring-white/10 sm:size-24"
 			placeholder
 			width="45"
 			format="webp"
 			loading="lazy"
 		/>
-		<h1 class="text-xl font-bold text-gray-800 drop-shadow-2xl dark:text-gray-100">
+		<h1 class="text-xl font-bold text-neutral-800 drop-shadow-2xl dark:text-neutral-100">
 			Hey. I'm {{ appConfig.name }}. 👋
 		</h1>
-		<p class="text-gray-900 dark:text-gray-400">
+		<p class="text-neutral-900 dark:text-neutral-400">
 			I'm a tinkerer, hacker, and software engineer from India. <br><br>
 			My coding journey started at 2012 when I began customizing Cydia themes for my iPad, which quickly fueled my
 			obsession with computers and the

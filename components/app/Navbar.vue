@@ -6,7 +6,7 @@
 	>
 		<nav class="mx-auto max-w-3xl px-2 sm:px-4">
 			<ul
-				class="my-4 flex items-center rounded-md bg-white/90 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20"
+				class="my-4 flex items-center rounded-md bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur-sm dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/20"
 			>
 				<li
 					v-for="item in items"
@@ -31,7 +31,7 @@
 
 							<span
 								v-if="$route.path === item.path"
-								class="absolute left-1/2 top-1/2 z-0 size-10 -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-gray-100 dark:bg-white/10"
+								class="absolute left-1/2 top-1/2 z-0 size-10 -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-neutral-100 dark:bg-white/10"
 							/>
 							<span class="sr-only">{{ item.name }}</span>
 						</ULink>
