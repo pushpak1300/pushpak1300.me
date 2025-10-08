@@ -1,0 +1,1 @@
+{"id":"fe393f67-f574-454c-a228-c8a96bfed83d","timestamp":1759915149499,"matcher":{"static":{"/__nuxt_content/blogs/sql_dump":{"prerender":true},"/__nuxt_content/projects/sql_dump":{"prerender":true},"/__nuxt_content/talks/sql_dump":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/","/projects","/blogs","/talks"]}
