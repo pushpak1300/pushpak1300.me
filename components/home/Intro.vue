@@ -73,12 +73,32 @@
 				Laracon India.
 			</AppExternalLink>
 			<br><br>
-			Currently, I'm channeling my energy as a Founding Software Engineer at <AppExternalLink
+			After a very short stint as a Founding Software Engineer at <AppExternalLink
 				href="https://zango.ai"
 				title="Zango"
 			>
 				Zango
-			</AppExternalLink>, where we're building automations within the compliance industry.
+			</AppExternalLink>, I'm currently working at <AppExternalLink
+				href="https://laravel.com"
+				title="Laravel"
+			>
+				Laravel
+			</AppExternalLink> in the Open Source team, where I'm maintaining the <AppExternalLink
+				href="https://github.com/laravel/boost"
+				title="Laravel Boost"
+			>
+				Boost
+			</AppExternalLink>, <AppExternalLink
+				href="https://github.com/laravel/mcp"
+				title="Laravel MCP"
+			>
+				MCP
+			</AppExternalLink>, and <AppExternalLink
+				href="https://github.com/laravel/roster"
+				title="Laravel Roster"
+			>
+				Roster
+			</AppExternalLink> packages.
 			<br><br>
 			As of 2024, my current focus is on:
 			<br>
