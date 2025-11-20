@@ -40,7 +40,7 @@ const links = [
 	},
 	{
 		name: 'Linkedin',
-		url: 'https://www.linkedin.com/in/pushpak-c-286b17b1/',
+		url: 'https://www.linkedin.com/in/pushpak1300',
 		icon: 'mdi:linkedin',
 	},
 	{
