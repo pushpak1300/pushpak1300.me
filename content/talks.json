@@ -1,6 +1,15 @@
 {
   "talks": [
     {
+      "title": "MCP by Laravel Way",
+      "conference": "Laravel Ahmedabad Meetup",
+      "date": "2025-10-16",
+      "slidesUrl": "https://docs.google.com/presentation/d/16TG1Qn0sAzIR7Zn32nulzgZCm0FJ5RddEQnePdOofdg/edit?usp=sharing",
+      "youtubeUrl": "https://www.youtube.com/live/tHHC-1PE5-k",
+      "tweetUrl": "https://x.com/LaravelAhm/status/1977336937481687267?s=20"
+    },
+
+    {
       "title": "Async PHP",
       "conference": "Laravel Pune Meetup (In-Person)",
       "date": "2024-11-23",
@@ -37,6 +46,13 @@
       "tweetUrl": "https://x.com/pushpak1300/status/1753306752563728838"
     },
     {
+      "title": "One Container to Rule Them All",
+      "conference": "Laravel Bangalore Meetup (In-Person)",
+      "date": "2025-07-12",
+      "slidesUrl": "https://docs.google.com/presentation/d/1pStKgNFSUajoiIqdc4fCJiejSfdoAT2wHWjUokFTj_o/edit?usp=sharing",
+      "tweetUrl": "https://x.com/LaravelBLR/status/1943977213399117905?s=20"
+    },
+    {
       "title": "Smooth Sailing with Laravel Sail",
       "conference": "Laravel Mumbai Meetup(In-Person)",
       "date": "2023-03-25",
@@ -69,6 +85,13 @@
       "date": "2025-02-15",
       "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
       "youtubeUrl": "https://www.youtube.com/watch?v=QleCq_fgYcU"
+    },
+    {
+      "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
+      "conference": "Laravel PHP Moris (online)",
+      "date": "2025-05-31",
+      "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
+      "tweetUrl": "https://x.com/laravelphpmoris/status/1925475904731717775?s=20"
     },
     {
       "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
