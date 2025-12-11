@@ -88,18 +88,18 @@
     },
     {
       "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
-      "conference": "Laravel PHP Moris (online)",
-      "date": "2025-05-31",
-      "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
-      "tweetUrl": "https://x.com/laravelphpmoris/status/1925475904731717775?s=20"
-    },
-    {
-      "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
       "conference": "Laracon India",
       "date": "2025-03-12",
       "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
       "tweetUrl": "https://x.com/LaraconIN/status/1892930535980179720",
       "youtubeUrl": "https://www.youtube.com/watch?v=Ipm51uKIPEM"
+    },
+    {
+      "title": "Laravel 🤝 LLM : Supercharge Your Laravel App with LLM",
+      "conference": "Laravel PHP Moris (online)",
+      "date": "2025-05-31",
+      "slidesUrl": "https://docs.google.com/presentation/d/1A5YT4MLjJitgM0SGIB0wbNWkcHfNyWCwhBLdtL7X8WI/mobilepresent?slide=id.p",
+      "tweetUrl": "https://x.com/laravelphpmoris/status/1925475904731717775?s=20"
     }
   ]
 } 
