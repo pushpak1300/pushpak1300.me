@@ -93,3 +93,6 @@ sw.*
 .components.gen.js
 
 .output
+
+# Bun lockfile
+bun.lockb
