@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         class: "h-full",
       },
       bodyAttrs: {
-        class: "antialiased bg-neutral-50 dark:bg-black min-h-screen",
+        class: "min-h-screen antialiased",
       },
       title: "Pushpak Chhajed",
       meta: [
@@ -37,13 +37,12 @@ export default defineNuxtConfig({
         { name: "theme-color", content: "#ffffff" },
       ],
       link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
         { rel: "icon", href: "/favicon.ico" },
         {
-          rel: "preload",
-          as: "style",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
-          media: "all",
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400..700&display=swap",
         },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         {
@@ -69,7 +68,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   colorMode: {
-    preference: "dark",
+    preference: "light",
   },
   compatibilityDate: "2024-11-16",
   nitro: {

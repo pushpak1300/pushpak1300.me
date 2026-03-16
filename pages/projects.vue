@@ -1,6 +1,11 @@
 <template>
-  <main>
-    <AppHeader class="mb-8 md:mb-16" :title :description />
+  <main class="space-y-8 py-8">
+    <section>
+      <AppBackHome />
+      <h1 class="mb-8 text-4xl font-bold">{{ title }}</h1>
+      <p class="mb-8 text-lg">{{ description }}</p>
+    </section>
+
     <div v-if="projects" class="space-y-6">
       <ProjectItem v-for="project in projects" :key="project.slug" :project="project" />
     </div>

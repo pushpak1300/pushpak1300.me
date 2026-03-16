@@ -1,10 +1,10 @@
 <template>
   <footer
-    class="decoration-primary pb-8 text-center text-sm text-neutral-800 decoration-1 dark:text-neutral-400 sm:flex sm:justify-between"
+    class="border-t border-stone-200/80 pt-6 text-xs text-stone-500 dark:border-white/10 dark:text-stone-400 sm:flex sm:items-center sm:justify-between"
   >
     <div>© <span v-text="new Date().getFullYear()" /> Pushpak Chhajed. All rights reserved.</div>
     <div />
-    <div class="sm:text-right">
+    <div class="mt-2 sm:mt-0 sm:text-right">
       Built with
       <AppExternalLink href="https://nuxt.com/" title="The Intuitive Vue Framework">
         Nuxt

@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "import"
-  ],
+  "plugins": ["import"],
   "categories": {
     "correctness": "off"
   },
@@ -498,18 +496,10 @@
     "onBeforeRouteUpdate": "readonly",
     "useLink": "readonly"
   },
-  "jsPlugins": [
-    "@nuxt/eslint-plugin"
-  ],
+  "jsPlugins": ["@nuxt/eslint-plugin"],
   "overrides": [
     {
-      "files": [
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.mts",
-        "**/*.cts",
-        "**/*.vue"
-      ],
+      "files": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.vue"],
       "rules": {
         "constructor-super": "off",
         "getter-return": "off",
@@ -574,14 +564,10 @@
         ],
         "@typescript-eslint/no-import-type-side-effects": "error"
       },
-      "plugins": [
-        "typescript"
-      ]
+      "plugins": ["typescript"]
     },
     {
-      "files": [
-        "**/*.vue"
-      ],
+      "files": ["**/*.vue"],
       "rules": {
         "vue/no-arrow-functions-in-watch": "error",
         "vue/no-deprecated-destroyed-lifecycle": "error",
@@ -593,33 +579,22 @@
         "vue/no-multiple-slot-args": "warn",
         "vue/no-required-prop-with-default": "warn"
       },
-      "plugins": [
-        "vue"
-      ]
+      "plugins": ["vue"]
     },
     {
-      "files": [
-        "pages/**/*.{js,ts,jsx,tsx,vue}"
-      ],
+      "files": ["pages/**/*.{js,ts,jsx,tsx,vue}"],
       "rules": {
         "@nuxt/no-page-meta-runtime-values": "error"
       },
-      "jsPlugins": [
-        "@nuxt/eslint-plugin"
-      ]
+      "jsPlugins": ["@nuxt/eslint-plugin"]
     },
     {
-      "files": [
-        "**/.config/nuxt.?([cm])[jt]s?(x)",
-        "**/nuxt.config.?([cm])[jt]s?(x)"
-      ],
+      "files": ["**/.config/nuxt.?([cm])[jt]s?(x)", "**/nuxt.config.?([cm])[jt]s?(x)"],
       "rules": {
         "@nuxt/no-nuxt-config-test-key": "error",
         "@nuxt/nuxt-config-keys-order": "error"
       },
-      "jsPlugins": [
-        "@nuxt/eslint-plugin"
-      ]
+      "jsPlugins": ["@nuxt/eslint-plugin"]
     }
   ]
 }

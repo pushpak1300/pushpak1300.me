@@ -12,8 +12,12 @@
     rgba(10, 10, 10, 0.2) 0px 5.06879px 10.1376px 0px;
 
   --font-sans:
-    Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Newsreader", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 /*
@@ -25,11 +29,43 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  html {
+    background-color: #fcfbf7;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 30%),
+      linear-gradient(180deg, #fcfbf7 0%, #f4f0e7 100%);
+    color: #1c1917;
+    font-family: var(--font-mono);
+  }
+
+  .dark html {
+    background-color: #0c0b0a;
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at top, rgba(96, 165, 250, 0.12), transparent 26%),
+      linear-gradient(180deg, #0c0b0a 0%, #13110f 100%);
+    color: #f5f5f4;
+  }
+
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-neutral-200, currentcolor);
+  }
+
+  *::selection {
+    background: rgba(96, 165, 250, 0.22);
+  }
+
+  .dark *::selection {
+    background: rgba(96, 165, 250, 0.3);
   }
 }

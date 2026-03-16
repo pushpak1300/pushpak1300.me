@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+  <div class="space-y-4">
+    <h1 class="font-serif text-4xl italic tracking-tight text-stone-900 dark:text-stone-100">
       {{ title }}
     </h1>
-    <p class="mt-4 text-base text-neutral-600 dark:text-neutral-400">
+    <p class="max-w-2xl text-sm leading-7 text-stone-600 dark:text-stone-400">
       {{ description }}
     </p>
   </div>

@@ -1,13 +1,11 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: ["emerald", "blue", "purple", "rose", "cyan", "red", "orange", "lime"][
-        Math.floor(Math.random() * 8)
-      ],
-      neutral: "zinc",
+      primary: "blue",
+      neutral: "stone",
     },
     container: {
-      base: "w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8",
+      base: "mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8",
     },
     button: {
       rounded: "rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]",

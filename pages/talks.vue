@@ -1,7 +1,8 @@
 <template>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">{{ PAGE_CONFIG.title }}</h1>
-    <p class="text-lg mb-8">{{ PAGE_CONFIG.description }}</p>
+    <AppBackHome />
+    <h1 class="mb-8 text-4xl font-bold">{{ PAGE_CONFIG.title }}</h1>
+    <p class="mb-8 text-lg">{{ PAGE_CONFIG.description }}</p>
 
     <div v-if="groupedTalks.length > 0" class="space-y-12">
       <div v-for="talk in groupedTalks" :key="talk.title" class="space-y-4">
