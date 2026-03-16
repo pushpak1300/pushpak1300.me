@@ -1,43 +1,43 @@
 <template>
   <div v-motion-fade-visible :delay="200">
     <div
-      class="bg-stone-50/40 border border-stone-200/80 dark:bg-white/3 dark:border-white/10 px-4 py-4 rounded-2xl"
+      class="rounded-2xl border border-stone-200/80 bg-stone-50/40 p-4 dark:border-white/10 dark:bg-white/3"
     >
-      <div class="flex gap-4 items-center justify-between">
+      <div class="flex items-center justify-between gap-4">
         <a
           :href="project.mainLink"
           target="_blank"
-          class="dark:hover:text-stone-200 dark:text-stone-100 font-medium font-sans hover:text-stone-700 text-base text-stone-900 transition-colors"
+          class="font-sans text-base font-medium text-stone-900 transition-colors hover:text-stone-700 dark:text-stone-100 dark:hover:text-stone-200"
         >
           {{ project.name }}
         </a>
-        <span class="dark:text-stone-500 text-stone-400 text-xs">
+        <span class="text-xs text-stone-400 dark:text-stone-500">
           {{ getProjectMeta(project) }}
         </span>
       </div>
-      <p class="dark:text-stone-400 mt-1 text-sm text-stone-500">
+      <p class="mt-1 text-sm text-stone-500 dark:text-stone-400">
         {{ project.description }}
       </p>
-      <div class="flex gap-4 items-center mt-3 text-sm">
+      <div class="mt-3 flex items-center gap-4 text-sm">
         <a
-          v-if="project.githubUrl"
+          v-if="isExternalUrl(project.githubUrl)"
           :href="project.githubUrl"
           target="_blank"
-          class="dark:hover:text-stone-100 dark:text-stone-400 flex gap-2 hover:text-stone-900 items-center text-stone-500 transition-colors"
+          class="flex items-center gap-2 text-stone-500 transition-colors hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
           aria-label="GitHub"
         >
           <Icon name="mdi:github" class="size-4" />
         </a>
         <a
-          v-if="project.projectLink"
+          v-if="isExternalUrl(project.projectLink)"
           :href="project.projectLink"
           target="_blank"
-          class="dark:hover:text-stone-100 dark:text-stone-400 flex gap-2 hover:text-stone-900 items-center text-stone-500 transition-colors"
+          class="flex items-center gap-2 text-stone-500 transition-colors hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
           aria-label="Visit project"
         >
           <Icon name="heroicons:globe-alt" class="size-4" />
         </a>
-        <span class="dark:text-stone-500 text-stone-400 text-xs truncate">
+        <span class="truncate text-xs text-stone-400 dark:text-stone-500">
           {{ project.skills }}
         </span>
       </div>
@@ -49,8 +49,8 @@
 type Project = {
   mainLink: string;
   description: string;
-  projectLink?: string | boolean;
-  githubUrl?: string;
+  projectLink?: string | boolean | null;
+  githubUrl?: string | null;
   name: string;
   published_at: string;
   skills: string;
@@ -65,6 +65,19 @@ const getProjectMeta = (project: Project) => {
     return new URL(project.mainLink).hostname.replace(/^www\./, "");
   } catch {
     return new Date(project.published_at).getFullYear().toString();
+  }
+};
+
+const isExternalUrl = (value: unknown): value is string => {
+  if (typeof value !== "string" || value.length === 0) {
+    return false;
+  }
+
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
   }
 };
 </script>

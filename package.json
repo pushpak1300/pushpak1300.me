@@ -12,6 +12,9 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt"
   },
+  "overrides": {
+    "vite": "8.0.0-beta.0"
+  },
   "dependencies": {
     "@iconify-json/fa6-brands": "1.2.6",
     "@iconify-json/iconoir": "1.2.10",
