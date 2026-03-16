@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "@nuxt/ui";
 
 @custom-variant dark (&:is(.dark *));
@@ -12,8 +12,8 @@
     rgba(10, 10, 10, 0.2) 0px 5.06879px 10.1376px 0px;
 
   --font-sans:
-    Inter var, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /*

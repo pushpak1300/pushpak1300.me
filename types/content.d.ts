@@ -50,4 +50,4 @@ export interface GroupedTalk {
 
 export interface TalksResponse {
   talks: RawTalk[];
-} 
+}

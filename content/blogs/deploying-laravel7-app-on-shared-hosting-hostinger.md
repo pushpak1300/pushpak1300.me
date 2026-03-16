@@ -6,6 +6,7 @@ slug: "deploying-laravel7-app-on-shared-hosting-hostinger"
 external: true
 external_url: https://dev.to/pushpak1300/deploying-laravel7-app-on-shared-hosting-hostinger-31cj
 ---
+
 In this article, I’ll try to explain how you can deploy your laravel application on shared hosting.
 I’ll use hostinger.com.
 
@@ -16,11 +17,11 @@ But some clients (- very low budget clients ) or circumstance (for instance, you
 I will cover the following here:
 
 **How to deploy your app to shared hosting (Hostinger).**
- 
+
 Step 1) Go to Add website section under Domain's section on panel(Hostinger Control Panel) and add your domain.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ve1va6vzcqdofv6ndtmr.png)
- 
+
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/a0jfdvmkbqwvfg2p3mwj.png)
 
 Step 2) Click Manage on the domain which you want to use.
@@ -29,17 +30,17 @@ Step 2) Click Manage on the domain which you want to use.
 
 Step 3) Now you have to upload all source code of an application to Hostinger using SFTP, SSH access or Hostinger File Manager in the respective domain directory.
 
-I assume you've finished building your app – at least a functional app that is working on your localhost. 
+I assume you've finished building your app – at least a functional app that is working on your localhost.
 
 Let's say your laravel project is named laravel with the following folder structure:
 
- ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pai9yp29qn7sq1hys4r8.png)
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pai9yp29qn7sq1hys4r8.png)
 
-* Using Hostinger File Manager: compress the entire project folder on your local machine. You'll get a zip file – laravel.zip and upload it on the root directory of your project and extract files in laravel folder.
+- Using Hostinger File Manager: compress the entire project folder on your local machine. You'll get a zip file – laravel.zip and upload it on the root directory of your project and extract files in laravel folder.
 
-* Using SSH: You can download the project using git in the root directory of your project using ssh client like [putty]('https://www.putty.org').
+- Using SSH: You can download the project using git in the root directory of your project using ssh client like [putty]('https://www.putty.org').
 
-* Using SFTP: You can upload project files on the respective file directory using FileZilla.
+- Using SFTP: You can upload project files on the respective file directory using FileZilla.
 
 after that, your file structure should look like this.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ox2uhkihenwzam9h3ws7.png)
@@ -101,7 +102,7 @@ $kernel->terminate($request, $response);
 
 ```
 
-to 
+to
 
 ```php
 <?php
@@ -153,7 +154,7 @@ If everything went well, going to http://yourdomain.com should throw database er
 
 Step 6) If Models are running on your application then you have to migrate tables to the database. I'm using sqlite database for migrating tables to the database.
 
-Use ssh access or file manager create a 'database.sqlite' file in the 'laravel/database' directory. (Make Sure to give write and read permission) 
+Use ssh access or file manager create a 'database.sqlite' file in the 'laravel/database' directory. (Make Sure to give write and read permission)
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/d7lrc95mzk7aoi8i4q6r.png)
 
@@ -164,7 +165,6 @@ Ensure that these details are entered correctly.
 
 Now using SSH in your laravel directory migrate all the files to a database.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ybkagilc8so92ktrekgt.png)
-
 
 If all goes well, you should have your site working fine now. So go ahead and try it out.
 

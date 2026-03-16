@@ -6,6 +6,7 @@ slug: "introducing-skills-in-boost-2x"
 external: true
 external_url: https://x.com/pushpak1300/status/2015787988299796956
 ---
+
 We are shipping Skills in Laravel Boost 2.0, a major upgrade to how AI agents understand and work with Laravel applications.
 
 This update transitions many package guidelines into agent skills so package-specific knowledge is loaded only when relevant. The result is cleaner context, more accurate output, and roughly 40% leaner baseline guidelines.

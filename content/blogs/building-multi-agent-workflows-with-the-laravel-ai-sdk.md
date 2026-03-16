@@ -6,6 +6,7 @@ slug: "building-multi-agent-workflows-with-the-laravel-ai-sdk"
 external: true
 external_url: https://laravel.com/blog/building-multi-agent-workflows-with-the-laravel-ai-sdk
 ---
+
 This Laravel article walks through designing multi-agent workflows where specialized agents collaborate to solve complex tasks.
 
 Read the original post for architecture guidance, implementation patterns, and practical examples built with the Laravel AI SDK.

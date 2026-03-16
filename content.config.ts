@@ -39,9 +39,9 @@ export default defineContentConfig({
             date: z.string(),
             slidesUrl: z.string(),
             youtubeUrl: z.string().optional(),
-            tweetUrl: z.string().optional()
-          })
-        )
+            tweetUrl: z.string().optional(),
+          }),
+        ),
       }),
     }),
   },

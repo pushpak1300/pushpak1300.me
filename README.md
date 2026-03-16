@@ -4,6 +4,7 @@ Elegant and visually appealing personal portfolio template designed for develope
 It is a fully responsive and cross-browser compatible template. It is built with Nuxt stack. It is easily customizable and can be used for creating a professional online portfolio.
 
 ## Tech Stack
+
 - Nuxt
 - Tailwind CSS
 - Vercel (for deployment, analytics, and monitoring)
@@ -14,6 +15,7 @@ It is a fully responsive and cross-browser compatible template. It is built with
 - Nuxt UI
 
 ### Features
+
 - Fully Responsive 📲
 - Cross-browser compatible 🌐
 - Clean and well-commented code 🧹
@@ -25,14 +27,16 @@ It is a fully responsive and cross-browser compatible template. It is built with
 - Easy to customize 🎨
 
 ## Local Development
+
 To run this project locally, follow these steps:
 clone the repository and run the following commands:
 
 ```bash
-$ git clone 
+$ git clone
 ```
 
 Install dependencies and run the project:
+
 ```bash
 # install dependencies
 $ bun install
@@ -43,12 +47,14 @@ $ bun run dev
 ```
 
 ## Roadmap
+
 Please check following link for roadmap:
 [Project Roadmap](https://github.com/users/pushpak1300/projects/3)
 
-
 ## Inspiration
-This project is inspired from 
+
+This project is inspired from
+
 - [Matthieu Napoli](https://mnapoli.fr/)
 - [Tom Herrmann](https://gummibeer.dev/)
 - [Zooper](https://zooper.pages.dev)
