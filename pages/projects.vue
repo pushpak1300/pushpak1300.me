@@ -1,12 +1,18 @@
 <template>
-  <main class="space-y-8 py-8">
-    <section>
+  <main class="flex flex-col gap-4 max-w-xl mt-10 mx-auto sm:mt-16 w-full">
+    <section class="flex flex-col gap-4">
       <AppBackHome />
-      <h1 class="mb-8 text-4xl font-bold">{{ title }}</h1>
-      <p class="mb-8 text-lg">{{ description }}</p>
+      <h1 class="dark:text-stone-100 font-semibold text-3xl text-stone-900 tracking-tight">
+        {{ title }}
+      </h1>
+      <p class="dark:text-stone-400 font-medium text-sm text-stone-500">
+        {{ description }}
+      </p>
     </section>
 
-    <div v-if="projects" class="space-y-6">
+    <div class="bg-stone-200/80 dark:bg-white/10 h-px mt-4 w-full" />
+
+    <div v-if="projects" class="flex flex-col gap-3">
       <ProjectItem v-for="project in projects" :key="project.slug" :project="project" />
     </div>
   </main>

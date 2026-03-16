@@ -1,9 +1,9 @@
 <template>
   <div class="space-y-4">
-    <h1 class="font-serif text-4xl italic tracking-tight text-stone-900 dark:text-stone-100">
+    <h1 class="dark:text-stone-100 font-serif italic text-4xl text-stone-900 tracking-tight">
       {{ title }}
     </h1>
-    <p class="max-w-2xl text-sm leading-7 text-stone-600 dark:text-stone-400">
+    <p class="dark:text-stone-400 leading-7 max-w-2xl text-sm text-stone-600">
       {{ description }}
     </p>
   </div>

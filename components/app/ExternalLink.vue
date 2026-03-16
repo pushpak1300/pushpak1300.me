@@ -2,7 +2,7 @@
   <a
     :href="href"
     :title="title"
-    class="text-primary-700 dark:text-primary-100 font-bold"
+    class="dark:text-primary-100 font-bold text-primary-700"
     target="_blank"
     rel="noopener"
   >

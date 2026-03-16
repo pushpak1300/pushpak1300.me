@@ -3,13 +3,13 @@
     <a
       :href="link"
       target="_blank"
-      class="group-hover:text-primary relative flex items-center justify-center py-4 transition"
+      class="flex group-hover:text-primary items-center justify-center py-4 relative transition"
     >
-      <Icon aria-hidden="true" :name="icon" class="z-10 size-5" />
+      <Icon aria-hidden="true" :name="icon" class="size-5 z-10" />
 
       <span
         v-if="active"
-        class="absolute left-1/2 top-1/2 z-0 size-8 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-neutral-200 dark:bg-white/10"
+        class="-translate-x-1/2 -translate-y-1/2 absolute bg-neutral-200 dark:bg-white/10 left-1/2 rounded-xl size-8 top-1/2 z-0"
       />
       <span class="sr-only">{{ name }}</span>
     </a>
@@ -17,9 +17,9 @@
       v-if="showName"
       :href="link"
       target="_blank"
-      class="relative flex items-center justify-center"
+      class="flex items-center justify-center relative"
     >
-      <span class="group-hover:text-primary-500 sr-only sm:not-sr-only sm:pr-2">{{ name }}</span>
+      <span class="group-hover:text-primary-500 sm:not-sr-only sm:pr-2 sr-only">{{ name }}</span>
     </a>
   </UTooltip>
 </template>

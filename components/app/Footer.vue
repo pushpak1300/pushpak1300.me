@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="border-t border-stone-200/80 pt-6 text-xs text-stone-500 dark:border-white/10 dark:text-stone-400 sm:flex sm:items-center sm:justify-between"
+    class="border-stone-200/80 border-t dark:border-white/10 dark:text-stone-400 pt-6 sm:flex sm:items-center sm:justify-between text-stone-500 text-xs"
   >
     <div>© <span v-text="new Date().getFullYear()" /> Pushpak Chhajed. All rights reserved.</div>
     <div />

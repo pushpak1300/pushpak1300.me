@@ -1,17 +1,17 @@
 <template>
   <ULink
     to="/"
-    class="group mb-2 inline-flex -translate-x-2 items-center gap-2 text-stone-500 transition-colors duration-150 ease-out hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
+    class="-translate-x-2 dark:hover:text-stone-100 dark:text-stone-400 duration-150 ease-out gap-2 group hover:text-stone-900 inline-flex items-center mb-2 text-stone-500 transition-colors"
   >
-    <div class="relative size-4 overflow-hidden">
-      <div class="relative size-4 *:absolute *:left-0 *:top-0 *:size-4 *:transition-transform">
+    <div class="overflow-hidden relative size-4">
+      <div class="*:absolute *:left-0 *:size-4 *:top-0 *:transition-transform relative size-4">
         <Icon
           name="heroicons:arrow-up-left"
           class="group-hover:-translate-x-4 group-hover:-translate-y-4"
         />
         <Icon
           name="heroicons:arrow-up-left"
-          class="translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0"
+          class="group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 translate-y-4"
         />
       </div>
     </div>

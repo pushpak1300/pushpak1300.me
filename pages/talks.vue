@@ -1,50 +1,54 @@
 <template>
-  <div class="container mx-auto px-4 py-8">
-    <AppBackHome />
-    <h1 class="mb-8 text-4xl font-bold">{{ PAGE_CONFIG.title }}</h1>
-    <p class="mb-8 text-lg">{{ PAGE_CONFIG.description }}</p>
+  <main class="flex flex-col gap-4 max-w-xl mt-10 mx-auto sm:mt-16 w-full">
+    <section class="flex flex-col gap-4">
+      <AppBackHome />
+      <h1 class="dark:text-stone-100 font-semibold text-3xl text-stone-900 tracking-tight">
+        {{ PAGE_CONFIG.title }}
+      </h1>
+      <p class="dark:text-stone-400 font-medium text-sm text-stone-500">
+        {{ PAGE_CONFIG.description }}
+      </p>
+    </section>
 
-    <div v-if="groupedTalks.length > 0" class="space-y-12">
-      <div v-for="talk in groupedTalks" :key="talk.title" class="space-y-4">
-        <h2 class="text-2xl font-semibold">{{ talk.title }}</h2>
-        <div class="grid gap-4">
+    <div class="bg-stone-200/80 dark:bg-white/10 h-px mt-4 w-full" />
+
+    <div v-if="groupedTalks.length > 0" class="flex flex-col gap-8">
+      <section v-for="talk in groupedTalks" :key="talk.title" class="flex flex-col gap-3">
+        <h2 class="dark:text-stone-100 font-sans text-lg font-medium text-stone-900">
+          {{ talk.title }}
+        </h2>
+        <div class="flex flex-col gap-3">
           <TalkItem
             v-for="instance in talk.instances"
-            :key="`${talk.title}-${instance.date}`"
+            :key="`${talk.title}-${instance.date}-${instance.conference}`"
             :talk="instance"
           />
         </div>
-      </div>
+      </section>
     </div>
-    <div v-else class="text-center py-12">
-      <p class="text-lg text-gray-600">No talks available at the moment.</p>
+    <div v-else class="py-12">
+      <p class="dark:text-stone-400 text-sm text-stone-500">No talks available at the moment.</p>
     </div>
-
-    <!-- Contact Section -->
-    <section class="mt-16 space-y-4">
-      <h2 class="text-xl font-semibold">Want me to speak at your event?</h2>
-      <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        If you are organizing a tech conference or meetup focused on Laravel(PHP), Vue (Typescript),
-        Voice AI or modern web development, I'd be happy to give a talk!
-      </p>
-      <ul class="ml-4 list-disc space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-        <li>I am currently doing in-person/online talks</li>
-        <li>For events outside India, visa assistance may be required</li>
-      </ul>
-      <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        Reach out to me at
-        <a :href="`mailto:${PAGE_CONFIG.email}`" class="text-primary underline">{{
-          PAGE_CONFIG.email
-        }}</a>
-      </p>
-    </section>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
 import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
 import TalkItem from "~/components/TalkItem.vue";
+
+type TalkEntry = {
+  conference: string;
+  date: string;
+  slidesUrl?: string;
+  tweetUrl?: string;
+  youtubeUrl?: string;
+};
+
+type GroupedTalk = {
+  title: string;
+  instances: TalkEntry[];
+};
 
 const PAGE_CONFIG = {
   title: "Talks",
@@ -66,21 +70,19 @@ useHead({
 // Data fetching using queryCollection
 const { data: talksData } = await useAsyncData("talks", () => queryCollection("talks").all());
 
-// Sort talks by date within instances
-const groupedTalks = computed(() => {
-  if (!talksData.value || talksData.value.length === 0) return [];
+const groupedTalks = computed<GroupedTalk[]>(() =>
+  (talksData.value ?? [])
+    .map((talk) => ({
+      title: talk.title,
+      instances: [...talk.instances].sort(
+        (left, right) => new Date(right.date).getTime() - new Date(left.date).getTime(),
+      ),
+    }))
+    .sort((left, right) => {
+      const leftLatest = left.instances[0] ? new Date(left.instances[0].date).getTime() : 0;
+      const rightLatest = right.instances[0] ? new Date(right.instances[0].date).getTime() : 0;
 
-  // Sort instances by date within each talk
-  return talksData.value.map((talk) => {
-    // Sort instances by date, newest first
-    const sortedInstances = [...talk.instances].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    );
-
-    return {
-      ...talk,
-      instances: sortedInstances,
-    };
-  });
-});
+      return rightLatest - leftLatest;
+    }),
+);
 </script>

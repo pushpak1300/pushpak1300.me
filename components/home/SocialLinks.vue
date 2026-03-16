@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mb-4 text-xs font-semibold uppercase text-neutral-400">Socials</h2>
+    <h2 class="font-semibold mb-4 text-neutral-400 text-xs uppercase">Socials</h2>
     <div class="flex space-x-4">
       <NuxtLink
         v-for="(link, index) in links"
@@ -11,7 +11,7 @@
         target="_blank"
         external
         :aria-label="link.name + ' profile'"
-        class="hover:text-primary-300 group flex items-end gap-4"
+        class="flex gap-4 group hover:text-primary-300 items-end"
       >
         <Icon :name="link.icon" class="size-8" />
       </NuxtLink>

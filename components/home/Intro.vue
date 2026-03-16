@@ -3,16 +3,16 @@
     <NuxtImg
       src="/avtar.webp"
       alt="Pushpak Chhajed"
-      class="size-12 rounded-full border border-neutral-300 bg-neutral-200 ring-2 ring-neutral-200 transition-all duration-300 hover:ring-4 dark:border-neutral-800 dark:bg-neutral-900 dark:ring-white/10 sm:size-24"
+      class="bg-neutral-200 border border-neutral-300 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-white/10 duration-300 hover:ring-4 ring-2 ring-neutral-200 rounded-full size-12 sm:size-24 transition-all"
       placeholder
       width="45"
       format="webp"
       loading="lazy"
     />
-    <h1 class="text-xl font-bold text-neutral-800 drop-shadow-2xl dark:text-neutral-100">
+    <h1 class="dark:text-neutral-100 drop-shadow-2xl font-bold text-neutral-800 text-xl">
       Hey. I'm {{ appConfig.name }}. 👋
     </h1>
-    <p class="text-neutral-900 dark:text-neutral-400">
+    <p class="dark:text-neutral-400 text-neutral-900">
       I'm a tinkerer, hacker, and software engineer from India. <br /><br />
       My coding journey started at 2012 when I began customizing Cydia themes for my iPad, which
       quickly fueled my obsession with computers and the internet. I started learning swift. I
@@ -68,7 +68,7 @@
       packages. <br /><br />
       As of 2024, my current focus is on:
       <br />
-      <b class="text-primary-700 dark:text-primary-100"
+      <b class="dark:text-primary-100 text-primary-700"
         >Laravel, Inertia, Tailwind, Vue, TypeScript, PHP, Python and Nuxt.</b
       ><br />
       <br />

@@ -1,26 +1,26 @@
 <template>
-  <div class="py-4 md:py-2">
+  <div class="md:py-2 py-4">
     <ULink
       :to="blog.external_url"
       class="group rounded-lg"
       :target="blog.external ? '_blank' : '_self'"
     >
-      <div v-motion-fade-visible :delay="300" class="group grid grid-cols-1 md:grid-cols-4">
+      <div v-motion-fade-visible :delay="300" class="grid grid-cols-1 group md:grid-cols-4">
         <time
-          class="group-hover:text-primary flex-none text-sm text-neutral-800 dark:text-neutral-400 md:py-8"
+          class="dark:text-neutral-400 flex-none group-hover:text-primary md:py-8 text-neutral-800 text-sm"
           :datetime="blog.published_at"
         >
           {{ getReadableDate(blog.published_at) }}
         </time>
         <div
-          class="space-y-2 rounded-sm py-4 md:col-span-3 md:p-8 md:hover:bg-neutral-100 md:dark:hover:bg-neutral-900"
+          class="md:col-span-3 md:dark:hover:bg-neutral-900 md:hover:bg-neutral-100 md:p-8 py-4 rounded-sm space-y-2"
         >
           <h2
-            class="group-hover:text-primary-500 dark:group-hover:text-primary-200 text-lg font-medium"
+            class="dark:group-hover:text-primary-200 font-medium group-hover:text-primary-500 text-lg"
           >
             {{ blog.title }}
           </h2>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+          <p class="dark:text-neutral-400 mt-2 text-neutral-600 text-sm">
             {{ blog.description }}
           </p>
           <div class="text-primary text-sm">Read More →</div>

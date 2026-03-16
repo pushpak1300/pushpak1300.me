@@ -1,10 +1,10 @@
 <template>
-  <main class="space-y-10 sm:space-y-12">
+  <main class="sm:space-y-12 space-y-10">
     <section v-motion-fade-visible class="space-y-6">
       <NuxtImg
         src="/avtar.webp"
         alt="Pushpak Chhajed"
-        class="size-16 rounded-full border border-stone-200 bg-stone-100 object-cover dark:border-white/10 dark:bg-white/5"
+        class="bg-stone-100 border border-stone-200 dark:bg-white/5 dark:border-white/10 object-cover rounded-full size-16"
         placeholder
         width="64"
         height="64"
@@ -12,48 +12,48 @@
       />
 
       <div class="space-y-4">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-stone-500 dark:text-stone-400">
+        <p class="dark:text-stone-400 text-[11px] text-stone-500 tracking-[0.24em] uppercase">
           Open source engineer • India
         </p>
         <h1
-          class="font-serif text-4xl italic tracking-tight text-stone-950 dark:text-stone-50 sm:text-6xl"
+          class="dark:text-stone-50 font-serif italic sm:text-6xl text-4xl text-stone-950 tracking-tight"
         >
           Pushpak Chhajed
         </h1>
       </div>
     </section>
 
-    <div class="border-t border-stone-200/80 dark:border-white/10" />
+    <div class="border-stone-200/80 border-t dark:border-white/10" />
 
     <section
       v-motion-fade-visible
       :delay="80"
-      class="grid gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-8"
+      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
     >
-      <p class="pt-1 text-xs font-medium text-stone-400 dark:text-stone-500">Connect</p>
+      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">Connect</p>
       <div class="space-y-4">
         <div
-          class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-stone-700 dark:text-stone-300"
+          class="dark:text-stone-300 flex flex-wrap gap-x-3 gap-y-2 items-center text-sm text-stone-700"
         >
           <template v-for="(link, index) in connectLinks" :key="link.label">
             <ULink
               :to="link.href"
               :target="link.external ? '_blank' : '_self'"
-              class="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+              class="dark:hover:text-blue-400 font-semibold hover:text-blue-600 transition-colors"
             >
               {{ link.label }}
             </ULink>
-            <span v-if="index < connectLinks.length - 1" class="text-stone-300 dark:text-stone-600">
+            <span v-if="index < connectLinks.length - 1" class="dark:text-stone-600 text-stone-300">
               ·
             </span>
           </template>
         </div>
-        <p class="text-sm leading-7 text-stone-500 dark:text-stone-400">
+        <p class="dark:text-stone-400 leading-7 text-sm text-stone-500">
           Short intros, open source work, product ideas, or conference invites are all welcome.
           <ULink
             :to="appConfig.resumeURL"
             target="_blank"
-            class="text-stone-900 transition-colors hover:text-blue-600 dark:text-stone-100 dark:hover:text-blue-400"
+            class="dark:hover:text-blue-400 dark:text-stone-100 hover:text-blue-600 text-stone-900 transition-colors"
           >
             Resume →
           </ULink>
@@ -61,42 +61,42 @@
       </div>
     </section>
 
-    <div class="border-t border-stone-200/80 dark:border-white/10" />
+    <div class="border-stone-200/80 border-t dark:border-white/10" />
 
     <section
       v-motion-fade-visible
       :delay="120"
-      class="grid gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-8"
+      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
     >
-      <p class="pt-1 text-xs font-medium text-stone-400 dark:text-stone-500">Now</p>
-      <div class="space-y-3 text-sm leading-7 text-stone-600 dark:text-stone-400">
+      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">Now</p>
+      <div class="dark:text-stone-400 leading-7 space-y-3 text-sm text-stone-600">
         <p v-for="item in nowItems" :key="item">
           {{ item }}
         </p>
       </div>
     </section>
 
-    <div class="border-t border-stone-200/80 dark:border-white/10" />
+    <div class="border-stone-200/80 border-t dark:border-white/10" />
 
     <section
       v-motion-fade-visible
       :delay="160"
-      class="grid gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-8"
+      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
     >
-      <p class="pt-1 text-xs font-medium text-stone-400 dark:text-stone-500">History</p>
+      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">History</p>
       <div class="space-y-4">
         <article
           v-for="item in history"
           :key="item.year + item.title"
-          class="border-l border-stone-200 pl-4 dark:border-white/10"
+          class="border-l border-stone-200 dark:border-white/10 pl-4"
         >
-          <p class="text-xs uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
+          <p class="dark:text-stone-500 text-stone-400 text-xs tracking-[0.18em] uppercase">
             {{ item.year }}
           </p>
-          <h2 class="mt-2 font-sans text-base font-semibold text-stone-900 dark:text-stone-100">
+          <h2 class="dark:text-stone-100 font-sans font-semibold mt-2 text-base text-stone-900">
             {{ item.title }}
           </h2>
-          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-400">
+          <p class="dark:text-stone-400 leading-7 mt-2 text-sm text-stone-600">
             {{ item.description }}
           </p>
         </article>

@@ -11,21 +11,21 @@ export default defineAppConfig({
       rounded: "rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]",
     },
     formGroup: {
-      help: "text-xs mt-1 text-neutral-500 dark:text-neutral-400",
-      error: "text-xs mt-1 text-red-500 dark:text-red-400",
+      help: "mt-1 text-xs text-neutral-500 dark:text-neutral-400",
+      error: "mt-1 text-xs text-red-500 dark:text-red-400",
       label: {
-        base: "text-sm block font-medium text-neutral-500 dark:text-neutral-200",
+        base: "block text-sm font-medium text-neutral-500 dark:text-neutral-200",
       },
     },
     modal: {
       overlay: {
-        background: "bg-[rgba(0,8,47,.275)] saturate-50",
+        background: "saturate-50 bg-[rgba(0,8,47,.275)]",
       },
       padding: "p-0",
       rounded: "rounded-t-2xl sm:rounded-xl",
       transition: {
-        enterFrom: "opacity-0 translate-y-full sm:translate-y-0 sm:scale-x-95",
-        leaveFrom: "opacity-100 translate-y-0 sm:scale-x-100",
+        enterFrom: "translate-y-full opacity-0 sm:translate-y-0 sm:scale-x-95",
+        leaveFrom: "translate-y-0 opacity-100 sm:scale-x-100",
       },
     },
   },

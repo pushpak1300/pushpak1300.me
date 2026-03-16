@@ -96,3 +96,7 @@ sw.*
 
 # Bun lockfile
 bun.lockb
+
+.agents/*
+
+.codex/*

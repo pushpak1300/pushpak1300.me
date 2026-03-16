@@ -1,26 +1,26 @@
 <template>
-  <main class="space-y-8 py-8">
+  <main class="py-8 space-y-8">
     <section>
       <AppBackHome />
-      <h1 class="mb-8 text-4xl font-bold">{{ title }}</h1>
+      <h1 class="font-bold mb-8 text-4xl">{{ title }}</h1>
       <p class="mb-8 text-lg">{{ description }}</p>
     </section>
 
-    <div v-if="blogs" class="border-primary border-l-2 pl-4">
-      <BlogItem v-for="(blog, id) in blogs" :key="id" :blog="blog" />
+    <div v-if="sortedBlogs.length" class="border-l-2 border-primary pl-4">
+      <BlogItem v-for="(blog, id) in sortedBlogs" :key="id" :blog="blog" />
     </div>
-    <div class="pt-16 md:pt-24">
-      <div class="mb-6 flex items-center gap-3">
-        <div class="text-primary-500 bg-primary-500/10 flex-none rounded-full p-1">
-          <div class="size-1.5 rounded-full bg-current" />
+    <div class="md:pt-24 pt-16">
+      <div class="flex gap-3 items-center mb-6">
+        <div class="bg-primary-500/10 flex-none p-1 rounded-full text-primary-500">
+          <div class="bg-current rounded-full size-1.5" />
         </div>
-        <h2 class="text-xs font-semibold uppercase text-neutral-400">STAY IN TOUCH</h2>
+        <h2 class="font-semibold text-neutral-400 text-xs uppercase">STAY IN TOUCH</h2>
       </div>
-      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+      <p class="dark:text-neutral-400 mt-2 text-neutral-600 text-sm">
         Subscribe to newsletter and unsubscribe at any time.
       </p>
       <form @submit.prevent="subscribeToNewsletter">
-        <div class="mt-6 flex items-center gap-3">
+        <div class="flex gap-3 items-center mt-6">
           <UInput
             id="email-address"
             v-model="email"
@@ -63,8 +63,15 @@ useHead({
   title: `${title} | ${appConfig.name}`,
 });
 
-const { data: blogs } = await useAsyncData("blogs-all", () =>
-  queryCollection("blogs").order("published_at", "DESC").all(),
+const { data: blogs } = await useAsyncData("blogs-all", () => queryCollection("blogs").all());
+
+const getPublishedAtTimestamp = (value: string) => new Date(value.replaceAll("/", "-")).getTime();
+
+const sortedBlogs = computed(() =>
+  [...(blogs.value ?? [])].sort(
+    (left, right) =>
+      getPublishedAtTimestamp(right.published_at) - getPublishedAtTimestamp(left.published_at),
+  ),
 );
 
 const email = ref("");

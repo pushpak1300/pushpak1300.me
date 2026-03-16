@@ -1,15 +1,15 @@
 <template>
-  <div class="pointer-events-none fixed inset-x-0 bottom-5 z-50 px-3 sm:bottom-8">
-    <nav class="pointer-events-auto mx-auto flex w-fit max-w-full items-center justify-center">
+  <div class="bottom-5 fixed inset-x-0 pointer-events-none px-3 sm:bottom-8 z-50">
+    <nav class="flex items-center justify-center max-w-full mx-auto pointer-events-auto w-fit">
       <div
-        class="flex max-w-full items-center gap-1 overflow-x-auto rounded-full border border-stone-200/80 bg-white/90 px-2 py-2 text-stone-700 shadow-lg shadow-stone-900/8 ring-1 ring-black/5 backdrop-blur dark:border-white/10 dark:bg-stone-950/90 dark:text-stone-200 dark:ring-white/10"
+        class="backdrop-blur bg-white/90 border border-stone-200/80 dark:bg-stone-950/90 dark:border-white/10 dark:ring-white/10 dark:text-stone-200 flex gap-1 items-center max-w-full overflow-x-auto px-2 py-2 ring-1 ring-black/5 rounded-full shadow-lg shadow-stone-900/8 text-stone-700"
       >
         <ULink
           to="/"
-          class="mr-1 flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-stone-200 bg-stone-100 dark:border-white/10 dark:bg-white/5"
+          class="bg-stone-100 border border-stone-200 dark:bg-white/5 dark:border-white/10 flex items-center justify-center mr-1 overflow-hidden rounded-full shrink-0 size-8"
           aria-label="Go to homepage"
         >
-          <NuxtImg src="/avtar.webp" alt="Pushpak Chhajed" class="size-full object-cover" />
+          <NuxtImg src="/avtar.webp" alt="Pushpak Chhajed" class="object-cover size-full" />
         </ULink>
 
         <ULink
@@ -17,7 +17,7 @@
           :key="item.path"
           :to="item.path"
           :target="item.external ? '_blank' : '_self'"
-          class="relative shrink-0 rounded-full px-2.5 py-2 text-xs font-medium transition-colors hover:text-stone-950 dark:hover:text-white sm:px-3 sm:text-sm"
+          class="dark:hover:text-white font-medium hover:text-stone-950 px-2.5 py-2 relative rounded-full shrink-0 sm:px-3 sm:text-sm text-xs transition-colors"
           :class="
             isActive(item)
               ? 'text-primary-600 dark:text-primary-400'

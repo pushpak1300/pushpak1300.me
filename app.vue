@@ -1,13 +1,10 @@
 <template>
   <SpeedInsights />
   <UApp>
-    <div class="flex min-h-screen flex-col">
+    <div class="flex flex-col min-h-screen">
       <AppNavbar />
-      <UContainer class="flex-1 pb-16 pt-8 sm:pt-12">
+      <UContainer class="flex-1 pb-28 pt-8 sm:pb-32 sm:pt-12">
         <NuxtPage />
-      </UContainer>
-      <UContainer class="pb-24 pt-10 sm:pb-28 sm:pt-12">
-        <AppFooter />
       </UContainer>
     </div>
   </UApp>
