@@ -1,1 +1,0 @@
-import{F as e,Zt as t,dt as n}from"#entry";function r(r){let i=e({dir:t(`ltr`)});return n(()=>r?.value||i.dir?.value||`ltr`)}export{r as t};
