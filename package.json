@@ -24,7 +24,7 @@
     "@nuxt/eslint-plugin": "^1.15.2",
     "@nuxt/image": "2.0.0",
     "@nuxt/kit": "4.4.2",
-    "@nuxt/ui": "4.6.0",
+    "@nuxt/ui": "4.6.1",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "@vueuse/motion": "3.0.3",
