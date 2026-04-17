@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@iconify-json/fa6-brands": "1.2.6",
-    "@iconify-json/iconoir": "1.2.10",
+    "@iconify-json/iconoir": "1.2.11",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/proicons": "1.2.19",
     "@nuxt/content": "3.13.0",
