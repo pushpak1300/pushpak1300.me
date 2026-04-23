@@ -33,7 +33,7 @@
     "oxfmt": "^0.46.0",
     "oxlint": "^1.55.0",
     "tailwindcss": "4.2.4",
-    "vue": "3.5.32",
+    "vue": "3.5.33",
     "vue-router": "5.0.6",
     "vue-use-fixed-header": "2.0.3"
   }
