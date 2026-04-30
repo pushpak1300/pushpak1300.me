@@ -23,7 +23,7 @@
     "@nuxt/content": "3.13.0",
     "@nuxt/eslint-plugin": "^1.15.2",
     "@nuxt/image": "2.0.0",
-    "@nuxt/kit": "4.4.2",
+    "@nuxt/kit": "4.4.4",
     "@nuxt/ui": "4.7.1",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
