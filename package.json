@@ -29,7 +29,7 @@
     "@vercel/speed-insights": "2.0.0",
     "@vueuse/motion": "3.0.3",
     "better-sqlite3": "12.9.0",
-    "nuxt": "4.4.2",
+    "nuxt": "4.4.4",
     "oxfmt": "^0.47.0",
     "oxlint": "^1.55.0",
     "tailwindcss": "4.2.4",
