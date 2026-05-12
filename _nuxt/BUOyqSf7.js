@@ -1,0 +1,1 @@
+import{Kt as e,Mt as t,en as n,pt as r,q as i}from"#entry";import{t as a}from"./hgJAyw2D.js";import o from"./CagRICq4.js";var s={__name:`ProseWarning`,setup(s){let c=i();return(i,s)=>(t(),r(o,{color:`warning`,icon:n(c).ui.icons.warning},{default:e(()=>[a(i.$slots,`default`,{mdcUnwrap:`p`})]),_:3},8,[`icon`]))}};export{s as default};
