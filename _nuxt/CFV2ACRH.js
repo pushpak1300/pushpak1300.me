@@ -1,0 +1,1 @@
+import{K as e,Kt as t,Mt as n,en as r,pt as i}from"#entry";import{t as a}from"./hgJAyw2D.js";import o from"./COWfNOIV.js";var s={__name:`ProseNote`,setup(s){let c=e();return(e,s)=>(n(),i(o,{color:`info`,icon:r(c).ui.icons.info},{default:t(()=>[a(e.$slots,`default`,{mdcUnwrap:`p`})]),_:3},8,[`icon`]))}};export{s as default};
