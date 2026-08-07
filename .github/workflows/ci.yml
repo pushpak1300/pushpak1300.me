@@ -6,6 +6,9 @@ on:
       - main
       - master
 
+permissions:
+  contents: write
+
 jobs:
   cd:
     runs-on: ${{ matrix.os }}
@@ -13,7 +16,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [20]
 
     steps:
       - name: Checkout

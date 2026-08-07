@@ -2,6 +2,9 @@
   "name": "pushpak1300.github.io",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
