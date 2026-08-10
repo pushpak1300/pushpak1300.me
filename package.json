@@ -31,7 +31,7 @@
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "@vueuse/motion": "3.0.3",
-    "better-sqlite3": "13.0.2",
+    "better-sqlite3": "13.0.3",
     "nuxt": "4.5.1",
     "oxfmt": "^0.62.0",
     "oxlint": "^1.55.0",
