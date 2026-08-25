@@ -43,10 +43,6 @@ const items = [
     path: "/",
   },
   {
-    name: "Projects",
-    path: "/projects",
-  },
-  {
     name: "Blogs",
     path: "/blogs",
   },

@@ -19,17 +19,6 @@ export interface BlogContent extends ParsedContent {
   image: string;
 }
 
-export interface ProjectContent extends ParsedContent {
-  title: string;
-  description: string;
-  slug: string;
-  projectLink: string;
-  mainLink: string;
-  skills: string[];
-  githubUrl: string;
-  image: string;
-}
-
 export interface TalkInstance {
   conference: string;
   date: string;

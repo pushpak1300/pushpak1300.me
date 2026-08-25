@@ -153,6 +153,7 @@ const connectLinks = [
 const nowItems = [
   "I am currently part of the Open Source team at Laravel, maintaining Boost, MCP, and Roster.",
   "My recent work sits at the intersection of Laravel, AI systems, product engineering, and developer tooling.",
+  "Most of what I build is public — head to GitHub to see my work.",
   "I am based in India, but the work I enjoy most usually spans teams, products, and communities across borders.",
 ];
 

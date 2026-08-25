@@ -73,7 +73,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-16",
   nitro: {
     prerender: {
-      routes: ["/blogs", "/projects"],
+      routes: ["/blogs"],
     },
   },
   typescript: {

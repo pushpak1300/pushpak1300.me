@@ -2,21 +2,15 @@
   "name": "pushpak1300.github.io",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "24.x"
-  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "oxfmt"
-  },
-  "overrides": {
-    "vite": "8.0.0-beta.0"
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "format": "vp fmt"
   },
   "dependencies": {
     "@iconify-json/fa6-brands": "1.2.6",
@@ -24,20 +18,35 @@
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/proicons": "1.2.20",
     "@nuxt/content": "3.15.2",
-    "@nuxt/eslint-plugin": "^1.15.2",
+    "@nuxt/eslint-plugin": "^1.17.0",
     "@nuxt/image": "2.1.0",
-    "@nuxt/kit": "4.5.1",
-    "@nuxt/ui": "4.10.0",
+    "@nuxt/kit": "4.5.2",
+    "@nuxt/ui": "4.11.0",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "@vueuse/motion": "3.0.3",
-    "better-sqlite3": "13.0.2",
-    "nuxt": "4.5.1",
-    "oxfmt": "^0.62.0",
-    "oxlint": "^1.55.0",
+    "better-sqlite3": "13.0.3",
+    "nuxt": "4.5.2",
     "tailwindcss": "4.3.3",
-    "vue": "3.5.40",
+    "vue": "3.5.41",
     "vue-router": "5.2.0",
     "vue-use-fixed-header": "2.0.3"
+  },
+  "devDependencies": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0",
+    "vite-plus": "0.3.0"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "version": "1.4.0",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
