@@ -32,7 +32,7 @@
     <Tile
       :to="resumeURL"
       external
-      bg="034"
+      bg="029"
       span="c1 r2"
       label="Resume"
       class="justify-between gap-3.5"
@@ -86,7 +86,7 @@
       </div>
     </Tile>
 
-    <Tile to="/talks" bg="074" span="c3 r2" label="Talks">
+    <Tile to="/talks" bg="012" span="c3 r2" label="Talks">
       <div class="flex flex-col gap-2.5 mt-auto">
         <h2 class="hero text-[1.375rem] lg:text-[1.5rem] leading-[1.15]">
           I have spoken at conferences and meetups across India. Here is the list.
@@ -134,7 +134,17 @@ import appConfig from "~/app.config";
 const title = "Pushpak Chhajed";
 const description =
   "Open source engineer at Laravel, building thoughtful developer tooling across Laravel, AI, and modern product engineering.";
-useSeoMeta({ title, description });
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: "https://pushpak1300.me/og/home.jpg",
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterCard: "summary_large_image",
+  twitterImage: "https://pushpak1300.me/og/home.jpg",
+});
 useHead({ title });
 
 const { resumeURL } = appConfig;

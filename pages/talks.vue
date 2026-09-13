@@ -60,11 +60,21 @@ import appConfig from "~/app.config";
 const title = "Talks";
 const description =
   "Conferences and meetups where I have spoken about Laravel, PHP and AI tooling.";
-useSeoMeta({ title, description });
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: "https://pushpak1300.me/og/talks.jpg",
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterCard: "summary_large_image",
+  twitterImage: "https://pushpak1300.me/og/talks.jpg",
+});
 useHead({ title: `${title} | ${appConfig.name}` });
 
 // ponytail: 7 unique talk backgrounds (invite uses 030), wraps only if more talks land
-const bgs = ["021", "033", "025", "018", "031", "037", "071", "020"];
+const bgs = ["015", "040", "074", "021", "026", "031", "037"];
 
 type Instance = {
   conference: string;

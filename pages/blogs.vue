@@ -50,30 +50,21 @@ import appConfig from "~/app.config";
 
 const title = "Blogs";
 const description = "Articles on Laravel, AI tooling and building developer products.";
-useSeoMeta({ title, description });
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: "https://pushpak1300.me/og/blogs.jpg",
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterCard: "summary_large_image",
+  twitterImage: "https://pushpak1300.me/og/blogs.jpg",
+});
 useHead({ title: `${title} | ${appConfig.name}` });
 
-// ponytail: 18 unique post backgrounds, wraps only if more posts land
-const bgs = [
-  "033",
-  "025",
-  "018",
-  "031",
-  "037",
-  "071",
-  "016",
-  "02",
-  "046",
-  "023",
-  "04",
-  "034",
-  "020",
-  "026",
-  "042",
-  "032",
-  "041",
-  "030",
-];
+// ponytail: first 8 posts get images used nowhere else; the last 6 reuse Home social tiles since only 28 images exist for 34 slots
+const bgs = ["033", "025", "018", "071", "042", "020", "04", "034", "016", "02", "046", "041", "032", "023"];
 
 const { data: blogs } = await useAsyncData("blogs", () => queryCollection("blogs").all());
 const sorted = computed(() =>
