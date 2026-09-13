@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     ],
   },
   icon: { clientBundle: { scan: true, sizeLimitKb: 256 } },
+  // ponytail: images are optimised at prerender time, so the runtime server ships no ipx/sharp
+  image: { provider: "ipxStatic" },
   content: {},
   ssr: true,
   components: ["~/components", { path: "~/components/app", prefix: "App" }],
@@ -62,7 +64,8 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      routes: ["/blogs"],
+      crawlLinks: true,
+      routes: ["/", "/blogs", "/talks"],
     },
   },
   typescript: {
