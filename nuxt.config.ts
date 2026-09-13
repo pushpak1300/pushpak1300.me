@@ -2,7 +2,15 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  modules: ["@nuxt/image", "@nuxt/content", "@nuxt/icon"],
+  modules: ["@nuxt/image", "@nuxt/content", "@nuxt/icon", "@nuxt/fonts"],
+  // ponytail: fonts are downloaded at build and served from /_fonts with preload, no Google roundtrip at runtime
+  fonts: {
+    families: [
+      { name: "Bricolage Grotesque", provider: "google", weights: [400, 500, 600, 700] },
+      { name: "Geist Mono", provider: "google", weights: [400, 500] },
+    ],
+  },
+  icon: { clientBundle: { scan: true, sizeLimitKb: 256 } },
   content: {},
   ssr: true,
   components: ["~/components", { path: "~/components/app", prefix: "App" }],
@@ -25,12 +33,6 @@ export default defineNuxtConfig({
         { name: "theme-color", content: "#000000" },
       ],
       link: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com" },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Geist+Mono:wght@400;500&display=swap",
-        },
         { rel: "icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         {
@@ -58,6 +60,7 @@ export default defineNuxtConfig({
   vite: { plugins: [tailwindcss()] },
   compatibilityDate: "2024-11-16",
   nitro: {
+    compressPublicAssets: true,
     prerender: {
       routes: ["/blogs"],
     },

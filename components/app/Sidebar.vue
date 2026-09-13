@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <Tile bg="036" class="id min-h-fit flex-3 gap-[1.125rem] short:gap-3">
+    <Tile bg="036" eager class="id min-h-fit flex-3 gap-[1.125rem] short:gap-3">
       <NuxtImg
         src="/avtar.webp"
         alt="Pushpak Chhajed"
@@ -8,6 +8,8 @@
         width="72"
         height="72"
         format="webp"
+        loading="eager"
+        fetchpriority="high"
       />
       <div class="flex flex-col gap-2.5">
         <h1 class="hero text-[2.125rem] lg:text-[2.5rem] short:text-[1.875rem]">Pushpak Chhajed</h1>

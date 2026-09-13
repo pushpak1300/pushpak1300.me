@@ -10,10 +10,11 @@
       v-if="bg"
       :src="`/bg/${bg}.jpg`"
       class="bgimg"
+      :loading="eager ? 'eager' : 'lazy'"
+      :fetchpriority="eager ? 'high' : undefined"
       format="webp"
       quality="70"
       sizes="sm:100vw md:50vw lg:480px xl:560px 2xl:680px"
-      loading="lazy"
       alt=""
     />
     <span v-if="to" class="arrow" aria-hidden="true">
@@ -45,5 +46,6 @@ defineProps<{
   label?: string;
   span?: string;
   bg?: string;
+  eager?: boolean;
 }>();
 </script>

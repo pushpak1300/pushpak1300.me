@@ -16,6 +16,7 @@
     "@iconify-json/simple-icons": "^1.2.95",
     "@nuxt/content": "3.16.0",
     "@nuxt/eslint-plugin": "^1.17.0",
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "2.1.0",
     "@nuxt/kit": "4.5.2",
@@ -30,11 +31,11 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0",
-    "vite-plus": "0.3.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1",
+    "vite-plus": "0.3.1"
   },
   "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1"
   },
   "devEngines": {
     "packageManager": {
