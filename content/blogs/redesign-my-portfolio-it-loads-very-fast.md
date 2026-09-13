@@ -2,7 +2,7 @@
 title: "Redesigned my portfolio! It loads very fast ⚡"
 description: "I will show you how I redesigned my portfolio site using AlpineJs and Bootstrap4."
 published_at: 2020/05/16
-slug: "deploying-laravel7-app-on-shared-hosting-hostinger"
+slug: "redesign-my-portfolio-it-loads-very-fast"
 external: true
 external_url: https://dev.to/pushpak1300/redesign-my-portfolio-it-loads-very-fast-nn4
 ---

@@ -1,29 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  modules: ["@nuxt/ui", "@nuxt/image", "@nuxt/content", "@vueuse/motion/nuxt"],
+  modules: ["@nuxt/image", "@nuxt/content", "@nuxt/icon"],
   content: {},
   ssr: true,
-  components: [
-    "~/components",
-    { path: "~/components/app", prefix: "App" },
-    { path: "~/components/home", prefix: "Home" },
-  ],
-  devtools: {
-    enabled: true,
-    timeline: {
-      enabled: true,
-    },
-  },
+  components: ["~/components", { path: "~/components/app", prefix: "App" }],
+  devtools: { enabled: true },
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
     head: {
       htmlAttrs: {
         lang: "en",
         class: "h-full",
-      },
-      bodyAttrs: {
-        class: "min-h-screen antialiased",
       },
       title: "Pushpak Chhajed",
       meta: [
@@ -34,16 +22,16 @@ export default defineNuxtConfig({
           content: "Pushpak's Portfolio",
         },
         { name: "msapplication-TileColor", content: "#da532c" },
-        { name: "theme-color", content: "#ffffff" },
+        { name: "theme-color", content: "#000000" },
       ],
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
-        { rel: "icon", href: "/favicon.ico" },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400..700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Geist+Mono:wght@400;500&display=swap",
         },
+        { rel: "icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         {
           rel: "icon",
@@ -67,9 +55,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  colorMode: {
-    preference: "light",
-  },
+  vite: { plugins: [tailwindcss()] },
   compatibilityDate: "2024-11-16",
   nitro: {
     prerender: {

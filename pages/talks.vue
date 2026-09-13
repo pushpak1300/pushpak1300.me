@@ -1,88 +1,90 @@
 <template>
-  <main class="flex flex-col gap-4 max-w-xl mt-10 mx-auto sm:mt-16 w-full">
-    <section class="flex flex-col gap-4">
-      <AppBackHome />
-      <h1 class="dark:text-stone-100 font-semibold text-3xl text-stone-900 tracking-tight">
-        {{ PAGE_CONFIG.title }}
-      </h1>
-      <p class="dark:text-stone-400 font-medium text-sm text-stone-500">
-        {{ PAGE_CONFIG.description }}
-      </p>
-    </section>
-
-    <div class="bg-stone-200/80 dark:bg-white/10 h-px mt-4 w-full" />
-
-    <div v-if="groupedTalks.length > 0" class="flex flex-col gap-8">
-      <section v-for="talk in groupedTalks" :key="talk.title" class="flex flex-col gap-3">
-        <h2 class="dark:text-stone-100 font-sans text-lg font-medium text-stone-900">
-          {{ talk.title }}
-        </h2>
-        <div class="flex flex-col gap-3">
-          <TalkItem
-            v-for="instance in talk.instances"
-            :key="`${talk.title}-${instance.date}-${instance.conference}`"
-            :talk="instance"
-          />
+  <main
+    class="bento hgrid lg:[--rows:3] short:[--rows:2] [--minw:16rem]"
+    :style="{ '--n': talks.length + 2 }"
+  >
+    <Tile
+      v-for="(talk, i) in talks"
+      :key="talk.title"
+      :to="talk.instances[0].slidesUrl"
+      external
+      :bg="bgs[i % bgs.length]"
+      :label="`Spoke at ${talk.instances.length} ${talk.instances.length === 1 ? 'event' : 'events'}`"
+      class="justify-between"
+    >
+      <div class="flex flex-col gap-2 mt-auto">
+        <h2 class="hero leading-[1.15] text-[1.25rem] line-clamp-3">{{ talk.title }}</h2>
+        <div class="tl gap-1.5">
+          <div
+            v-for="ev in talk.instances.slice(0, 3)"
+            :key="ev.date + ev.conference"
+            class="grid-cols-[4.5rem_1fr]"
+          >
+            <span class="mono">{{ month(ev.date) }}</span
+            ><span class="truncate">{{ venue(ev.conference) }}</span>
+          </div>
         </div>
-      </section>
-    </div>
-    <div v-else class="py-12">
-      <p class="dark:text-stone-400 text-sm text-stone-500">No talks available at the moment.</p>
-    </div>
+      </div>
+      <div class="tags">
+        <span v-if="talk.instances[0].slidesUrl" class="chip">Slides</span>
+        <span v-if="video(talk)" class="chip">Video</span>
+      </div>
+    </Tile>
+
+    <Tile
+      to="mailto:hey@pushpak1300.me"
+      external
+      bg="030"
+      span="lg:row-span-2"
+      class="justify-between"
+    >
+      <div class="flex flex-col gap-2 mt-auto">
+        <p class="label">Invite me</p>
+        <h2 class="hero text-[1.25rem] leading-[1.15]">
+          Happy to speak about Laravel, AI tooling and MCP.
+        </h2>
+        <p class="body text-[0.8125rem]">
+          Conferences, meetups, podcasts or internal team sessions, in person across India or remote
+          anywhere.
+        </p>
+        <p class="body text-[0.8125rem] font-semibold">hey@pushpak1300.me</p>
+      </div>
+    </Tile>
   </main>
 </template>
 
 <script setup lang="ts">
 import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
-import TalkItem from "~/components/TalkItem.vue";
 
-type TalkEntry = {
+const title = "Talks";
+const description =
+  "Conferences and meetups where I have spoken about Laravel, PHP and AI tooling.";
+useSeoMeta({ title, description });
+useHead({ title: `${title} | ${appConfig.name}` });
+
+// ponytail: 7 unique talk backgrounds (invite uses 030), wraps only if more talks land
+const bgs = ["021", "033", "025", "018", "031", "037", "071", "020"];
+
+type Instance = {
   conference: string;
   date: string;
   slidesUrl?: string;
-  tweetUrl?: string;
   youtubeUrl?: string;
+  tweetUrl?: string;
 };
+type Talk = { title: string; instances: Instance[] };
 
-type GroupedTalk = {
-  title: string;
-  instances: TalkEntry[];
-};
-
-const PAGE_CONFIG = {
-  title: "Talks",
-  description:
-    "I've had the pleasure of speaking at various conferences and meetups. Here's a collection of my talks.",
-  email: "talks@pushpak1300.me",
-} as const;
-
-// SEO setup
-useSeoMeta({
-  title: PAGE_CONFIG.title,
-  description: PAGE_CONFIG.description,
-});
-
-useHead({
-  title: `${PAGE_CONFIG.title} | ${appConfig.name}`,
-});
-
-// Data fetching using queryCollection
-const { data: talksData } = await useAsyncData("talks", () => queryCollection("talks").all());
-
-const groupedTalks = computed<GroupedTalk[]>(() =>
-  (talksData.value ?? [])
-    .map((talk) => ({
-      title: talk.title,
-      instances: [...talk.instances].sort(
-        (left, right) => new Date(right.date).getTime() - new Date(left.date).getTime(),
-      ),
+const { data } = await useAsyncData("talks", () => queryCollection("talks").all());
+const talks = computed<Talk[]>(() =>
+  (data.value ?? [])
+    .filter((t) => t.instances.length)
+    .map((t) => ({
+      title: t.title,
+      instances: [...t.instances].sort((a, b) => ts(b.date) - ts(a.date)),
     }))
-    .sort((left, right) => {
-      const leftLatest = left.instances[0] ? new Date(left.instances[0].date).getTime() : 0;
-      const rightLatest = right.instances[0] ? new Date(right.instances[0].date).getTime() : 0;
-
-      return rightLatest - leftLatest;
-    }),
+    .sort((a, b) => ts(b.instances[0].date) - ts(a.instances[0].date)),
 );
+const venue = (v: string) => v.replace(/\s*\((In-Person|Online)\)/i, "");
+const video = (t: Talk) => t.instances.find((i) => i.youtubeUrl)?.youtubeUrl;
 </script>

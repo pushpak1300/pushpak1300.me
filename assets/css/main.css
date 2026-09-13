@@ -1,71 +1,297 @@
 @import "tailwindcss";
-@import "@nuxt/ui";
 
-@custom-variant dark (&:is(.dark *));
+/* Short desktop viewports: the sidebar must fit without scrolling */
+@custom-variant short (@media (min-width: 64rem) and (max-height: 820px));
+@custom-variant xshort (@media (min-width: 64rem) and (max-height: 700px));
 
 @theme {
-  --shadow-zoop:
-    rgba(102, 109, 128, 0.08) 0px 1.2672px 1.2672px 0px,
-    rgba(102, 109, 128, 0.08) 0px 5.06879px 10.1376px 0px;
-  --shadow-zoopdark:
-    rgba(10, 10, 10, 0.2) 0px 1.2672px 1.2672px 0px,
-    rgba(10, 10, 10, 0.2) 0px 5.06879px 10.1376px 0px;
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --font-sans:
-    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Newsreader", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono:
-    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --color-bg: #000;
+  --color-card2: #1c1c1c;
+  --color-ink: #f5f5f5;
+  --color-ink2: #b3b3b3;
+  --color-mute: #7a7a7a;
+  --color-line: rgba(255, 255, 255, 0.1);
+
+  --radius-card: 1.25rem;
+  --spacing-gutter: 0.75rem;
+  --animate-sheen: sheen 0.9s ease-out forwards;
+
+  @keyframes sheen {
+    from {
+      transform: translateX(-60%);
+    }
+    to {
+      transform: translateX(60%);
+    }
+  }
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   html {
-    background-color: #fcfbf7;
+    background: var(--color-bg);
+    color-scheme: dark;
+    /* ponytail: everything is rem-based, so one fluid root size scales the whole desktop layout with the screen */
+    @variant lg {
+      font-size: clamp(13px, 0.55vw + 8px, 24px);
+    }
   }
-
   body {
-    min-height: 100vh;
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Shell */
+  .shell {
+    @apply flex gap-gutter p-gutter min-h-screen flex-col lg:flex-row;
+  }
+  .sidebar {
+    @apply flex flex-col gap-gutter lg:w-[25rem] lg:flex-none lg:sticky lg:top-gutter lg:h-[calc(100vh-2*var(--spacing-gutter))];
+  }
+
+  /* Page grid: 2 columns stacked on mobile, viewport-height bento on desktop (pages set their own lg:grid-cols/rows) */
+  .bento {
+    @apply flex-1 min-w-0 grid gap-gutter grid-cols-2 auto-rows-[minmax(7.5rem,auto)] lg:auto-rows-auto lg:h-[calc(100vh-2*var(--spacing-gutter))];
+  }
+  /* Desktop: fixed rows, columns flow sideways and scroll horizontally once narrower than --minw.
+     Page sets --n (cells, row-spans count as 2), --rows and --minw. */
+  .hgrid {
+    /* ponytail: round() needs Chrome 125 / Safari 15.4 / Firefox 118; older browsers fall back to content-sized columns */
+    --cols: round(up, var(--n) / var(--rows));
+    scrollbar-width: none;
+    @variant lg {
+      grid-auto-flow: column;
+      grid-template-columns: none;
+      grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
+      grid-auto-columns: max(
+        var(--minw),
+        calc((100% - (var(--cols) - 1) * var(--spacing-gutter)) / var(--cols))
+      );
+      overflow-x: auto;
+    }
+  }
+  .hgrid::-webkit-scrollbar {
+    display: none;
+  }
+  .c1 {
+    @apply col-span-1;
+  }
+  .c2 {
+    @apply col-span-2;
+  }
+  .c3 {
+    @apply col-span-2 lg:col-span-3;
+  }
+  .r2 {
+    @apply min-h-[15rem] lg:min-h-0 lg:row-span-2;
+  }
+
+  /* Card: dark glass + glossy rim + sheen */
+  .card {
+    --sheen: rgba(255, 255, 255, 0.12);
+    @apply relative overflow-hidden flex flex-col gap-3 p-5 min-h-0 rounded-card text-ink;
+    background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 50%, #2a2a2a 100%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+  .card::before {
+    content: "";
+    @apply absolute inset-0 rounded-[inherit] p-px pointer-events-none z-2;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 40%,
+      rgba(255, 255, 255, 0.06) 60%,
+      rgba(255, 255, 255, 0.16) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .card::after {
+    content: "";
+    @apply absolute -inset-[40%] pointer-events-none;
+    transform: translateX(-60%);
+    background: linear-gradient(115deg, transparent 42%, var(--sheen) 50%, transparent 58%);
+  }
+  .card:hover::after {
+    @apply animate-sheen motion-reduce:animate-none;
+  }
+  .card > *:not(.arrow, .bgimg) {
+    @apply relative z-1;
+  }
+  .card .arrow {
+    @apply z-1;
+  }
+
+  /* Photo backgrounds — set --dim on the tile to darken */
+  .card.img {
+    @apply text-white bg-[#0a0a0a];
+  }
+  .card .bgimg {
+    @apply absolute inset-0 size-full object-cover z-0;
+  }
+  .card.img::after {
+    @apply inset-0;
+    transform: none;
     background:
-      radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 30%),
-      linear-gradient(180deg, #fcfbf7 0%, #f4f0e7 100%);
-    color: #1c1917;
-    font-family: var(--font-mono);
+      linear-gradient(rgba(0, 0, 0, var(--dim, 0.1)), rgba(0, 0, 0, var(--dim, 0.1))),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0.75) 62%,
+        rgba(0, 0, 0, 0.92) 100%
+      ),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .card.img:hover::after {
+    @apply animate-none;
+  }
+  .card.img .label {
+    @apply text-white/70;
+  }
+  .card.img .body,
+  .card.img .tl span {
+    @apply text-white/80;
+  }
+  .card.img .chip {
+    @apply bg-white/15 border-white/20;
+  }
+  .card.img .post {
+    @apply border-white/15;
+  }
+  .card.img .post .d {
+    @apply text-white/65;
   }
 
-  .dark html {
-    background-color: #0c0b0a;
+  /* Type + bits */
+  .label {
+    @apply font-mono text-[0.6875rem] tracking-[0.06em] uppercase text-mute font-medium;
+  }
+  .card:has(> .arrow) > .label {
+    @apply pr-11;
+  }
+  .card:has(> .arrow) .hero {
+    @apply pr-6;
+  }
+  .body {
+    @apply text-sm leading-relaxed text-ink2;
+  }
+  .mono {
+    @apply font-mono tabular-nums;
+  }
+  .hero {
+    @apply font-semibold tracking-[-0.03em] leading-[1.05];
+  }
+  .title {
+    @apply text-sm font-semibold leading-snug;
+  }
+  .chip {
+    @apply font-mono inline-flex items-center gap-1.5 h-7 px-[0.6875rem] rounded-full border border-line text-xs font-medium bg-white/8 text-inherit;
+  }
+  .tags {
+    @apply flex flex-wrap gap-1.5;
+  }
+  .arrow {
+    @apply absolute top-[1.125rem] right-[1.125rem] size-8 rounded-full flex items-center justify-center bg-white/10 text-inherit;
+  }
+  .avatar {
+    @apply size-[4.5rem] rounded-2xl object-cover bg-card2;
+  }
+  .clock {
+    @apply font-mono text-[2.5rem] font-medium tracking-[-0.04em] leading-none;
+  }
+  .post {
+    @apply flex flex-col gap-2 py-3.5 border-t border-line first:border-t-0 first:pt-0;
+  }
+  .post .t {
+    @apply text-sm font-semibold leading-snug;
+  }
+  .post .d {
+    @apply text-[0.6875rem] text-mute;
   }
 
-  .dark body {
-    background:
-      radial-gradient(circle at top, rgba(96, 165, 250, 0.12), transparent 26%),
-      linear-gradient(180deg, #0c0b0a 0%, #13110f 100%);
-    color: #f5f5f4;
+  /* Equalizer bars for the music chip */
+  .eq {
+    @apply inline-flex items-end gap-px h-3;
+  }
+  .eq i {
+    @apply block w-[3px] h-1 rounded-sm bg-current opacity-70;
+    transform-origin: bottom;
+  }
+  .eq.on i {
+    animation: eq 0.9s ease-in-out infinite alternate;
+  }
+  .eq.on i:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .eq.on i:nth-child(3) {
+    animation-delay: -0.6s;
+  }
+  .eq.on i:nth-child(4) {
+    animation-delay: -0.15s;
+  }
+  @keyframes eq {
+    from {
+      height: 3px;
+    }
+    to {
+      height: 12px;
+    }
   }
 
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-neutral-200, currentcolor);
+  /* Site cursor: glass dot that grows into a pill with a glyph */
+  .has-cursor,
+  .has-cursor *:not(input, textarea) {
+    cursor: none !important;
+  }
+  .cursor {
+    @apply fixed top-0 left-0 z-50 pointer-events-none flex items-center justify-center size-3 rounded-full text-base font-medium text-white bg-white/80;
+    transition:
+      width 0.18s ease,
+      height 0.18s ease,
+      background-color 0.18s ease;
+  }
+  .cursor.big {
+    @apply size-11 bg-white/10 border border-white/20 backdrop-blur-md;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+  }
+  .cursor > * {
+    @apply opacity-0;
+    transition: opacity 0.12s ease;
+  }
+  .cursor.big > * {
+    @apply opacity-100;
   }
 
-  *::selection {
-    background: rgba(96, 165, 250, 0.22);
+  /* Timeline */
+  .tl {
+    @apply relative pl-[1.125rem] flex flex-col gap-2.5;
   }
-
-  .dark *::selection {
-    background: rgba(96, 165, 250, 0.3);
+  .tl::before {
+    content: "";
+    @apply absolute left-[0.3125rem] top-1.5 bottom-1.5 w-px bg-current opacity-20;
+  }
+  .tl div {
+    @apply relative grid grid-cols-[4.75rem_1fr] gap-3 text-[0.8125rem] leading-snug;
+  }
+  .tl div::before {
+    content: "";
+    @apply absolute -left-4 top-1.5 size-[0.4375rem] rounded-full bg-current opacity-35;
+  }
+  .tl div:last-child::before {
+    @apply opacity-100;
+  }
+  .tl span {
+    @apply text-mute;
   }
 }

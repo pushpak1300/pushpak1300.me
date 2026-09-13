@@ -1,192 +1,161 @@
 <template>
-  <main class="sm:space-y-12 space-y-10">
-    <section v-motion-fade-visible class="space-y-6">
-      <NuxtImg
-        src="/avtar.webp"
-        alt="Pushpak Chhajed"
-        class="bg-stone-100 border border-stone-200 dark:bg-white/5 dark:border-white/10 object-cover rounded-full size-16"
-        placeholder
-        width="64"
-        height="64"
-        format="webp"
-      />
-
-      <div class="space-y-4">
-        <p class="dark:text-stone-400 text-[11px] text-stone-500 tracking-[0.24em] uppercase">
-          Open source engineer • India
-        </p>
-        <h1
-          class="dark:text-stone-50 font-serif italic sm:text-6xl text-4xl text-stone-950 tracking-tight"
-        >
-          Pushpak Chhajed
-        </h1>
+  <main class="bento lg:grid-cols-6 lg:grid-rows-4">
+    <Tile bg="080" span="c3 r2" label="Now">
+      <div class="flex flex-col gap-2.5 mt-auto">
+        <h2 class="hero text-[1.625rem] lg:text-[2rem] max-w-[20ch]">
+          Building the tools that make Laravel teams faster with AI.
+        </h2>
       </div>
-    </section>
-
-    <div class="border-stone-200/80 border-t dark:border-white/10" />
-
-    <section
-      v-motion-fade-visible
-      :delay="80"
-      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
-    >
-      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">Connect</p>
-      <div class="space-y-4">
-        <div
-          class="dark:text-stone-300 flex flex-wrap gap-x-3 gap-y-2 items-center text-sm text-stone-700"
+      <div class="tags">
+        <a
+          v-for="p in projects"
+          :key="p[0]"
+          :href="p[1]"
+          target="_blank"
+          rel="noopener"
+          class="chip"
+          >{{ p[0] }}</a
         >
-          <template v-for="(link, index) in connectLinks" :key="link.label">
-            <ULink
-              :to="link.href"
-              :target="link.external ? '_blank' : '_self'"
-              class="dark:hover:text-blue-400 font-semibold hover:text-blue-600 transition-colors"
-            >
-              {{ link.label }}
-            </ULink>
-            <span v-if="index < connectLinks.length - 1" class="dark:text-stone-600 text-stone-300">
-              ·
-            </span>
-          </template>
+      </div>
+    </Tile>
+
+    <Tile to="/blogs" bg="023" span="c2 r2" label="Latest writing">
+      <div class="flex flex-col mt-auto">
+        <div v-for="blog in latest" :key="blog.slug" class="post">
+          <span class="d mono">{{ month(blog.published_at) }}</span>
+          <span class="t">{{ blog.title }}</span>
         </div>
-        <p class="dark:text-stone-400 leading-7 text-sm text-stone-500">
-          Short intros, open source work, product ideas, or conference invites are all welcome.
-          <ULink
-            :to="appConfig.resumeURL"
-            target="_blank"
-            class="dark:hover:text-blue-400 dark:text-stone-100 hover:text-blue-600 text-stone-900 transition-colors"
-          >
-            Resume →
-          </ULink>
-        </p>
       </div>
-    </section>
+      <span class="text-[0.8125rem] font-semibold">All posts →</span>
+    </Tile>
 
-    <div class="border-stone-200/80 border-t dark:border-white/10" />
-
-    <section
-      v-motion-fade-visible
-      :delay="120"
-      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
+    <Tile
+      :to="resumeURL"
+      external
+      bg="034"
+      span="c1 r2"
+      label="Resume"
+      class="justify-between gap-3.5"
     >
-      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">Now</p>
-      <div class="dark:text-stone-400 leading-7 space-y-3 text-sm text-stone-600">
-        <p v-for="item in nowItems" :key="item">
-          {{ item }}
-        </p>
+      <div class="flex flex-col gap-1">
+        <p class="title text-[0.9375rem]">Download my resume</p>
+        <p class="body text-xs">One page · PDF</p>
       </div>
-    </section>
+    </Tile>
 
-    <div class="border-stone-200/80 border-t dark:border-white/10" />
-
-    <section
-      v-motion-fade-visible
-      :delay="160"
-      class="gap-4 grid sm:gap-8 sm:grid-cols-[112px_minmax(0,1fr)]"
+    <Tile
+      to="https://github.com/pushpak1300"
+      external
+      bg="016"
+      span="c1 r2"
+      label="GitHub"
+      class="justify-between gap-3.5"
     >
-      <p class="dark:text-stone-500 font-medium pt-1 text-stone-400 text-xs">History</p>
-      <div class="space-y-4">
-        <article
-          v-for="item in history"
-          :key="item.year + item.title"
-          class="border-l border-stone-200 dark:border-white/10 pl-4"
-        >
-          <p class="dark:text-stone-500 text-stone-400 text-xs tracking-[0.18em] uppercase">
-            {{ item.year }}
-          </p>
-          <h2 class="dark:text-stone-100 font-sans font-semibold mt-2 text-base text-stone-900">
-            {{ item.title }}
-          </h2>
-          <p class="dark:text-stone-400 leading-7 mt-2 text-sm text-stone-600">
-            {{ item.description }}
-          </p>
-        </article>
+      <Icon name="simple-icons:github" size="2.25rem" />
+      <div class="flex flex-col gap-1">
+        <p class="title text-[0.9375rem]">Most of what I build is public.</p>
+        <p class="body text-xs">@pushpak1300</p>
       </div>
-    </section>
+    </Tile>
+
+    <Tile
+      to="https://twitter.com/pushpak1300"
+      external
+      bg="02"
+      span="c1"
+      class="justify-between gap-3.5"
+    >
+      <Icon name="simple-icons:x" size="2.25rem" />
+      <div class="flex flex-col gap-0.5">
+        <p class="label">X</p>
+        <p class="title">@pushpak1300</p>
+      </div>
+    </Tile>
+
+    <Tile
+      to="https://www.linkedin.com/in/pushpak1300"
+      external
+      bg="046"
+      span="c1"
+      class="justify-between gap-3.5"
+    >
+      <Icon name="simple-icons:linkedin" size="2.25rem" />
+      <div class="flex flex-col gap-0.5">
+        <p class="label">LinkedIn</p>
+        <p class="title">in/pushpak1300</p>
+      </div>
+    </Tile>
+
+    <Tile to="/talks" bg="074" span="c3 r2" label="Talks">
+      <div class="flex flex-col gap-2.5 mt-auto">
+        <h2 class="hero text-[1.375rem] lg:text-[1.5rem] leading-[1.15]">
+          I have spoken at conferences and meetups across India. Here is the list.
+        </h2>
+        <div class="tags">
+          <span v-for="v in venues" :key="v" class="chip">{{ v }}</span>
+        </div>
+      </div>
+    </Tile>
+
+    <Tile
+      to="mailto:hey@pushpak1300.me"
+      external
+      bg="041"
+      span="c1"
+      class="justify-between gap-3.5"
+    >
+      <Icon name="simple-icons:gmail" size="2.25rem" />
+      <div class="flex flex-col gap-0.5">
+        <p class="label">Email</p>
+        <p class="title">Say hi</p>
+      </div>
+    </Tile>
+
+    <Tile
+      to="https://peerlist.io/pushpak1300"
+      external
+      bg="032"
+      span="c1"
+      class="justify-between gap-3.5"
+    >
+      <Icon name="simple-icons:peerlist" size="2.25rem" />
+      <div class="flex flex-col gap-0.5">
+        <p class="label">Peerlist</p>
+        <p class="title">@pushpak1300</p>
+      </div>
+    </Tile>
   </main>
 </template>
 
 <script setup lang="ts">
-import { useHead, useSeoMeta } from "#imports";
+import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
 
 const title = "Pushpak Chhajed";
 const description =
   "Open source engineer at Laravel, building thoughtful developer tooling across Laravel, AI, and modern product engineering.";
+useSeoMeta({ title, description });
+useHead({ title });
 
-useSeoMeta({
-  title,
-  description,
-});
+const { resumeURL } = appConfig;
 
-useHead({
-  title,
-});
-
-const connectLinks = [
-  {
-    label: "Email",
-    href: "mailto:hey@pushpak1300.me",
-    external: true,
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/pushpak1300",
-    external: true,
-  },
-  {
-    label: "X",
-    href: "https://twitter.com/pushpak1300",
-    external: true,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/pushpak1300",
-    external: true,
-  },
-  {
-    label: "Peerlist",
-    href: "https://peerlist.io/pushpak1300",
-    external: true,
-  },
+const projects = [
+  ["Laravel Boost", "https://github.com/laravel/boost"],
+  ["Laravel MCP", "https://github.com/laravel/mcp"],
+  ["Roster", "https://github.com/laravel/roster"],
 ];
 
-const nowItems = [
-  "I am currently part of the Open Source team at Laravel, maintaining Boost, MCP, and Roster.",
-  "My recent work sits at the intersection of Laravel, AI systems, product engineering, and developer tooling.",
-  "Most of what I build is public — head to GitHub to see my work.",
-  "I am based in India, but the work I enjoy most usually spans teams, products, and communities across borders.",
+const venues = [
+  "Laracon India",
+  "Laravel Bangalore",
+  "Laravel Pune",
+  "Laravel Mumbai",
+  "Laravel Nagpur",
+  "Hackerspace Mumbai",
 ];
 
-const history = [
-  {
-    year: "2012",
-    title: "Started by tinkering",
-    description:
-      "My path into software started with customizing Cydia themes on an iPad, then quickly grew into an obsession with computers, the internet, and building things from scratch.",
-  },
-  {
-    year: "Early years",
-    title: "Moved into web products",
-    description:
-      "After experimenting with Swift, I shifted toward HTML, CSS, and JavaScript. That led to startup work, early product experience, and learning how to ship useful software end to end.",
-  },
-  {
-    year: "2019–2023",
-    title: "Product engineering across teams",
-    description:
-      "I worked with teams such as Eastern Enterprise and Clearglass Analytics, where I got deeper into Laravel, product thinking, and the realities of building software that supports real customer workflows.",
-  },
-  {
-    year: "2024",
-    title: "Laravel and AI became the center",
-    description:
-      "At Bigly Sales and through speaking opportunities like Laracon India, I went deeper into Laravel, LLM workflows, and automation at scale, which sharpened the direction of my work.",
-  },
-  {
-    year: "Now",
-    title: "Open source at Laravel",
-    description:
-      "Today I focus on open source tools, developer experience, and the kinds of systems that make modern product teams faster and more effective.",
-  },
-];
+const { data: blogs } = await useAsyncData("blogs", () => queryCollection("blogs").all());
+const latest = computed(() =>
+  [...(blogs.value ?? [])].sort((a, b) => ts(b.published_at) - ts(a.published_at)).slice(0, 3),
+);
 </script>
