@@ -1,0 +1,1 @@
+import{P as e,R as t,f as n}from"./BRCGbW8x.js";import{t as r}from"./BDNMzG2s.js";var i={};function a(r,i){return e(),n(`p`,null,[t(r.$slots,`default`)])}var o=Object.assign(r(i,[[`render`,a]]),{__name:`ProseP`});export{o as default};
