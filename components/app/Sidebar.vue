@@ -14,7 +14,7 @@
       </div>
       <p class="body short:text-[0.8125rem] xshort:hidden">
         {{ age }}-year-old tinkerer, speaker and software engineer on the Open Source team at
-        Laravel. Days go to developer tooling and AI, free time to shipping side projects.
+        Laravel. In my free time I ship side projects.
       </p>
       <div class="flex flex-col gap-3 mt-1.5">
         <p class="label">History</p>
