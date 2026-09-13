@@ -107,36 +107,12 @@ let timer: ReturnType<typeof setInterval>;
 
 const audio = ref<HTMLAudioElement>();
 const playing = ref(false);
-const play = () => audio.value?.play().catch(() => {});
-const toggle = () => {
-  if (audio.value?.paused) {
-    localStorage.removeItem("lofi-off");
-    play();
-  } else {
-    localStorage.setItem("lofi-off", "1");
-    audio.value?.pause();
-  }
-};
-// ponytail: browsers block sound before a gesture, so try on load and otherwise start on the first click or key.
-// One handler for both events so a pause in between is respected; the toggle button plays itself, so skip it.
-const autoplay = () => {
-  if (localStorage.getItem("lofi-off")) return;
-  play()?.then(() => {
-    if (!audio.value?.paused) return;
-    const start = (e: Event) => {
-      removeEventListener("pointerdown", start);
-      removeEventListener("keydown", start);
-      if (!(e.target as Element).closest?.("button")) play();
-    };
-    addEventListener("pointerdown", start);
-    addEventListener("keydown", start);
-  });
-};
+// ponytail: music only starts from the chip, never on load or on a stray click
+const toggle = () => (audio.value?.paused ? audio.value.play().catch(() => {}) : audio.value?.pause());
 onMounted(() => {
   age.value = ageAt(new Date());
   tick();
   timer = setInterval(tick, 1000);
-  autoplay();
 });
 onBeforeUnmount(() => clearInterval(timer));
 </script>
