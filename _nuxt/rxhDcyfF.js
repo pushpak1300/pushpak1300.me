@@ -1,0 +1,1 @@
+var e=/bot\b|chrome-lighthouse|facebookexternalhit|google\b/i;function t(t){return e.test(t)}import.meta.url.replace(/\/app\/.*$/,`/`);export{t};
