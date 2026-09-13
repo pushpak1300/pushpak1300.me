@@ -150,9 +150,9 @@ useHead({ title });
 const { resumeURL } = appConfig;
 
 const projects = [
-  ["Laravel Boost", "https://github.com/laravel/boost"],
-  ["Laravel MCP", "https://github.com/laravel/mcp"],
-  ["Roster", "https://github.com/laravel/roster"],
+  ["Laravel Boost", "https://laravel.com/ai/boost"],
+  ["Laravel MCP", "https://laravel.com/ai/mcp"],
+  ["Laravel AI SDK", "https://laravel.com/ai"],
 ];
 
 const venues = [

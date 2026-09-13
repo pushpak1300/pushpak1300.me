@@ -10,12 +10,11 @@
         format="webp"
       />
       <div class="flex flex-col gap-2.5">
-        <p class="label">Open source engineer · India</p>
         <h1 class="hero text-[2.125rem] lg:text-[2.5rem] short:text-[1.875rem]">Pushpak Chhajed</h1>
       </div>
       <p class="body short:text-[0.8125rem] xshort:hidden">
-        I work on the Open Source team at Laravel, maintaining Boost, MCP and Roster. Most days sit
-        at the intersection of Laravel, AI systems and developer tooling.
+        {{ age }}-year-old tinkerer, speaker and software engineer on the Open Source team at
+        Laravel. Days go to developer tooling and AI, free time to shipping side projects.
       </p>
       <div class="flex flex-col gap-3 mt-1.5">
         <p class="label">History</p>
@@ -36,7 +35,7 @@
       </div>
     </Tile>
 
-    <Tile bg="057" label="India" class="[--dim:0.8] flex-1 min-h-[9.375rem] short:min-h-0">
+    <Tile bg="057" label="India" class="[--dim:0.8] flex-1 min-h-[9.375rem] short:min-h-0 order-last lg:order-none">
       <button
         type="button"
         class="chip absolute top-3.5 right-3.5 gap-2 pl-2.5 pr-3 backdrop-blur-sm"
@@ -80,6 +79,10 @@ const history = [
   ["2024", "Locked in on AI and Laravel"],
   ["Now", "Open source at Laravel"],
 ];
+
+// ponytail: born 13 May 2000; recomputed on mount so a static build never shows a stale age
+const ageAt = (d: Date) => d.getFullYear() - 2000 - (d < new Date(d.getFullYear(), 4, 13) ? 1 : 0);
+const age = ref(ageAt(new Date()));
 
 const time = ref("--:--");
 const diff = ref("");
@@ -128,6 +131,7 @@ const autoplay = () => {
   });
 };
 onMounted(() => {
+  age.value = ageAt(new Date());
   tick();
   timer = setInterval(tick, 1000);
   autoplay();

@@ -52,8 +52,9 @@
   .shell {
     @apply flex gap-gutter p-gutter min-h-screen flex-col lg:flex-row;
   }
+  /* ponytail: on mobile the sidebar dissolves into the shell so its cards can be ordered around the page grid */
   .sidebar {
-    @apply flex flex-col gap-gutter lg:w-[25rem] lg:flex-none lg:sticky lg:top-gutter lg:h-[calc(100vh-2*var(--spacing-gutter))];
+    @apply contents lg:flex lg:flex-col lg:gap-gutter lg:w-[25rem] lg:flex-none lg:sticky lg:top-gutter lg:h-[calc(100vh-2*var(--spacing-gutter))];
   }
 
   /* Page grid: 2 columns stacked on mobile, viewport-height bento on desktop (pages set their own lg:grid-cols/rows) */
