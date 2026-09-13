@@ -61,6 +61,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   compatibilityDate: "2024-11-16",
+  routeRules: { "/projects": { redirect: { to: "https://github.com/pushpak1300", statusCode: 302 } } },
   nitro: {
     compressPublicAssets: true,
     prerender: {

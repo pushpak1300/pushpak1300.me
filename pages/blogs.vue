@@ -18,7 +18,7 @@
       </div>
     </Tile>
 
-    <Tile bg="117" class="[--dim:0.8] justify-between" span="lg:row-span-2">
+    <Tile bg="117" class="[--dim:0.8] justify-between" span="col-span-2 lg:col-span-1 lg:row-span-2">
       <div class="flex flex-col gap-1 mt-auto">
         <p class="label">Newsletter</p>
         <p class="title text-[1.0625rem]">New posts in your inbox. Unsubscribe anytime.</p>
