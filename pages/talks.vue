@@ -6,8 +6,6 @@
     <Tile
       v-for="(talk, i) in talks"
       :key="talk.title"
-      :to="talk.instances[0].slidesUrl"
-      external
       :bg="bgs[i % bgs.length]"
       :label="`Spoke at ${talk.instances.length} ${talk.instances.length === 1 ? 'event' : 'events'}`"
       class="justify-between"
@@ -26,8 +24,17 @@
         </div>
       </div>
       <div class="tags">
-        <span v-if="talk.instances[0].slidesUrl" class="chip">Slides</span>
-        <span v-if="video(talk)" class="chip">Video</span>
+        <a
+          v-if="talk.instances[0].slidesUrl"
+          :href="talk.instances[0].slidesUrl"
+          class="chip"
+          target="_blank"
+          rel="noopener"
+          >Slides</a
+        >
+        <a v-if="video(talk)" :href="video(talk)" class="chip" target="_blank" rel="noopener"
+          >Video</a
+        >
       </div>
     </Tile>
 
