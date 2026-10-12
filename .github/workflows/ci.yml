@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+  pull_request:
 
 permissions:
   contents: write
@@ -31,6 +32,7 @@ jobs:
         run: bun run generate
 
       - name: Deploy
+        if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
