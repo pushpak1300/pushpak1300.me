@@ -128,22 +128,28 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
+import { useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
 
 const title = "Pushpak Chhajed";
 const description =
   "Open source engineer at Laravel, building thoughtful developer tooling across Laravel, AI, and modern product engineering.";
-useSeoMeta({
+usePageSeo(title, description, {
+  eyebrow: "Tinkerer · Speaker · Laravel",
   title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: "https://pushpak1300.me/og/home.jpg",
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
-  twitterCard: "summary_large_image",
-  twitterImage: "https://pushpak1300.me/og/home.jpg",
+  description:
+    "Tinkerer, speaker and software engineer on the Open Source team at Laravel. In my free time I ship side projects.",
+  path: "/",
+  tiles: [
+    {
+      bg: "080",
+      label: "Now",
+      title: "Building the tools that make Laravel teams faster with AI.",
+      chips: ["Laravel Boost", "Laravel MCP", "Laravel AI SDK"],
+    },
+    { bg: "023", label: "Writing", title: "Laravel, AI tooling and MCP, in depth.", link: true },
+    { bg: "012", label: "Talks", title: "Conferences and meetups across India.", link: true },
+  ],
 });
 useHead({ title });
 
