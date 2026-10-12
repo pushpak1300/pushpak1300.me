@@ -2,12 +2,20 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  modules: ["@nuxt/image", "@nuxt/content", "@nuxt/icon", "@nuxt/fonts"],
+  modules: ["@nuxt/image", "@nuxt/content", "@nuxt/icon", "@nuxt/fonts", "nuxt-og-image"],
+  site: { url: "https://pushpak1300.me", name: "Pushpak Chhajed" },
+  // ponytail: every page is prerendered, so og:images are static PNGs and no renderer ships at runtime
+  ogImage: { zeroRuntime: true, defaults: { height: 630 } },
   // ponytail: fonts are downloaded at build and served from /_fonts with preload, no Google roundtrip at runtime
   fonts: {
     families: [
-      { name: "Bricolage Grotesque", provider: "google", weights: [400, 500, 600, 700] },
-      { name: "Geist Mono", provider: "google", weights: [400, 500] },
+      {
+        name: "Bricolage Grotesque",
+        provider: "google",
+        weights: [400, 500, 600, 700],
+        global: true,
+      },
+      { name: "Geist Mono", provider: "google", weights: [400, 500], global: true },
     ],
   },
   icon: { clientBundle: { scan: true, sizeLimitKb: 256 } },
@@ -61,7 +69,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   compatibilityDate: "2024-11-16",
-  routeRules: { "/projects": { redirect: { to: "https://github.com/pushpak1300", statusCode: 302 } } },
+  routeRules: {
+    "/projects": { redirect: { to: "https://github.com/pushpak1300", statusCode: 302 } },
+  },
   nitro: {
     compressPublicAssets: true,
     prerender: {

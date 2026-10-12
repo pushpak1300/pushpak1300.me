@@ -61,23 +61,12 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
+import { useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
 
 const title = "Talks";
 const description =
   "Conferences and meetups where I have spoken about Laravel, PHP and AI tooling.";
-useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: "https://pushpak1300.me/og/talks.jpg",
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
-  twitterCard: "summary_large_image",
-  twitterImage: "https://pushpak1300.me/og/talks.jpg",
-});
 useHead({ title: `${title} | ${appConfig.name}` });
 
 // ponytail: 7 unique talk backgrounds (invite uses 030), wraps only if more talks land
@@ -103,5 +92,36 @@ const talks = computed<Talk[]>(() =>
     .sort((a, b) => ts(b.instances[0].date) - ts(a.instances[0].date)),
 );
 const venue = (v: string) => v.replace(/\s*\((In-Person|Online)\)/i, "");
+const spoke = (t: Talk) =>
+  `Spoke at ${t.instances.length} event${t.instances.length > 1 ? "s" : ""}`;
+const [latest, previous] = talks.value;
+usePageSeo(title, description, {
+  eyebrow: "Talks · Pushpak Chhajed",
+  title: "Conferences and meetups across India.",
+  chips: [
+    ...new Set(
+      talks.value.flatMap((t) =>
+        t.instances.map((i) => venue(i.conference).replace(/ Meetup$/, "")),
+      ),
+    ),
+  ].slice(0, 4),
+  path: "/talks",
+  tiles: [
+    {
+      bg: bgs[0],
+      label: spoke(latest),
+      title: latest.title,
+      rows: latest.instances.slice(0, 2).map((i) => [month(i.date), venue(i.conference)]),
+      link: true,
+    },
+    { bg: bgs[1], label: spoke(previous), title: previous.title, link: true },
+    {
+      bg: "030",
+      label: "Invite me",
+      title: "Happy to speak about Laravel, AI tooling and MCP.",
+      link: true,
+    },
+  ],
+});
 const video = (t: Talk) => t.instances.find((i) => i.youtubeUrl)?.youtubeUrl;
 </script>

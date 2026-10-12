@@ -18,7 +18,11 @@
       </div>
     </Tile>
 
-    <Tile bg="117" class="[--dim:0.8] justify-between" span="col-span-2 lg:col-span-1 lg:row-span-2">
+    <Tile
+      bg="117"
+      class="[--dim:0.8] justify-between"
+      span="col-span-2 lg:col-span-1 lg:row-span-2"
+    >
       <div class="flex flex-col gap-1 mt-auto">
         <p class="label">Newsletter</p>
         <p class="title text-[1.0625rem]">New posts in your inbox. Unsubscribe anytime.</p>
@@ -45,31 +49,50 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useAsyncData, queryCollection } from "#imports";
+import { useAsyncData, queryCollection } from "#imports";
 import appConfig from "~/app.config";
 
 const title = "Blogs";
 const description = "Articles on Laravel, AI tooling and building developer products.";
-useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: "https://pushpak1300.me/og/blogs.jpg",
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
-  twitterCard: "summary_large_image",
-  twitterImage: "https://pushpak1300.me/og/blogs.jpg",
-});
 useHead({ title: `${title} | ${appConfig.name}` });
 
 // ponytail: first 8 posts get images used nowhere else; the last 6 reuse Home social tiles since only 28 images exist for 34 slots
-const bgs = ["033", "025", "018", "071", "042", "020", "04", "034", "016", "02", "046", "041", "032", "023"];
+const bgs = [
+  "033",
+  "025",
+  "018",
+  "071",
+  "042",
+  "020",
+  "04",
+  "034",
+  "016",
+  "02",
+  "046",
+  "041",
+  "032",
+  "023",
+];
 
 const { data: blogs } = await useAsyncData("blogs", () => queryCollection("blogs").all());
 const sorted = computed(() =>
   [...(blogs.value ?? [])].sort((a, b) => ts(b.published_at) - ts(a.published_at)),
 );
+
+const [first, second, third] = sorted.value.map((b, i) => ({
+  bg: bgs[i % bgs.length],
+  label: month(b.published_at),
+  title: b.title,
+  link: true,
+}));
+usePageSeo(title, description, {
+  eyebrow: "Blog · Pushpak Chhajed",
+  title: "Writing on Laravel, AI tooling and MCP.",
+  description:
+    "Notes from shipping Boost, MCP and the AI SDK at Laravel, plus the odd essay on taste and craft.",
+  path: "/blogs",
+  tiles: [{ ...first, body: sorted.value[0].description }, second, third],
+});
 
 const email = ref("");
 const done = ref(false);
