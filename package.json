@@ -19,7 +19,7 @@
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "2.1.0",
-    "@nuxt/kit": "4.6.0",
+    "@nuxt/kit": "4.6.1",
     "@takumi-rs/core": "^2.15.0",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
