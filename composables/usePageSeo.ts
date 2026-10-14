@@ -24,7 +24,14 @@ export function usePageSeo(title: string, description: string, og: OgCard) {
     description,
     ogTitle: title,
     ogDescription: description,
-    twitterCard: "summary_large_image",
+    twitterTitle: title,
+    twitterSite: "@pushpak1300",
+    twitterDescription: description,
+    twitterPlayer: new URL(og.path, useSiteConfig().url).href,
+    twitterPlayerWidth: 1200,
+    twitterPlayerHeight: 630,
   });
   defineOgImage("Bento", og, { alt: title });
+  // Override nuxt-og-image's high-priority summary card, keeping its fallback image.
+  useSeoMeta({ twitterCard: "player" }, { tagPriority: "critical" });
 }
