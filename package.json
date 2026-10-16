@@ -13,7 +13,7 @@
     "format": "vp fmt"
   },
   "dependencies": {
-    "@iconify-json/simple-icons": "^1.2.99",
+    "@iconify-json/simple-icons": "^1.2.100",
     "@nuxt/content": "3.16.1",
     "@nuxt/eslint-plugin": "^1.17.0",
     "@nuxt/fonts": "^1.0.1",
