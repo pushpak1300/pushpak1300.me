@@ -27,7 +27,7 @@
     "hookable": "^6.1.2",
     "nuxt": "4.6.4",
     "nuxt-og-image": "^7.0.7",
-    "tailwindcss": "4.3.3",
+    "tailwindcss": "4.3.4",
     "vue": "3.5.44",
     "vue-router": "5.4.0"
   },
