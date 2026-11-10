@@ -32,7 +32,7 @@
     "vue-router": "5.4.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.4",
+    "@tailwindcss/vite": "^4.3.5",
     "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1",
     "vite-plus": "1.5.0"
   },
