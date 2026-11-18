@@ -23,7 +23,7 @@
     "@takumi-rs/core": "^2.20.0",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.1.0",
-    "better-sqlite3": "13.1.1",
+    "better-sqlite3": "13.2.0",
     "hookable": "^6.1.2",
     "nuxt": "4.6.4",
     "nuxt-og-image": "^7.0.7",
