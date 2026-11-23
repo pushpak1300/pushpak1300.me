@@ -1,0 +1,1 @@
+import{P as e,R as t,q as n,u as r}from"./DtXyu5yn.js";import{r as i}from"#entry";var a={__name:`ProseA`,props:{href:{type:String,default:``},target:{type:String,default:void 0,required:!1}},setup(a){let o=a;return(a,s)=>{let c=i;return e(),r(c,{href:o.href,target:o.target},{default:n(()=>[t(a.$slots,`default`)]),_:3},8,[`href`,`target`])}}};export{a as default};
