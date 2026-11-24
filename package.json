@@ -28,7 +28,7 @@
     "nuxt": "4.6.4",
     "nuxt-og-image": "^7.0.7",
     "tailwindcss": "4.3.5",
-    "vue": "3.5.45",
+    "vue": "3.5.46",
     "vue-router": "5.5.1"
   },
   "devDependencies": {
